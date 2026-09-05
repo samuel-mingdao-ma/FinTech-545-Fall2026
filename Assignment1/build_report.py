@@ -24,7 +24,7 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "output"
 RESULTS = json.loads((OUTPUT / "results.json").read_text(encoding="utf-8"))
-PDF_PATH = ROOT / "assignment1.pdf"
+PDF_PATH = ROOT / "assignment1answer.pdf"
 
 NAVY = colors.HexColor("#16324F")
 BLUE = colors.HexColor("#2A6F97")

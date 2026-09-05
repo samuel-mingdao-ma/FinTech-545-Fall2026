@@ -4,8 +4,7 @@ This folder contains the complete submission for FinTech 545 Assignment 1.
 
 ## Contents
 
-- `Answer.pdf` - written answers, tables, and figures (submission copy)
-- `assignment1.pdf` - identical reproducible output from `build_report.py`
+- `assignment1answer.pdf` - written answers, tables, and figures
 - `analysis.py` - reproduces every numerical result and figure
 - `build_report.py` - builds the submitted PDF from the computed results
 - `problem1.csv` through `problem5.csv` - supplied data
@@ -36,7 +35,7 @@ After running the analysis:
 python3 build_report.py
 ```
 
-This writes `assignment1.pdf` in the current directory. Run the analysis first
+This writes `assignment1answer.pdf` in the current directory. Run the analysis first
 because the report reads `output/results.json` and the generated figures.
 
 ## Conventions
