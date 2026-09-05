@@ -4,7 +4,8 @@ This folder contains the complete submission for FinTech 545 Assignment 1.
 
 ## Contents
 
-- `assignment1.pdf` - written answers, tables, and figures
+- `Answer.pdf` - written answers, tables, and figures (submission copy)
+- `assignment1.pdf` - identical reproducible output from `build_report.py`
 - `analysis.py` - reproduces every numerical result and figure
 - `build_report.py` - builds the submitted PDF from the computed results
 - `problem1.csv` through `problem5.csv` - supplied data
