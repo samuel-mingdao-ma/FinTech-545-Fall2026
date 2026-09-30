@@ -33,7 +33,7 @@ def main():
     passed = sum(r["status"] == "PASS" for r in rows)
     report = {"passed": passed, "total": len(rows), "seed": args.seed,
               "versions": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__, "pandas": pd.__version__},
-              "scope": "1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 7.1–7.6; inferred first checkpoint, not confirmed Canvas scope",
+              "scope": "Current checkpoint: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 7.1–7.6 (including new NIG cases 7.5 and 7.6)",
               "cases": rows}
     (args.output_dir / "test_report.json").write_text(json.dumps(report, indent=2) + "\n")
     pd.DataFrame(rows).to_csv(args.output_dir / "test_summary.csv", index=False)

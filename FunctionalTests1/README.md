@@ -7,10 +7,10 @@ functional tests against the instructor's supplied input and expected-output CSV
 
 ## Scope
 
-Implemented instructor cases (23 total): **1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1,
-5.1–5.5, and 7.1–7.6**. This is the first-checkpoint scope inferred from the
-September 14 lecture. The final Canvas list has not been supplied or verified.
-Cases 6 and 8–13 are not implemented in this submission.
+Implemented current-checkpoint instructor cases (23 total): **1.1–1.4, 2.1–2.3,
+3.1–3.4, 4.1, 5.1–5.5, and 7.1–7.6**. This includes the instructor's newly
+announced NIG cases 7.5 (method of moments) and 7.6 (maximum likelihood). Later
+course cases are outside this checkpoint.
 
 ## Run
 

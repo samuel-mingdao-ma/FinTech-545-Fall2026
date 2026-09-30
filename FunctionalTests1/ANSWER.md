@@ -6,7 +6,7 @@ Samuel Ma
 
 Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5 and 7.1–7.6.
 
-This first-checkpoint scope is inferred from the September 14 lecture; the final Canvas list has not been verified.
+This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.
 
 Instructor reference comparisons: **23/23 passed**.
 Pytest suite: **50/50 passed** (23 instructor cases plus 27 independent checks).

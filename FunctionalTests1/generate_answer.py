@@ -13,7 +13,7 @@ failures = sum(int(s.get("failures", 0))+int(s.get("errors", 0)) for s in suites
 lines = ["# FINTECH 545 — Functional Test Answers", "", "Samuel Ma", "",
          "## Scope and verification", "",
          "Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5 and 7.1–7.6.", "",
-         "This first-checkpoint scope is inferred from the September 14 lecture; the final Canvas list has not been verified.", "",
+         "This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.", "",
          f"Instructor reference comparisons: **{report['passed']}/{report['total']} passed**.",
          f"Pytest suite: **{tests-failures}/{tests} passed** (23 instructor cases plus 27 independent checks).",
          "This is not a claim that all 50 cases in the full-semester Tests.xlsx are implemented.", "",
