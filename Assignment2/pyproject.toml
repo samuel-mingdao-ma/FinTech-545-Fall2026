@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fintech545-assignment2"
+version = "1.0.0"
+description = "Reusable risk analytics for FinTech 545 Assignment 2"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "scipy>=1.11",
+  "statsmodels>=0.14",
+]
+
+[tool.setuptools.packages.find]
+include = ["risk545*"]

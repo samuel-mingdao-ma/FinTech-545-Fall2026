@@ -1,0 +1,8 @@
+matplotlib>=3.8
+numpy>=1.26
+pandas>=2.0
+reportlab>=4.0
+scipy>=1.11
+setuptools>=68
+statsmodels>=0.14
+pytest>=8.0
