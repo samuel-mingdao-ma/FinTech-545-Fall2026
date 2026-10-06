@@ -460,9 +460,11 @@ def solve_problem4(
 
     gaussian_log_likelihood = float(np.sum(gaussian_daily_log_likelihood))
     t_log_likelihood = float(np.sum(t_daily_log_likelihood))
-    n_pair_parameters = dimension * (dimension - 1) // 2
-    gaussian_k = n_pair_parameters
-    t_k = n_pair_parameters + 1
+    # The course comparison freezes the fitted margins and the Kendall-tau R
+    # before scoring either copula.  The shared R therefore contributes no
+    # free parameters here: Gaussian has none left, while Student-t adds nu.
+    gaussian_k = 0
+    t_k = 1
     gaussian_aicc = corrected_aic(
         gaussian_log_likelihood, gaussian_k, n_observations
     )
@@ -570,7 +572,10 @@ def solve_problem4(
             "copula_parameter_counts": {
                 "gaussian": gaussian_k,
                 "student_t": t_k,
-                "explanation": "three pairwise correlations; t copula adds degrees of freedom",
+                "explanation": (
+                    "fitted margins and Kendall-tau R are frozen for both "
+                    "models; only the t degrees of freedom remains free"
+                ),
             },
             "copula_correlation_estimator": "rho_ij = sin(pi * Kendall_tau_ij / 2)",
             "t_copula_df_profile_bounds": [2.01, 200.0],

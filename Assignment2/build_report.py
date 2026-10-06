@@ -602,7 +602,7 @@ def add_methods(story: list, results: dict) -> None:
         ["Moments", "Sample variance (n-1); corrected skewness and excess kurtosis"],
         ["Historical VaR", "Course RiskStats floor/ceil one-based order-statistic average"],
         ["Historical ES", "Negative mean P&L at or below the VaR cutoff, including ties"],
-        ["AICc/BIC", "Every estimated margin or copula parameter counted"],
+        ["AICc/BIC", "Margins count fitted parameters; with margins and Kendall R frozen, copula k is 0 (Gaussian) or 1 (t)"],
         ["Exploratory ranks", "Average rank/(n+1), strictly inside (0,1), for plots and tail counts"],
         ["Copula uniforms", "Selected fitted marginal CDF applied to each raw return"],
         ["Simulation", f"100,000 draws; master seed {results['metadata']['seed']}"],

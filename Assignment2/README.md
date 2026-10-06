@@ -51,11 +51,14 @@ without running the report builder.
   negative mean of P&L at or below that threshold, including ties.
 - Exponentially weighted variances use normalized finite-sample weights, newest
   observation receiving the largest weight.
-- AICc counts every estimated distribution or copula parameter. BIC is
+- Marginal AICc counts every fitted distribution parameter. For the copula
+  comparison, the fitted margins and Kendall-tau correlation matrix are frozen,
+  so `k=0` for Gaussian and `k=1` for Student-t; BIC is
   `-2*logLik + k*log(n)`.
-- Copula pseudo-observations use `rank/(n+1)`. Elliptical copula correlations
-  use `rho = sin(pi*tau/2)` and are repaired if numerical noise prevents positive
-  definiteness.
+- Exploratory rank plots and joint-tail counts use `rank/(n+1)`. Copula
+  likelihoods instead use the selected fitted marginal CDFs. Elliptical copula
+  correlations use `rho = sin(pi*tau/2)` and are repaired if numerical noise
+  prevents positive definiteness.
 - Monte Carlo calculations use 100,000 draws and seed 545 (with stable offsets
   by problem).
 - Problem 5 follows the instruction to assume zero expected returns for risk;

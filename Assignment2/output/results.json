@@ -2120,9 +2120,9 @@
       "central_day_definition": "all three empirical rank uniforms strictly between 0.05 and 0.95",
       "copula_correlation_estimator": "rho_ij = sin(pi * Kendall_tau_ij / 2)",
       "copula_parameter_counts": {
-        "explanation": "three pairwise correlations; t copula adds degrees of freedom",
-        "gaussian": 3,
-        "student_t": 4
+        "explanation": "fitted margins and Kendall-tau R are frozen for both models; only the t degrees of freedom remains free",
+        "gaussian": 0,
+        "student_t": 1
       },
       "es_rule": "negative mean P&L at or below the empirical quantile, including ties",
       "holdings_usd_per_asset": 1000000.0,
@@ -2194,10 +2194,10 @@
         "was_repaired": false
       },
       "gaussian": {
-        "aicc": -694.8564765543906,
-        "bic": -680.1573071029864,
+        "aicc": -700.8805729399328,
+        "bic": -700.8805729399328,
         "log_likelihood": 350.4402864699664,
-        "n_parameters": 3
+        "n_parameters": 0
       },
       "kendall_tau_matrix": [
         [
@@ -2217,13 +2217,13 @@
         ]
       ],
       "student_t": {
-        "aicc": -895.9586281182657,
-        "bic": -876.3678080073622,
+        "aicc": -901.9948211072586,
+        "bic": -897.0910738443087,
         "degrees_of_freedom": 3.6599325242742955,
         "log_likelihood": 451.9994145616454,
-        "n_parameters": 4
+        "n_parameters": 1
       },
-      "student_t_aicc_advantage": 201.10215156387505,
+      "student_t_aicc_advantage": 201.11424816732585,
       "student_t_bic_advantage": 196.21050090437586,
       "winner_by_aicc": "student_t",
       "winner_by_bic": "student_t"

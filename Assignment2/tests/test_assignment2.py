@@ -48,6 +48,10 @@ def test_problem3_var_failure_and_es_coherence(results):
 
 def test_problem4_t_copula_wins_and_has_tail_dependence(results):
     p4 = results["p4"]
+    assert p4["copula_fit"]["gaussian"]["n_parameters"] == 0
+    assert p4["copula_fit"]["student_t"]["n_parameters"] == 1
+    assert p4["copula_fit"]["gaussian"]["aicc"] == pytest.approx(-700.8805729399328)
+    assert p4["copula_fit"]["student_t"]["aicc"] == pytest.approx(-901.9948211072586)
     assert p4["copula_fit"]["student_t_aicc_advantage"] > 100
     assert p4["tail_dependence"]["student_t_lower_and_upper"] > 0
     for model in p4["portfolio_risk_usd"].values():
