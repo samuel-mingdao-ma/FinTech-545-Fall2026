@@ -4,12 +4,12 @@ Samuel Ma
 
 ## Scope and verification
 
-Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5 and 7.1–7.6.
+Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2 and 7.1–7.6.
 
 This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.
 
-Instructor reference comparisons: **23/23 passed**.
-Pytest suite: **50/50 passed** (23 instructor cases plus 27 independent checks).
+Instructor reference comparisons: **25/25 passed**.
+Pytest suite: **59/59 passed** (25 instructor cases plus 34 independent checks).
 This is not a claim that all 50 cases in the full-semester Tests.xlsx are implemented.
 
 All answers below were calculated by risk545. Full-precision matrices and parameters are in output/*.csv.
@@ -35,12 +35,22 @@ All answers below were calculated by risk545. Full-precision matrices and parame
 | 5.3 | PASS | 0.000878503 |
 | 5.4 | PASS | 0.000878503 |
 | 5.5 | PASS | 0.000939396 |
+| 6.1 | PASS | 9.99634e-17 |
+| 6.2 | PASS | 9.9855e-17 |
 | 7.1 | PASS | 2.77556e-17 |
 | 7.2 | PASS | 3.9684e-07 |
 | 7.3 | PASS | 3.35438e-08 |
 | 7.4 | PASS | 5.68434e-14 |
 | 7.5 | PASS | 7.81597e-14 |
 | 7.6 | PASS | 1.46372e-12 |
+
+## Return conversion tests 6.1 and 6.2
+
+Both tests read test6.csv and calculate every asset column from prices. Dates retain the ending observation, and the first observation is omitted.
+6.1: arithmetic return = P[t]/P[t-1] - 1; output/testout6_1.csv.
+6.2: log return = log(P[t]/P[t-1]); output/testout6_2.csv.
+Dates, column order, dimensions and all numeric entries are checked against the supplied references.
+Independent checks verify known returns, exp(log return)-1, scale invariance, unchanged inputs and invalid prices.
 
 ## Monte Carlo covariance comparisons
 
@@ -137,6 +147,6 @@ python -m pytest -q --junitxml=output/pytest-results.xml
 python generate_answer.py
 ```
 
-Environment: python 3.12.3, numpy 2.5.3, scipy 1.18.1, pandas 3.0.6.
+Environment: python 3.12.3, numpy 2.5.4, scipy 1.18.1, pandas 3.0.6.
 
 See README.md for function conventions, data provenance, naming corrections, installation, and grading assumptions.

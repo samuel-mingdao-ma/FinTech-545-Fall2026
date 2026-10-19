@@ -12,16 +12,22 @@ tests = sum(int(s.get("tests", 0)) for s in suites.findall("testsuite"))
 failures = sum(int(s.get("failures", 0))+int(s.get("errors", 0)) for s in suites.findall("testsuite"))
 lines = ["# FINTECH 545 — Functional Test Answers", "", "Samuel Ma", "",
          "## Scope and verification", "",
-         "Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5 and 7.1–7.6.", "",
+         "Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2 and 7.1–7.6.", "",
          "This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.", "",
          f"Instructor reference comparisons: **{report['passed']}/{report['total']} passed**.",
-         f"Pytest suite: **{tests-failures}/{tests} passed** (23 instructor cases plus 27 independent checks).",
+         f"Pytest suite: **{tests-failures}/{tests} passed** ({report['total']} instructor cases plus {tests-report['total']} independent checks).",
          "This is not a claim that all 50 cases in the full-semester Tests.xlsx are implemented.", "",
          "All answers below were calculated by risk545. Full-precision matrices and parameters are in output/*.csv.", "",
          "## Results by test", "", "| Test | Result | Maximum absolute difference vs reference |", "|---|---|---:|"]
 for row in report["cases"]:
     lines.append(f"| {row['test']} | {row['status']} | {row.get('max_abs_error', float('nan')):.6g} |")
-lines += ["", "## Monte Carlo covariance comparisons", "",
+lines += ["", "## Return conversion tests 6.1 and 6.2", "",
+          "Both tests read test6.csv and calculate every asset column from prices. Dates retain the ending observation, and the first observation is omitted.",
+          "6.1: arithmetic return = P[t]/P[t-1] - 1; output/testout6_1.csv.",
+          "6.2: log return = log(P[t]/P[t-1]); output/testout6_2.csv.",
+          "Dates, column order, dimensions and all numeric entries are checked against the supplied references.",
+          "Independent checks verify known returns, exp(log return)-1, scale invariance, unchanged inputs and invalid prices.", "",
+          "## Monte Carlo covariance comparisons", "",
           "100,000 observations per case; seed 1234. Python and Julia simulations have different random streams.",
           "The Frobenius differences below are divided by the norm of the analytic target covariance.", "",
           "| Test | Relative Frobenius difference | Largest error / MC standard error vs target |", "|---|---:|---:|"]

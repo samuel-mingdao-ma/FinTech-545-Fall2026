@@ -7,8 +7,8 @@ functional tests against the instructor's supplied input and expected-output CSV
 
 ## Scope
 
-Implemented current-checkpoint instructor cases (23 total): **1.1–1.4, 2.1–2.3,
-3.1–3.4, 4.1, 5.1–5.5, and 7.1–7.6**. This includes the instructor's newly
+Implemented current-checkpoint instructor cases (25 total): **1.1–1.4, 2.1–2.3,
+3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2, and 7.1–7.6**. This includes the instructor's newly
 announced NIG cases 7.5 (method of moments) and 7.6 (maximum likelihood). Later
 course cases are outside this checkpoint.
 
@@ -44,10 +44,11 @@ python run_functional_tests.py --data-dir /path/to/data --output-dir /path/to/re
 
 - `risk545/`: reusable functions, with docstrings and input validation. These functions
   never load or return values from expected-output files.
-- `data/`: unmodified instructor input and reference CSVs for the 23 cases.
+- `data/`: unmodified instructor input and reference CSVs for the 25 cases.
 - `functional_cases.py`: maps each numbered case to inputs, function calls and comparison rules.
 - `run_functional_tests.py`: exports calculated CSV answers and a per-case pass/fail report.
-- `tests/test_functional.py`: 23 separately named instructor tests.
+- `tests/test_functional.py`: 25 separately named instructor tests.
+- `tests/test_returns.py`: 7 independent return-conversion checks.
 - `tests/test_independent.py`: 27 additional checks on independent data, mathematical
   properties, repeatability and invalid inputs. These are our own checks, not hidden instructor tests.
 - `output/`: calculated answer CSVs, summary CSV, JSON report and pytest JUnit results.
@@ -90,6 +91,9 @@ order and have no added row index. Matrix output row order matches variable colu
   eigenvalues use the course cutoff `1e-8`. Compare sampling error to the truncated covariance,
   not to the original full-rank covariance.
 - Normal fit: sample standard deviation (`ddof=1`), not the normal MLE divisor `n`.
+- Return cases 6.1/6.2: `calculate_returns(prices, method='arithmetic'/'log')`;
+  preserve Date and asset order, omit first row, no filling or demeaning. Outputs
+  are `testout6_1.csv` and `testout6_2.csv` (no underscore after `testout`).
 - Student t: estimate location, scale and nu; constrain `nu >= 2.0001`, as the reference does.
   Scale is not standard deviation. For nu > 2, variance is `scale**2 * nu/(nu-2)`.
 - t regression: estimate intercept, slopes, scale and nu; error location is fixed at zero

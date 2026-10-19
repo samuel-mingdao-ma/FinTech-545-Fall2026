@@ -11,12 +11,12 @@ import risk545 as risk
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
-CASE_IDS = [f"1.{i}" for i in range(1, 5)] + [f"2.{i}" for i in range(1, 4)] + [f"3.{i}" for i in range(1, 5)] + ["4.1"] + [f"5.{i}" for i in range(1, 6)] + [f"7.{i}" for i in range(1, 7)]
+CASE_IDS = [f"1.{i}" for i in range(1, 5)] + [f"2.{i}" for i in range(1, 4)] + [f"3.{i}" for i in range(1, 5)] + ["4.1"] + [f"5.{i}" for i in range(1, 6)] + ["6.1", "6.2"] + [f"7.{i}" for i in range(1, 7)]
 
 
 def output_name(case):
     # The workbook uses a different spelling from actual CSVs for group 7.
-    return f"testout{case.replace('.', '_')}.csv" if case.startswith("7.") else f"testout_{case}.csv"
+    return f"testout{case.replace('.', '_')}.csv" if case.startswith(("6.", "7.")) else f"testout_{case}.csv"
 
 
 def read(name, data_dir=DATA):
@@ -59,6 +59,8 @@ def calculate(case, data_dir=DATA, seed=1234):
         else:
             draws = risk.simulate_normal(frame, 100000, seed=seed, repair=risk.higham_psd if case == "5.4" else risk.near_psd)
         return pd.DataFrame(np.cov(draws, rowvar=False, ddof=1), columns=frame.columns)
+    if case in ("6.1", "6.2"):
+        return risk.calculate_returns(read("test6.csv", data_dir), method="arithmetic" if case == "6.1" else "log")
     if case == "7.1":
         parameters = risk.fit_normal(matrix("test7_1.csv", data_dir)[:, 0])
     elif case in ("7.2", "7.4"):
@@ -92,6 +94,10 @@ def simulation_target(case, data_dir=DATA):
 def compare(case, actual, expected, data_dir=DATA):
     if list(actual.columns) != list(expected.columns) or actual.shape != expected.shape:
         raise AssertionError("CSV dimensions or column order differ from reference")
+    if case in ("6.1", "6.2"):
+        if actual["Date"].tolist() != expected["Date"].tolist():
+            raise AssertionError("Return dates differ from reference")
+        actual, expected = actual.drop(columns="Date"), expected.drop(columns="Date")
     a, e = actual.to_numpy(float), expected.to_numpy(float)
     if not np.isfinite(a).all():
         raise AssertionError("Output includes NaN or infinity")
