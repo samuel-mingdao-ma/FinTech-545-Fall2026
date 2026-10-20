@@ -1,0 +1,46 @@
+Python 3.12 setup:
+  python3.12 -m venv .venv
+  source .venv/bin/activate
+  python -m pip install -r requirements.txt
+  python -m pip install --no-deps -e .
+  python -m pytest -q
+
+The installable numerical library is examkit/ (configured by pyproject.toml).
+Code labels identify Problem 1(a-e), Problem 2(a-b), and Problem 3(a-c).
+
+1. Fit every marginal candidate; no model is selected:
+  python run_midterm.py --output-dir results/fits
+  python validate_results.py --output-dir results/fits
+
+Numeric files:
+  q3a_all_fits.csv     All Normal/t/NIG fitted parameters, ll, AICc, BIC
+  q3a_comparison.csv   Side-by-side ll, AICc, BIC in fixed family order
+  q1*.csv, q2*.csv     Problem 1 and 2 calculations
+
+2. Copy marginal_choices_template.json to my_choices.json.
+Replace every null with your own choice: "normal", "t", or "nig".
+Then fit both copulas without selecting either:
+  python run_midterm.py --choices my_choices.json --output-dir results/copula_fits
+  python validate_results.py --output-dir results/copula_fits
+
+Additional numeric files:
+  q3b_comparison.csv      Both copulas' fitted nu, ll, AICc, BIC
+  q3b_copula_scores.csv   Both copulas' scores
+  q3b_kendall_R.csv       Shared dependence matrix
+  q3b_extended_*.csv      Additional numerical nu profile calculations
+
+3. To simulate, supply YOUR copula choice explicitly.
+Replace YOUR_COPULA below with "gaussian" or "t"; there is no default:
+  python run_midterm.py --choices my_choices.json --copula YOUR_COPULA --output-dir results/risk --draws 250000 --seed 545
+  python validate_results.py --output-dir results/risk
+
+q3c_risk.csv contains risk under the supplied choices only.
+The code does not replace choices with a different family or copula.
+Every run requires a new or empty output folder; previous files are not overwritten.
+Minimum simulation size: 5000; default: 250000; random seed: 545.
+Parameters: t=(mu,scale,nu), NIG=(mu,alpha,beta,delta).
+VaR/ES use positive losses; Q2 uses percent, Q3 uses dollars.
+The copula nu fit uses the course search cap of 100.
+Input guards reject invalid/constant observations, duplicate JSON keys,
+incomplete choices, duplicate/missing holdings, and invalid book labels.
+The included marginal validation supports positive long-only positions.

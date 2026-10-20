@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fintech545-midterm-numerics"
+version = "1.0.0"
+description = "Numerical routines and calculations for the FINTECH 545 midterm"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0", "scipy>=1.14", "pandas>=2.2"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["examkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
