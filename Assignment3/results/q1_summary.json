@@ -1,0 +1,242 @@
+{
+  "parameters": {
+    "spot": 182.4,
+    "rate": 0.0425,
+    "dividend_yield": 0.006,
+    "valuation_date": "2026-11-13",
+    "expiration_date": "2026-12-18",
+    "calendar_days": 35,
+    "t": 0.0958904109589041
+  },
+  "flagged_strikes": [
+    175.0
+  ],
+  "flagged_parity": [
+    {
+      "Strike": 175.0,
+      "call_mid": 10.605,
+      "put_mid": 1.71,
+      "theoretical_call_minus_put": 8.006821384610163,
+      "gap": 0.8881786153898368,
+      "band": 0.4699999999999993,
+      "flag": true
+    }
+  ],
+  "flagged_vol_translation": [
+    {
+      "Strike": 175.0,
+      "flag": true,
+      "parity_gap": 0.8881786153898368,
+      "reference_iv": 0.23603861185228273,
+      "reference_vega": 18.219168798187383,
+      "estimated_IV_gap": 0.048749678167436555,
+      "actual_IV_gap": 0.0488367493451321,
+      "estimated_gap_vol_points": 4.874967816743656,
+      "actual_gap_vol_points": 4.88367493451321
+    }
+  ],
+  "missing_IV_roots": [
+    {
+      "Type": "Call",
+      "Strike": 140.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Call",
+      "Strike": 145.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Call",
+      "Strike": 150.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Call",
+      "Strike": 155.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Put",
+      "Strike": 205.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Put",
+      "Strike": 210.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Put",
+      "Strike": 215.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Put",
+      "Strike": 220.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    },
+    {
+      "Type": "Put",
+      "Strike": 225.0,
+      "source": "bid",
+      "status": "below_no_arbitrage_lower_bound"
+    }
+  ],
+  "call_wing": [
+    {
+      "Type": "Call",
+      "Strike": 215.0,
+      "Bid": 0.05,
+      "Mid": 0.07500000000000001,
+      "Ask": 0.1,
+      "lower_bound": 0.0,
+      "upper_bound": 182.29508771738628,
+      "IV_bid": 0.22561879492297465,
+      "status_bid": "ok",
+      "IV_mid": 0.238225372907684,
+      "status_mid": "ok",
+      "IV_ask": 0.24826652490441223,
+      "status_ask": "ok",
+      "vega_per_unit_sigma": 2.2580156125411706,
+      "vega_per_vol_point": 0.022580156125411706,
+      "cent_dIV_linear": 0.004428667341562799,
+      "cent_dIV_vol_points": 0.44286673415627986,
+      "cent_dIV_exact_up": 0.00424672331333889,
+      "cent_up_status": "ok"
+    },
+    {
+      "Type": "Call",
+      "Strike": 220.0,
+      "Bid": 0.05,
+      "Mid": 0.07500000000000001,
+      "Ask": 0.1,
+      "lower_bound": 0.0,
+      "upper_bound": 182.29508771738628,
+      "IV_bid": 0.2531375003347569,
+      "status_bid": "ok",
+      "IV_mid": 0.26688776647676893,
+      "status_mid": "ok",
+      "IV_ask": 0.27781114363284987,
+      "status_ask": "ok",
+      "vega_per_unit_sigma": 2.073255384397208,
+      "vega_per_vol_point": 0.02073255384397208,
+      "cent_dIV_linear": 0.004823332463167565,
+      "cent_dIV_vol_points": 0.48233324631675645,
+      "cent_dIV_exact_up": 0.0046229090982223275,
+      "cent_up_status": "ok"
+    },
+    {
+      "Type": "Call",
+      "Strike": 225.0,
+      "Bid": 0.05,
+      "Mid": 0.07500000000000001,
+      "Ask": 0.1,
+      "lower_bound": 0.0,
+      "upper_bound": 182.29508771738628,
+      "IV_bid": 0.2796456164595183,
+      "status_bid": "ok",
+      "IV_mid": 0.2944729789353058,
+      "status_mid": "ok",
+      "IV_ask": 0.3062260141460228,
+      "status_ask": "ok",
+      "vega_per_unit_sigma": 1.925035027479969,
+      "vega_per_vol_point": 0.01925035027479969,
+      "cent_dIV_linear": 0.005194710671364163,
+      "cent_dIV_vol_points": 0.5194710671364163,
+      "cent_dIV_exact_up": 0.004976804383891642,
+      "cent_up_status": "ok"
+    }
+  ],
+  "clean_smile": [
+    {
+      "Type": "Put",
+      "Strike": 140.0,
+      "IV_mid": 0.390690208134064
+    },
+    {
+      "Type": "Put",
+      "Strike": 145.0,
+      "IV_mid": 0.3642464527777811
+    },
+    {
+      "Type": "Put",
+      "Strike": 150.0,
+      "IV_mid": 0.3410151465270111
+    },
+    {
+      "Type": "Put",
+      "Strike": 155.0,
+      "IV_mid": 0.3199260431121209
+    },
+    {
+      "Type": "Put",
+      "Strike": 160.0,
+      "IV_mid": 0.30184276471855787
+    },
+    {
+      "Type": "Put",
+      "Strike": 165.0,
+      "IV_mid": 0.28592937521571987
+    },
+    {
+      "Type": "Put",
+      "Strike": 170.0,
+      "IV_mid": 0.2721505892201128
+    },
+    {
+      "Type": "Put",
+      "Strike": 180.0,
+      "IV_mid": 0.25030538919703255
+    },
+    {
+      "Type": "Call",
+      "Strike": 185.0,
+      "IV_mid": 0.2419204743786405
+    },
+    {
+      "Type": "Call",
+      "Strike": 190.0,
+      "IV_mid": 0.2350418184743424
+    },
+    {
+      "Type": "Call",
+      "Strike": 195.0,
+      "IV_mid": 0.2294653782519067
+    },
+    {
+      "Type": "Call",
+      "Strike": 200.0,
+      "IV_mid": 0.22535548972443536
+    },
+    {
+      "Type": "Call",
+      "Strike": 205.0,
+      "IV_mid": 0.22285565702371213
+    },
+    {
+      "Type": "Call",
+      "Strike": 210.0,
+      "IV_mid": 0.2206713171922859
+    }
+  ],
+  "all_mid_repricing_checked": true,
+  "files": [
+    "q1_parity.csv",
+    "q1_quotes_iv.csv",
+    "q1_parity_vol_translation.csv",
+    "q1_clean_otm_smile.csv"
+  ],
+  "figures": [
+    "q1_smile.png",
+    "q1_vega_sensitivity.png"
+  ]
+}

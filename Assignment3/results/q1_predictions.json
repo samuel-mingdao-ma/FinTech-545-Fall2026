@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-11-09T17:14:56.550958+00:00",
+  "origin": "AI-assisted analytical prediction draft; chronology is not verified and this is not an unaided student prediction",
+  "predictions": {
+    "a": "The midpoint parity gaps above the complete call-plus-put spread band identify inconsistent quotes, not an independently tradable arbitrage guarantee.",
+    "b": "Under a common carry/rate and a unique IV root, exact put-call parity implies equal call and put IV at the same strike: both price functions differ by the fixed parity term.",
+    "c": "Low-vega far-wing quotes amplify a one-cent price error into a large IV error. The identical 0.05/0.10 call quotes at strikes above 210 suggest a quote floor and an unreliable apparent wing before any IV fit.",
+    "parity_flagged_strikes": [
+      175.0
+    ]
+  }
+}

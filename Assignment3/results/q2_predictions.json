@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-11-09T17:13:31.185359+00:00",
+  "origin": "AI-assisted analytical prediction draft; chronology is not verified and this is not an unaided student prediction",
+  "predictions": {
+    "chronology_note": "AI-assisted analytical draft, not a verified student-before-fit record; implementation benchmarks predated persistence",
+    "dividend_conditions": [
+      {
+        "time": 0.1,
+        "dividend": 0.25,
+        "strike_interest": 0.8919483820849616,
+        "condition_holds": false
+      },
+      {
+        "time": 0.4,
+        "dividend": 1.5,
+        "strike_interest": 0.22449450852147224,
+        "condition_holds": true
+      }
+    ],
+    "a": "The first dividend fails the given interest condition. The second passes it; sufficiently high stock prices can make exercising the call just before that payment optimal.",
+    "b": {
+      "EuropeanCall": "lower",
+      "AmericanCall": "lower",
+      "EuropeanPut": "higher",
+      "AmericanPut": "higher",
+      "call_early_exercise_premium": "larger",
+      "put_early_exercise_premium": "expected smaller: a forthcoming stock-price drop makes waiting more attractive to a put holder"
+    }
+  }
+}

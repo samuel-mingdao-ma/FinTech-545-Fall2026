@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-09T17:12:51.871250+00:00",
+  "origin": "AI-assisted analytical prediction draft; chronology is not verified and this is not an unaided student prediction",
+  "predictions": {
+    "FUND1": "Before FF3 or four-factor fitting, SMB: residual correlation -0.061, sample daily premium -0.000163, HML: residual correlation 0.205, sample daily premium 0.000372, Mom: residual correlation 0.801, sample daily premium 0.000782. I predict alpha will decline substantially when the omitted factors are included; the direction is a heuristic from residual association and factor premia, not a result from the expanded regression.",
+    "FUND2": "Before FF3 or four-factor fitting, SMB: residual correlation 0.330, sample daily premium -0.000163, HML: residual correlation -0.121, sample daily premium 0.000372, Mom: residual correlation 0.053, sample daily premium 0.000782. I predict alpha will rise substantially when the omitted factors are included; the direction is a heuristic from residual association and factor premia, not a result from the expanded regression."
+  }
+}

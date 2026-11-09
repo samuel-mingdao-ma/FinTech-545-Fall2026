@@ -1,0 +1,404 @@
+{
+  "n": 240,
+  "assets": [
+    "EQ",
+    "BOND",
+    "STK",
+    "PUTW"
+  ],
+  "risk_free_annual": 0.03,
+  "risk_free_monthly": 0.0024662697723036864,
+  "annualization": "Sharpe uses sqrt(12); plots and VaR/ES use monthly returns",
+  "data_start": "2006-12-31",
+  "data_end": "2026-11-30",
+  "moments": [
+    {
+      "asset": "EQ",
+      "n": 240,
+      "mean": 0.007901411245415473,
+      "variance": 0.0024272224308966024,
+      "sd": 0.04926684920812983,
+      "skewness": -0.38492011220099454,
+      "excess_kurtosis": 3.421231466560095,
+      "annual_sharpe": 0.38216128407094946,
+      "mean_standard_error": 0.0031801614417199813
+    },
+    {
+      "asset": "BOND",
+      "n": 240,
+      "mean": 0.003326686433831667,
+      "variance": 0.0001811671917055629,
+      "sd": 0.013459836243638439,
+      "skewness": 0.08667283111214168,
+      "excess_kurtosis": 0.48155317799186603,
+      "annual_sharpe": 0.2214418283357071,
+      "mean_standard_error": 0.0008688286935715111
+    },
+    {
+      "asset": "STK",
+      "n": 240,
+      "mean": 0.011244336913781657,
+      "variance": 0.008698622074677127,
+      "sd": 0.09326640378334058,
+      "skewness": -0.060628985882903615,
+      "excess_kurtosis": 0.7702514187666303,
+      "annual_sharpe": 0.3260350493755506,
+      "mean_standard_error": 0.006020320476892242
+    },
+    {
+      "asset": "PUTW",
+      "n": 240,
+      "mean": 0.0062429141655662,
+      "variance": 0.00027393301537238974,
+      "sd": 0.0165509218888976,
+      "skewness": -6.52542307446727,
+      "excess_kurtosis": 59.85049820890249,
+      "annual_sharpe": 0.7904502256927157,
+      "mean_standard_error": 0.001068357414001337
+    }
+  ],
+  "single_month_influence": [
+    {
+      "asset": "EQ",
+      "month": "2008-06-30",
+      "event_return": -0.2350976381527448,
+      "variance_share": 0.10178919304738919,
+      "fourth_moment_share": 0.3872543094026476,
+      "excess_kurtosis_full": 3.421231466560095,
+      "excess_kurtosis_without_event": 1.851936461608794,
+      "annual_sharpe_full": 0.38216128407094946,
+      "annual_sharpe_without_event": 0.4777768272755427
+    },
+    {
+      "asset": "BOND",
+      "month": "2012-12-31",
+      "event_return": 0.049857345279027,
+      "variance_share": 0.050003562942174375,
+      "fourth_moment_share": 0.17236143840979726,
+      "excess_kurtosis_full": 0.48155317799186603,
+      "excess_kurtosis_without_event": 0.176665839869957,
+      "annual_sharpe_full": 0.2214418283357071,
+      "annual_sharpe_without_event": 0.17543807386573596
+    },
+    {
+      "asset": "STK",
+      "month": "2008-06-30",
+      "event_return": -0.3766826295147244,
+      "variance_share": 0.07238549972382485,
+      "fourth_moment_share": 0.33353705023620367,
+      "excess_kurtosis_full": 0.7702514187666303,
+      "excess_kurtosis_without_event": -0.10759182164438608,
+      "annual_sharpe_full": 0.3260350493755506,
+      "annual_sharpe_without_event": 0.40033651213443455
+    },
+    {
+      "asset": "PUTW",
+      "month": "2008-06-30",
+      "event_return": -0.1671967691777659,
+      "variance_share": 0.4594673597560314,
+      "fourth_moment_share": 0.8061425536370074,
+      "excess_kurtosis_full": 59.85049820890249,
+      "excess_kurtosis_without_event": 39.87168931923693,
+      "annual_sharpe_full": 0.7904502256927157,
+      "annual_sharpe_without_event": 1.281322162682325
+    }
+  ],
+  "portfolios": [
+    {
+      "portfolio": "Unconstrained",
+      "EQ": -0.04308995470778699,
+      "BOND": 0.25237919035714285,
+      "STK": 0.02210478967402745,
+      "PUTW": 0.7686059746766166,
+      "mean": 0.005546009805600489,
+      "sd": 0.012871841243862713,
+      "annual_sharpe": 0.8288272222619745
+    },
+    {
+      "portfolio": "LongOnly",
+      "EQ": 0.0,
+      "BOND": 0.26630156869604943,
+      "STK": 0.008844657249808941,
+      "PUTW": 0.7248537740541415,
+      "mean": 0.0055105540158997355,
+      "sd": 0.012791967183966657,
+      "annual_sharpe": 0.8244009551867354
+    },
+    {
+      "portfolio": "PUTW20",
+      "EQ": 0.14454774388329908,
+      "BOND": 0.6386539223246819,
+      "STK": 0.016798333792008596,
+      "PUTW": 0.2,
+      "mean": 0.004704201466190586,
+      "sd": 0.012938688859045155,
+      "annual_sharpe": 0.5991660267757436
+    }
+  ],
+  "risk": [
+    {
+      "portfolio": "Unconstrained",
+      "alpha": 0.05,
+      "mean": 0.005546009805600489,
+      "sd": 0.012871841243862713,
+      "annual_sharpe": 0.8288272222619745,
+      "historical_VaR": 0.00392380453893883,
+      "historical_ES": 0.028746349071864158,
+      "normal_VaR": 0.01562628494991065,
+      "normal_ES": 0.021004901984317436,
+      "historical_tail_count": 12,
+      "weighted_standalone_ES": 0.0364300758683674
+    },
+    {
+      "portfolio": "Unconstrained",
+      "alpha": 0.01,
+      "mean": 0.005546009805600489,
+      "sd": 0.012871841243862713,
+      "annual_sharpe": 0.8288272222619745,
+      "historical_VaR": 0.05856763279819966,
+      "historical_ES": 0.10248197429690517,
+      "normal_VaR": 0.024398370707050743,
+      "normal_ES": 0.028760204519576085,
+      "historical_tail_count": 2,
+      "weighted_standalone_ES": 0.11151263475978147
+    },
+    {
+      "portfolio": "LongOnly",
+      "alpha": 0.05,
+      "mean": 0.0055105540158997355,
+      "sd": 0.012791967183966657,
+      "annual_sharpe": 0.8244009551867354,
+      "historical_VaR": 0.002862556197082245,
+      "historical_ES": 0.028983110844205764,
+      "normal_VaR": 0.015530359602492041,
+      "normal_ES": 0.020875600527682982,
+      "historical_tail_count": 12,
+      "weighted_standalone_ES": 0.03714102825561813
+    },
+    {
+      "portfolio": "LongOnly",
+      "alpha": 0.01,
+      "mean": 0.0055105540158997355,
+      "sd": 0.012791967183966657,
+      "annual_sharpe": 0.8244009551867354,
+      "historical_VaR": 0.059470446793571,
+      "historical_ES": 0.1017926768602283,
+      "normal_VaR": 0.0242480116473213,
+      "normal_ES": 0.028582778829005125,
+      "historical_tail_count": 2,
+      "weighted_standalone_ES": 0.11105393712865011
+    },
+    {
+      "portfolio": "PUTW20",
+      "alpha": 0.05,
+      "mean": 0.004704201466190586,
+      "sd": 0.012938688859045155,
+      "annual_sharpe": 0.5991660267757436,
+      "historical_VaR": 0.015439339721387762,
+      "historical_ES": 0.028164335764674215,
+      "normal_VaR": 0.01657804783160645,
+      "normal_ES": 0.021984597755715492,
+      "historical_tail_count": 12,
+      "weighted_standalone_ES": 0.04175369935437934
+    },
+    {
+      "portfolio": "PUTW20",
+      "alpha": 0.01,
+      "mean": 0.004704201466190586,
+      "sd": 0.012938688859045155,
+      "annual_sharpe": 0.5991660267757436,
+      "historical_VaR": 0.03898003772441817,
+      "historical_ES": 0.05916742244892374,
+      "normal_VaR": 0.02539568985392502,
+      "normal_ES": 0.029780176073566443,
+      "historical_tail_count": 2,
+      "weighted_standalone_ES": 0.08129655345251088
+    }
+  ],
+  "capm": [
+    {
+      "sample": "AllMonths",
+      "n": 240,
+      "alpha": 0.0027723068987828485,
+      "alpha_t": 3.0819186816989617,
+      "beta": 0.18478589737695436,
+      "rsquared": 0.3025539627397207,
+      "aicc": -1368.9195987143369
+    },
+    {
+      "sample": "EQExcessBelowMinus5pct",
+      "n": 26,
+      "alpha": 0.05865353045767041,
+      "alpha_t": 15.137146632238306,
+      "beta": 0.9428470935773211,
+      "rsquared": 0.9520862727455354,
+      "aicc": -162.97572769492885
+    }
+  ],
+  "optimizer_diagnostics": {
+    "Unconstrained": {
+      "method": "analytic",
+      "successful_starts": 1,
+      "objective": 0.23926180994232038
+    },
+    "LongOnly": {
+      "method": "SLSQP",
+      "successful_starts": 13,
+      "objective": 0.23798405669862316,
+      "objective_spread": 3.0558888752807434e-14
+    },
+    "PUTW20": {
+      "method": "SLSQP",
+      "successful_starts": 13,
+      "objective": 0.17296433342412706,
+      "objective_spread": 2.550737399076297e-14
+    }
+  },
+  "mean_se": [
+    {
+      "asset": "EQ",
+      "mean": 0.007901411245415473,
+      "mean_standard_error": 0.0031801614417199813
+    },
+    {
+      "asset": "BOND",
+      "mean": 0.003326686433831667,
+      "mean_standard_error": 0.0008688286935715111
+    },
+    {
+      "asset": "STK",
+      "mean": 0.011244336913781657,
+      "mean_standard_error": 0.006020320476892242
+    },
+    {
+      "asset": "PUTW",
+      "mean": 0.0062429141655662,
+      "mean_standard_error": 0.001068357414001337
+    }
+  ],
+  "bootstrap_replications": 300,
+  "bootstrap_failures": 3,
+  "bootstrap_intervals": [
+    {
+      "portfolio": "Unconstrained",
+      "asset": "EQ",
+      "n_success": 297,
+      "p05": -0.3279875893730553,
+      "median": -0.04012637490493014,
+      "p95": 0.20601491467488134,
+      "sd": 0.19513262651224464,
+      "zero_share": 0.0
+    },
+    {
+      "portfolio": "Unconstrained",
+      "asset": "BOND",
+      "n_success": 297,
+      "p05": -0.2618358733071594,
+      "median": 0.1870457506186829,
+      "p95": 0.6263599430250264,
+      "sd": 0.3299239853614726,
+      "zero_share": 0.0
+    },
+    {
+      "portfolio": "Unconstrained",
+      "asset": "STK",
+      "n_success": 297,
+      "p05": -0.08766393283118247,
+      "median": 0.01946772716974893,
+      "p95": 0.18964748961635297,
+      "sd": 0.08459727719358208,
+      "zero_share": 0.0
+    },
+    {
+      "portfolio": "Unconstrained",
+      "asset": "PUTW",
+      "n_success": 297,
+      "p05": 0.28140477411385806,
+      "median": 0.82613978419581,
+      "p95": 1.387764497427375,
+      "sd": 0.3934432028797053,
+      "zero_share": 0.0
+    },
+    {
+      "portfolio": "LongOnly",
+      "asset": "EQ",
+      "n_success": 300,
+      "p05": 0.0,
+      "median": 8.753153773631214e-17,
+      "p95": 0.13525026398668707,
+      "sd": 0.06740492665950513,
+      "zero_share": 0.7166666666666667
+    },
+    {
+      "portfolio": "LongOnly",
+      "asset": "BOND",
+      "n_success": 300,
+      "p05": 0.0,
+      "median": 0.21142217262704255,
+      "p95": 0.6497567412300568,
+      "sd": 0.21836110693228827,
+      "zero_share": 0.16333333333333333
+    },
+    {
+      "portfolio": "LongOnly",
+      "asset": "STK",
+      "n_success": 300,
+      "p05": 0.0,
+      "median": 0.002111898954236536,
+      "p95": 0.1031240587929672,
+      "sd": 0.03969695077927237,
+      "zero_share": 0.4666666666666667
+    },
+    {
+      "portfolio": "LongOnly",
+      "asset": "PUTW",
+      "n_success": 300,
+      "p05": 0.22959247074013275,
+      "median": 0.7414722304745717,
+      "p95": 0.9982591510878743,
+      "sd": 0.24585965979888905,
+      "zero_share": 0.023333333333333334
+    },
+    {
+      "portfolio": "PUTW20",
+      "asset": "EQ",
+      "n_success": 300,
+      "p05": 1.769420491642534e-17,
+      "median": 0.1339230057317934,
+      "p95": 0.49479968001439356,
+      "sd": 0.1652988937638039,
+      "zero_share": 0.14
+    },
+    {
+      "portfolio": "PUTW20",
+      "asset": "BOND",
+      "n_success": 300,
+      "p05": 0.13089195093084605,
+      "median": 0.6210584602480096,
+      "p95": 0.7928328906406746,
+      "sd": 0.1800118908496043,
+      "zero_share": 0.043333333333333335
+    },
+    {
+      "portfolio": "PUTW20",
+      "asset": "STK",
+      "n_success": 300,
+      "p05": 0.0,
+      "median": 0.011996506377298311,
+      "p95": 0.19556794964186186,
+      "sd": 0.11459110570943469,
+      "zero_share": 0.42333333333333334
+    },
+    {
+      "portfolio": "PUTW20",
+      "asset": "PUTW",
+      "n_success": 300,
+      "p05": 0.19999999999998966,
+      "median": 0.2,
+      "p95": 0.2,
+      "sd": 0.03126400429098825,
+      "zero_share": 0.023333333333333334
+    }
+  ],
+  "historical_risk_convention": "course order-statistic average and threshold-tail mean; fractional-tail sensitivity separately reported"
+}

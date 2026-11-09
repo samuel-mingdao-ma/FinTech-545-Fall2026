@@ -1,0 +1,3 @@
+time,dividend,strike_interest,condition_holds
+0.1,0.25,0.8919483820849616,False
+0.4,1.5,0.22449450852147224,True

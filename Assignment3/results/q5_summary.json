@@ -1,0 +1,690 @@
+{
+  "n": 1257,
+  "fund_sample_start": "1996-10-01",
+  "fund_sample_end": "2001-09-28",
+  "factor_file_end": "2024-09-30",
+  "forecast_window_start_exclusive": "2014-09-30",
+  "forecast_first_date": "2014-10-01",
+  "forecast_last_date": "2024-09-30",
+  "forecast_n": 2516,
+  "annual_days": 255,
+  "annualization": "255 times daily arithmetic expected returns; Sharpe multiplied by sqrt(255); geometric sample return reported separately",
+  "unit_conversion": "Fund returns already decimals; every factor and RF column divided by 100 exactly once",
+  "regression_covariance": "Classical OLS homoskedastic standard errors, intercept plus all specified factor slopes; Gaussian AICc k includes sigma",
+  "stress_convention": "Incremental momentum factor shock only: -$10m * beta_Mom * worst_Mom; other factor shocks are zero and alpha/RF drift excluded",
+  "initial_statistics": [
+    {
+      "fund": "FUND1",
+      "n": 1257,
+      "mean_daily_return": 0.0008196136038186157,
+      "mean_daily_excess": 0.0006236470167064439,
+      "daily_volatility": 0.011745370075744407,
+      "daily_excess_volatility": 0.01174598835618051,
+      "daily_sharpe": 0.053094469174941164,
+      "annual_sharpe": 0.8478506811503062,
+      "capm_alpha_daily": 0.00044065955499454423,
+      "capm_alpha_t": 3.2043307276848436
+    },
+    {
+      "fund": "FUND2",
+      "n": 1257,
+      "mean_daily_return": 0.0005335179793158313,
+      "mean_daily_excess": 0.00033755139220365953,
+      "daily_volatility": 0.007186030477873586,
+      "daily_excess_volatility": 0.007186627473299567,
+      "daily_sharpe": 0.04696937380680467,
+      "annual_sharpe": 0.750040751779431,
+      "capm_alpha_daily": 0.0002449069523269171,
+      "capm_alpha_t": 1.8348725273813877
+    }
+  ],
+  "residual_correlations": [
+    {
+      "fund": "FUND1",
+      "factor": "SMB",
+      "residual_correlation": -0.06117325285499549,
+      "sample_factor_premium": -0.00016276849642004774
+    },
+    {
+      "fund": "FUND1",
+      "factor": "HML",
+      "residual_correlation": 0.20520338301932223,
+      "sample_factor_premium": 0.00037167859984089095
+    },
+    {
+      "fund": "FUND1",
+      "factor": "Mom",
+      "residual_correlation": 0.801464452406162,
+      "sample_factor_premium": 0.0007818615751789977
+    },
+    {
+      "fund": "FUND2",
+      "factor": "SMB",
+      "residual_correlation": 0.32952616957917524,
+      "sample_factor_premium": -0.00016276849642004774
+    },
+    {
+      "fund": "FUND2",
+      "factor": "HML",
+      "residual_correlation": -0.12063340171044434,
+      "sample_factor_premium": 0.00037167859984089095
+    },
+    {
+      "fund": "FUND2",
+      "factor": "Mom",
+      "residual_correlation": 0.05302066302299169,
+      "sample_factor_premium": 0.0007818615751789977
+    }
+  ],
+  "regressions": [
+    {
+      "fund": "FUND1",
+      "model": "CAPM",
+      "n": 1257,
+      "k": 3,
+      "alpha_daily": 0.00044065955499454423,
+      "alpha_standard_error": 0.00013751999791635882,
+      "alpha_t": 3.2043307276848436,
+      "rsquared": 0.8278866533090184,
+      "ll": 4909.218432680686,
+      "AICc": -9812.417711331045,
+      "BIC": -9797.027415735602
+    },
+    {
+      "fund": "FUND1",
+      "model": "FF3",
+      "n": 1257,
+      "k": 5,
+      "alpha_daily": 0.0002963092808383307,
+      "alpha_standard_error": 0.00013108983387488364,
+      "alpha_t": 2.2603528594073725,
+      "rsquared": 0.8452057588803478,
+      "ll": 4975.874939014226,
+      "AICc": -9941.701916397757,
+      "BIC": -9916.0674619855
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "n": 1257,
+      "k": 6,
+      "alpha_daily": 2.937999702307285e-06,
+      "alpha_standard_error": 6.984730428153813e-05,
+      "alpha_t": 0.04206317956760215,
+      "rsquared": 0.9563325350972732,
+      "ll": 5771.237568450763,
+      "AICc": -11530.407936901527,
+      "BIC": -11499.656237649986
+    },
+    {
+      "fund": "FUND2",
+      "model": "CAPM",
+      "n": 1257,
+      "k": 3,
+      "alpha_daily": 0.0002449069523269171,
+      "alpha_standard_error": 0.00013347355125341192,
+      "alpha_t": 1.8348725273813877,
+      "rsquared": 0.5668860900146977,
+      "ll": 4946.760001798655,
+      "AICc": -9887.500849566983,
+      "BIC": -9872.110553971539
+    },
+    {
+      "fund": "FUND2",
+      "model": "FF3",
+      "n": 1257,
+      "k": 5,
+      "alpha_daily": 0.00027714639011508757,
+      "alpha_standard_error": 0.00012651816263808797,
+      "alpha_t": 2.1905660368138586,
+      "rsquared": 0.6148309423524778,
+      "ll": 5020.4946264338905,
+      "AICc": -10030.941291237086,
+      "BIC": -10005.30683682483
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "n": 1257,
+      "k": 6,
+      "alpha_daily": 0.0002727972444234224,
+      "alpha_standard_error": 0.00012690979372869394,
+      "alpha_t": 2.1495365834933486,
+      "rsquared": 0.6148961833058633,
+      "ll": 5020.601092442668,
+      "AICc": -10029.134984885337,
+      "BIC": -9998.383285633796
+    }
+  ],
+  "coefficients": [
+    {
+      "fund": "FUND1",
+      "model": "CAPM",
+      "term": "alpha",
+      "coefficient": 0.00044065955499454423,
+      "standard_error": 0.00013751999791635882,
+      "t_statistic": 3.2043307276848436,
+      "p_value": 0.0013878355624750655
+    },
+    {
+      "fund": "FUND1",
+      "model": "CAPM",
+      "term": "Mkt-RF",
+      "coefficient": 0.8468896884089022,
+      "standard_error": 0.010900007987411277,
+      "t_statistic": 77.69624475385694,
+      "p_value": 0.0
+    },
+    {
+      "fund": "FUND1",
+      "model": "FF3",
+      "term": "alpha",
+      "coefficient": 0.0002963092808383307,
+      "standard_error": 0.00013108983387488364,
+      "t_statistic": 2.2603528594073725,
+      "p_value": 0.023970395477703063
+    },
+    {
+      "fund": "FUND1",
+      "model": "FF3",
+      "term": "Mkt-RF",
+      "coefficient": 1.0017271235159695,
+      "standard_error": 0.01716202332328533,
+      "t_statistic": 58.36882427241735,
+      "p_value": 0.0
+    },
+    {
+      "fund": "FUND1",
+      "model": "FF3",
+      "term": "SMB",
+      "coefficient": 0.08278215407505757,
+      "standard_error": 0.020499809612549613,
+      "t_statistic": 4.038191360781216,
+      "p_value": 5.7134738915225263e-05
+    },
+    {
+      "fund": "FUND1",
+      "model": "FF3",
+      "term": "HML",
+      "coefficient": 0.3346140324554758,
+      "standard_error": 0.028812090715027584,
+      "t_statistic": 11.613667184552853,
+      "p_value": 1.0947938849125488e-29
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "term": "alpha",
+      "coefficient": 2.937999702307285e-06,
+      "standard_error": 6.984730428153813e-05,
+      "t_statistic": 0.04206317956760215,
+      "p_value": 0.9664550394651618
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "term": "Mkt-RF",
+      "coefficient": 0.9491597427546808,
+      "standard_error": 0.00916635233596156,
+      "t_statistic": 103.54824994353798,
+      "p_value": 0.0
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "term": "SMB",
+      "coefficient": 0.0008347155810970111,
+      "standard_error": 0.010988754364101164,
+      "t_statistic": 0.07596089178441541,
+      "p_value": 0.9394623478881742
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "term": "HML",
+      "coefficient": 0.2907278717197479,
+      "standard_error": 0.015328832799989816,
+      "t_statistic": 18.966080164951702,
+      "p_value": 1.0371933777510939e-70
+    },
+    {
+      "fund": "FUND1",
+      "model": "Carhart4",
+      "term": "Mom",
+      "coefficient": 0.3935512508987317,
+      "standard_error": 0.006972182794682439,
+      "t_statistic": 56.44591693707261,
+      "p_value": 0.0
+    },
+    {
+      "fund": "FUND2",
+      "model": "CAPM",
+      "term": "alpha",
+      "coefficient": 0.0002449069523269171,
+      "standard_error": 0.00013347355125341192,
+      "t_statistic": 1.8348725273813877,
+      "p_value": 0.06676115448792468
+    },
+    {
+      "fund": "FUND2",
+      "model": "CAPM",
+      "term": "Mkt-RF",
+      "coefficient": 0.42877047468727963,
+      "standard_error": 0.010579281535876709,
+      "t_statistic": 40.52926214632091,
+      "p_value": 2.775606864532857e-230
+    },
+    {
+      "fund": "FUND2",
+      "model": "FF3",
+      "term": "alpha",
+      "coefficient": 0.00027714639011508757,
+      "standard_error": 0.00012651816263808797,
+      "t_statistic": 2.1905660368138586,
+      "p_value": 0.02866693460966932
+    },
+    {
+      "fund": "FUND2",
+      "model": "FF3",
+      "term": "Mkt-RF",
+      "coefficient": 0.4443028098333001,
+      "standard_error": 0.016563509113044102,
+      "t_statistic": 26.824195694341277,
+      "p_value": 1.2713997143824211e-125
+    },
+    {
+      "fund": "FUND2",
+      "model": "FF3",
+      "term": "SMB",
+      "coefficient": 0.21001044046131975,
+      "standard_error": 0.01978489231350926,
+      "t_statistic": 10.614687061901428,
+      "p_value": 2.9025753788135555e-25
+    },
+    {
+      "fund": "FUND2",
+      "model": "FF3",
+      "term": "HML",
+      "coefficient": -0.0038001271552408405,
+      "standard_error": 0.0278072881113447,
+      "t_statistic": -0.13665939447329567,
+      "p_value": 0.8913219804098863
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "term": "alpha",
+      "coefficient": 0.0002727972444234224,
+      "standard_error": 0.00012690979372869394,
+      "t_statistic": 2.1495365834933486,
+      "p_value": 0.031783039369811236
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "term": "Mkt-RF",
+      "coefficient": 0.4435235133844956,
+      "standard_error": 0.016654900230829578,
+      "t_statistic": 26.63021136346992,
+      "p_value": 3.625342217687904e-124
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "term": "SMB",
+      "coefficient": 0.20879559302395262,
+      "standard_error": 0.019966132752412838,
+      "t_statistic": 10.457487967905072,
+      "p_value": 1.3494017028756989e-24
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "term": "HML",
+      "coefficient": -0.004450726989543705,
+      "standard_error": 0.027851883888130854,
+      "t_statistic": -0.15979985438042102,
+      "p_value": 0.8730645146909692
+    },
+    {
+      "fund": "FUND2",
+      "model": "Carhart4",
+      "term": "Mom",
+      "coefficient": 0.005834285212738588,
+      "standard_error": 0.012668180818336542,
+      "t_statistic": 0.460546411233234,
+      "p_value": 0.6452040460309819
+    }
+  ],
+  "expected_returns": [
+    {
+      "fund": "FUND1",
+      "expected_annual_without_alpha": 0.13705016778908785,
+      "expected_annual_with_alpha": 0.13779935771317622,
+      "annual_fitted_alpha": 0.0007491899240883576,
+      "realized_annual_arithmetic": 0.20900146897374702,
+      "realized_annual_geometric": 0.21084632436945636,
+      "realized_total_compounded": 1.5679113746868965,
+      "sample_daily_sd": 0.011745370075744407
+    },
+    {
+      "fund": "FUND2",
+      "expected_annual_without_alpha": 0.06891512961361045,
+      "expected_annual_with_alpha": 0.13847842694158316,
+      "annual_fitted_alpha": 0.06956329732797271,
+      "realized_annual_arithmetic": 0.13604708472553698,
+      "realized_annual_geometric": 0.13817566525502786,
+      "realized_total_compounded": 0.8926868498899011,
+      "sample_daily_sd": 0.007186030477873586
+    }
+  ],
+  "stress": [
+    {
+      "fund": "FUND1",
+      "worst_momentum_date": "1939-09-05",
+      "worst_momentum_return": -0.1844,
+      "momentum_beta": 0.3935512508987317,
+      "incremental_fund_return": -0.07257085066572613,
+      "position_value": 10000000.0,
+      "loss_dollars": 725708.5066572613,
+      "daily_sample_sd": 0.011745370075744407,
+      "loss_in_daily_sigmas": 6.178677231770978
+    },
+    {
+      "fund": "FUND2",
+      "worst_momentum_date": "1939-09-05",
+      "worst_momentum_return": -0.1844,
+      "momentum_beta": 0.005834285212738588,
+      "incremental_fund_return": -0.0010758421932289956,
+      "position_value": 10000000.0,
+      "loss_dollars": 10758.421932289955,
+      "daily_sample_sd": 0.007186030477873586,
+      "loss_in_daily_sigmas": 0.14971300171097346
+    }
+  ],
+  "recent_factor_premia": {
+    "Mkt-RF": 0.0004899841017488076,
+    "SMB": -4.6621621621621615e-05,
+    "HML": -9.383942766295704e-05,
+    "Mom": 9.658187599364072e-05,
+    "RF": 6.168918918918919e-05
+  },
+  "sample_factor_premia": {
+    "Mkt-RF": 0.00021607000795544943,
+    "SMB": -0.00016276849642004774,
+    "HML": 0.00037167859984089095,
+    "Mom": 0.0007818615751789977
+  },
+  "alpha_attribution": [
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "Mkt-RF",
+      "delta_beta": 0.15483743510706727,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": 3.345572583538541e-05,
+      "contribution_to_alpha_drop_annual": 0.00853121008802328
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "SMB",
+      "delta_beta": 0.08278215407505757,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": -1.3474326749209848e-05,
+      "contribution_to_alpha_drop_annual": -0.003435953321048511
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "HML",
+      "delta_beta": 0.3346140324554758,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": 0.0001243688750701657,
+      "contribution_to_alpha_drop_annual": 0.03171406314289225
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "Mkt-RF",
+      "delta_beta": -0.05256738076128864,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": -1.1358234379288776e-05,
+      "contribution_to_alpha_drop_annual": -0.0028963497667186377
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "SMB",
+      "delta_beta": -0.08194743849396055,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": 1.3338461349136301e-05,
+      "contribution_to_alpha_drop_annual": 0.0034013076440297567
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "HML",
+      "delta_beta": -0.043886160735727875,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": -1.631154677464762e-05,
+      "contribution_to_alpha_drop_annual": -0.004159444427535143
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "Mom",
+      "delta_beta": 0.3935512508987317,
+      "sample_daily_premium": 0.0007818615751789977,
+      "contribution_to_alpha_drop_daily": 0.0003077026009413473,
+      "contribution_to_alpha_drop_annual": 0.07846416324004356
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "Mkt-RF",
+      "delta_beta": 0.10227005434577863,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": 2.2097491456096632e-05,
+      "contribution_to_alpha_drop_annual": 0.005634860321304641
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "SMB",
+      "delta_beta": 0.0008347155810970111,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": -1.3586540007354692e-07,
+      "contribution_to_alpha_drop_annual": -3.4645677018754465e-05
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "HML",
+      "delta_beta": 0.2907278717197479,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": 0.00010805732829551806,
+      "contribution_to_alpha_drop_annual": 0.027554618715357106
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "Mom",
+      "delta_beta": 0.3935512508987317,
+      "sample_daily_premium": 0.0007818615751789977,
+      "contribution_to_alpha_drop_daily": 0.0003077026009413473,
+      "contribution_to_alpha_drop_annual": 0.07846416324004356
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "Mkt-RF",
+      "delta_beta": 0.015532335146020482,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": 3.3560717785673522e-06,
+      "contribution_to_alpha_drop_annual": 0.0008557983035346748
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "SMB",
+      "delta_beta": 0.21001044046131975,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": -3.418308362640097e-05,
+      "contribution_to_alpha_drop_annual": -0.008716686324732248
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "factor": "HML",
+      "delta_beta": -0.0038001271552408405,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": -1.4124259402772636e-06,
+      "contribution_to_alpha_drop_annual": -0.00036016861477070224
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "Mkt-RF",
+      "delta_beta": -0.000779296448804534,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": -1.6838258989284914e-07,
+      "contribution_to_alpha_drop_annual": -4.293756042267653e-05
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "SMB",
+      "delta_beta": -0.0012148474373671336,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": 1.9773889075999647e-07,
+      "contribution_to_alpha_drop_annual": 5.04234171437991e-05
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "HML",
+      "delta_beta": -0.0006505998343028646,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": -2.418140354704044e-07,
+      "contribution_to_alpha_drop_annual": -6.166257904495312e-05
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "factor": "Mom",
+      "delta_beta": 0.005834285212738588,
+      "sample_daily_premium": 0.0007818615751789977,
+      "contribution_to_alpha_drop_daily": 4.561603426475326e-06,
+      "contribution_to_alpha_drop_annual": 0.001163208873751208
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "Mkt-RF",
+      "delta_beta": 0.014753038697215948,
+      "sample_daily_premium": 0.00021607000795544943,
+      "contribution_to_alpha_drop_daily": 3.187689188674503e-06,
+      "contribution_to_alpha_drop_annual": 0.0008128607431119983
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "SMB",
+      "delta_beta": 0.20879559302395262,
+      "sample_daily_premium": -0.00016276849642004774,
+      "contribution_to_alpha_drop_daily": -3.3985344735640974e-05,
+      "contribution_to_alpha_drop_annual": -0.008666262907588448
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "HML",
+      "delta_beta": -0.004450726989543705,
+      "sample_daily_premium": 0.00037167859984089095,
+      "contribution_to_alpha_drop_daily": -1.654239975747668e-06,
+      "contribution_to_alpha_drop_annual": -0.0004218311938156553
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "factor": "Mom",
+      "delta_beta": 0.005834285212738588,
+      "sample_daily_premium": 0.0007818615751789977,
+      "contribution_to_alpha_drop_daily": 4.561603426475326e-06,
+      "contribution_to_alpha_drop_annual": 0.001163208873751208
+    }
+  ],
+  "alpha_attribution_checks": [
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "actual_alpha_drop_daily": 0.00014435027415621353,
+      "explained_alpha_drop_daily": 0.00014435027415634125,
+      "residual": -1.2771901591879242e-16
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "actual_alpha_drop_daily": 0.00029337128113602343,
+      "explained_alpha_drop_daily": 0.0002933712811365472,
+      "residual": -5.237780695277472e-16
+    },
+    {
+      "fund": "FUND1",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "actual_alpha_drop_daily": 0.00043772155529223696,
+      "explained_alpha_drop_daily": 0.00043772155529288846,
+      "residual": -6.514970854465396e-16
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "FF3",
+      "actual_alpha_drop_daily": -3.223943778817045e-05,
+      "explained_alpha_drop_daily": -3.2239437788110885e-05,
+      "residual": -5.95633568509224e-17
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "FF3",
+      "later_model": "Carhart4",
+      "actual_alpha_drop_daily": 4.349145691665175e-06,
+      "explained_alpha_drop_daily": 4.349145691872069e-06,
+      "residual": -2.0689372659749364e-16
+    },
+    {
+      "fund": "FUND2",
+      "earlier_model": "CAPM",
+      "later_model": "Carhart4",
+      "actual_alpha_drop_daily": -2.7890292096505274e-05,
+      "explained_alpha_drop_daily": -2.7890292096238817e-05,
+      "residual": -2.664562364154688e-16
+    }
+  ]
+}

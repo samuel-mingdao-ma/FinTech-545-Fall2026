@@ -1,0 +1,2744 @@
+{
+  "q1": {
+    "parameters": {
+      "spot": 182.4,
+      "rate": 0.0425,
+      "dividend_yield": 0.006,
+      "valuation_date": "2026-11-13",
+      "expiration_date": "2026-12-18",
+      "calendar_days": 35,
+      "t": 0.0958904109589041
+    },
+    "flagged_strikes": [
+      175.0
+    ],
+    "flagged_parity": [
+      {
+        "Strike": 175.0,
+        "call_mid": 10.605,
+        "put_mid": 1.71,
+        "theoretical_call_minus_put": 8.006821384610163,
+        "gap": 0.8881786153898368,
+        "band": 0.4699999999999993,
+        "flag": true
+      }
+    ],
+    "flagged_vol_translation": [
+      {
+        "Strike": 175.0,
+        "flag": true,
+        "parity_gap": 0.8881786153898368,
+        "reference_iv": 0.23603861185228273,
+        "reference_vega": 18.219168798187383,
+        "estimated_IV_gap": 0.048749678167436555,
+        "actual_IV_gap": 0.0488367493451321,
+        "estimated_gap_vol_points": 4.874967816743656,
+        "actual_gap_vol_points": 4.88367493451321
+      }
+    ],
+    "missing_IV_roots": [
+      {
+        "Type": "Call",
+        "Strike": 140.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Call",
+        "Strike": 145.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Call",
+        "Strike": 150.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Call",
+        "Strike": 155.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Put",
+        "Strike": 205.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Put",
+        "Strike": 210.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Put",
+        "Strike": 215.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Put",
+        "Strike": 220.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      },
+      {
+        "Type": "Put",
+        "Strike": 225.0,
+        "source": "bid",
+        "status": "below_no_arbitrage_lower_bound"
+      }
+    ],
+    "call_wing": [
+      {
+        "Type": "Call",
+        "Strike": 215.0,
+        "Bid": 0.05,
+        "Mid": 0.07500000000000001,
+        "Ask": 0.1,
+        "lower_bound": 0.0,
+        "upper_bound": 182.29508771738628,
+        "IV_bid": 0.22561879492297465,
+        "status_bid": "ok",
+        "IV_mid": 0.238225372907684,
+        "status_mid": "ok",
+        "IV_ask": 0.24826652490441223,
+        "status_ask": "ok",
+        "vega_per_unit_sigma": 2.2580156125411706,
+        "vega_per_vol_point": 0.022580156125411706,
+        "cent_dIV_linear": 0.004428667341562799,
+        "cent_dIV_vol_points": 0.44286673415627986,
+        "cent_dIV_exact_up": 0.00424672331333889,
+        "cent_up_status": "ok"
+      },
+      {
+        "Type": "Call",
+        "Strike": 220.0,
+        "Bid": 0.05,
+        "Mid": 0.07500000000000001,
+        "Ask": 0.1,
+        "lower_bound": 0.0,
+        "upper_bound": 182.29508771738628,
+        "IV_bid": 0.2531375003347569,
+        "status_bid": "ok",
+        "IV_mid": 0.26688776647676893,
+        "status_mid": "ok",
+        "IV_ask": 0.27781114363284987,
+        "status_ask": "ok",
+        "vega_per_unit_sigma": 2.073255384397208,
+        "vega_per_vol_point": 0.02073255384397208,
+        "cent_dIV_linear": 0.004823332463167565,
+        "cent_dIV_vol_points": 0.48233324631675645,
+        "cent_dIV_exact_up": 0.0046229090982223275,
+        "cent_up_status": "ok"
+      },
+      {
+        "Type": "Call",
+        "Strike": 225.0,
+        "Bid": 0.05,
+        "Mid": 0.07500000000000001,
+        "Ask": 0.1,
+        "lower_bound": 0.0,
+        "upper_bound": 182.29508771738628,
+        "IV_bid": 0.2796456164595183,
+        "status_bid": "ok",
+        "IV_mid": 0.2944729789353058,
+        "status_mid": "ok",
+        "IV_ask": 0.3062260141460228,
+        "status_ask": "ok",
+        "vega_per_unit_sigma": 1.925035027479969,
+        "vega_per_vol_point": 0.01925035027479969,
+        "cent_dIV_linear": 0.005194710671364163,
+        "cent_dIV_vol_points": 0.5194710671364163,
+        "cent_dIV_exact_up": 0.004976804383891642,
+        "cent_up_status": "ok"
+      }
+    ],
+    "clean_smile": [
+      {
+        "Type": "Put",
+        "Strike": 140.0,
+        "IV_mid": 0.390690208134064
+      },
+      {
+        "Type": "Put",
+        "Strike": 145.0,
+        "IV_mid": 0.3642464527777811
+      },
+      {
+        "Type": "Put",
+        "Strike": 150.0,
+        "IV_mid": 0.3410151465270111
+      },
+      {
+        "Type": "Put",
+        "Strike": 155.0,
+        "IV_mid": 0.3199260431121209
+      },
+      {
+        "Type": "Put",
+        "Strike": 160.0,
+        "IV_mid": 0.30184276471855787
+      },
+      {
+        "Type": "Put",
+        "Strike": 165.0,
+        "IV_mid": 0.28592937521571987
+      },
+      {
+        "Type": "Put",
+        "Strike": 170.0,
+        "IV_mid": 0.2721505892201128
+      },
+      {
+        "Type": "Put",
+        "Strike": 180.0,
+        "IV_mid": 0.25030538919703255
+      },
+      {
+        "Type": "Call",
+        "Strike": 185.0,
+        "IV_mid": 0.2419204743786405
+      },
+      {
+        "Type": "Call",
+        "Strike": 190.0,
+        "IV_mid": 0.2350418184743424
+      },
+      {
+        "Type": "Call",
+        "Strike": 195.0,
+        "IV_mid": 0.2294653782519067
+      },
+      {
+        "Type": "Call",
+        "Strike": 200.0,
+        "IV_mid": 0.22535548972443536
+      },
+      {
+        "Type": "Call",
+        "Strike": 205.0,
+        "IV_mid": 0.22285565702371213
+      },
+      {
+        "Type": "Call",
+        "Strike": 210.0,
+        "IV_mid": 0.2206713171922859
+      }
+    ],
+    "all_mid_repricing_checked": true,
+    "files": [
+      "q1_parity.csv",
+      "q1_quotes_iv.csv",
+      "q1_parity_vol_translation.csv",
+      "q1_clean_otm_smile.csv"
+    ],
+    "figures": [
+      "q1_smile.png",
+      "q1_vega_sensitivity.png"
+    ]
+  },
+  "q2": {
+    "inputs": {
+      "spot": 48.5,
+      "strike": 50.0,
+      "maturity": 0.5,
+      "risk_free_rate": 0.045,
+      "volatility": 0.3,
+      "dividends": [
+        {
+          "time": 0.1,
+          "amount": 0.25
+        },
+        {
+          "time": 0.4,
+          "amount": 1.5
+        }
+      ]
+    },
+    "tree_n": 500,
+    "dividends_present_value": 1.722119075994844,
+    "dividend_conditions": [
+      {
+        "time": 0.1,
+        "dividend": 0.25,
+        "strike_interest": 0.8919483820849616,
+        "condition_holds": false
+      },
+      {
+        "time": 0.4,
+        "dividend": 1.5,
+        "strike_interest": 0.22449450852147224,
+        "condition_holds": true
+      }
+    ],
+    "prices": {
+      "Call": {
+        "european_no_div": 3.922268008431505,
+        "european_no_div_tree": 3.924069456602276,
+        "american_no_div": 3.9240694566022665,
+        "european_div": 3.176278725552066,
+        "american_div": 3.4694525884962055,
+        "pv_dividend_gbsm": 3.0722931897598365
+      },
+      "Put": {
+        "european_no_div": 4.309829868098319,
+        "european_no_div_tree": 4.31163131626687,
+        "american_no_div": 4.439415359132902,
+        "european_div": 5.285959661211527,
+        "american_div": 5.371403408627196,
+        "pv_dividend_gbsm": 5.1819741254214975
+      }
+    },
+    "exercise_premiums": [
+      {
+        "kind": "Call",
+        "dividends": "none",
+        "n": 500,
+        "american_value": 3.9240694566022665,
+        "european_value_same_tree": 3.924069456602276,
+        "early_exercise_premium": 0.0,
+        "european_gbsm_reference": 3.922268008431505,
+        "american_minus_gbsm": 0.0018014481707613328
+      },
+      {
+        "kind": "Call",
+        "dividends": "two cash payments",
+        "n": 500,
+        "american_value": 3.4694525884962055,
+        "european_value_same_tree": 3.176278725552066,
+        "early_exercise_premium": 0.2931738629441396,
+        "european_gbsm_reference": null,
+        "american_minus_gbsm": null
+      },
+      {
+        "kind": "Put",
+        "dividends": "none",
+        "n": 500,
+        "american_value": 4.439415359132902,
+        "european_value_same_tree": 4.31163131626687,
+        "early_exercise_premium": 0.12778404286603262,
+        "european_gbsm_reference": 4.309829868098319,
+        "american_minus_gbsm": 0.12958549103458328
+      },
+      {
+        "kind": "Put",
+        "dividends": "two cash payments",
+        "n": 500,
+        "american_value": 5.371403408627196,
+        "european_value_same_tree": 5.285959661211527,
+        "early_exercise_premium": 0.08544374741566862,
+        "european_gbsm_reference": null,
+        "american_minus_gbsm": null
+      }
+    ],
+    "central_difference_greeks": [
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 1.0,
+        "required_bump": true,
+        "delta": 0.5024116273910206,
+        "gamma": 0.04087539888105196
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 0.1,
+        "required_bump": true,
+        "delta": 0.5051785829830657,
+        "gamma": 0.0003493200546156316
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 0.01,
+        "required_bump": true,
+        "delta": 0.5051891251693474,
+        "gamma": 0.00024851082525145785
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 0.001,
+        "required_bump": true,
+        "delta": 0.5051893813468045,
+        "gamma": -4.440892098500626e-10
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 0.0001,
+        "required_bump": false,
+        "delta": 0.505189381354576,
+        "gamma": 0.0
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "bump": 1e-05,
+        "required_bump": false,
+        "delta": 0.5051893815277708,
+        "gamma": 0.0
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 1.0,
+        "required_bump": true,
+        "delta": -0.5473533340642085,
+        "gamma": 0.039125769488709494
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 0.1,
+        "required_bump": true,
+        "delta": -0.548769452020732,
+        "gamma": 0.00611759660706923
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 0.01,
+        "required_bump": true,
+        "delta": -0.5487627009556739,
+        "gamma": 0.005887451273167699
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 0.001,
+        "required_bump": true,
+        "delta": -0.5487628760438845,
+        "gamma": 0.006381422501533507
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 0.0001,
+        "required_bump": false,
+        "delta": -0.5487628004186007,
+        "gamma": 0.008700240528014547
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "bump": 1e-05,
+        "required_bump": false,
+        "delta": -0.5487628198075356,
+        "gamma": 0.06656009077232737
+      }
+    ],
+    "dividend_sensitivities": [
+      {
+        "option": "EuropeanCall",
+        "n": 500,
+        "dividend_number": 1,
+        "dividend_time": 0.1,
+        "dividend_amount": 0.25,
+        "bump": 0.001,
+        "dV_dDividend": -0.44106009786260003
+      },
+      {
+        "option": "EuropeanCall",
+        "n": 500,
+        "dividend_number": 2,
+        "dividend_time": 0.4,
+        "dividend_amount": 1.5,
+        "bump": 0.001,
+        "dV_dDividend": -0.38633660051612395
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "dividend_number": 1,
+        "dividend_time": 0.1,
+        "dividend_amount": 0.25,
+        "bump": 0.001,
+        "dV_dDividend": -0.4850598308050458
+      },
+      {
+        "option": "AmericanCall",
+        "n": 500,
+        "dividend_number": 2,
+        "dividend_time": 0.4,
+        "dividend_amount": 1.5,
+        "bump": 0.001,
+        "dV_dDividend": -0.10549506538382047
+      },
+      {
+        "option": "EuropeanPut",
+        "n": 500,
+        "dividend_number": 1,
+        "dividend_time": 0.1,
+        "dividend_amount": 0.25,
+        "bump": 0.001,
+        "dV_dDividend": 0.5544500119643025
+      },
+      {
+        "option": "EuropeanPut",
+        "n": 500,
+        "dividend_number": 2,
+        "dividend_time": 0.4,
+        "dividend_amount": 1.5,
+        "bump": 0.001,
+        "dV_dDividend": 0.5958244318384764
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "dividend_number": 1,
+        "dividend_time": 0.1,
+        "dividend_amount": 0.25,
+        "bump": 0.001,
+        "dV_dDividend": 0.5632468565068827
+      },
+      {
+        "option": "AmericanPut",
+        "n": 500,
+        "dividend_number": 2,
+        "dividend_time": 0.4,
+        "dividend_amount": 1.5,
+        "bump": 0.001,
+        "dV_dDividend": 0.605017599334623
+      }
+    ],
+    "second_dividend_exercise_boundary": 52.7239079901561,
+    "second_dividend_continuous_boundary_reference": 52.71684732698782,
+    "boundary_remaining_steps": 100,
+    "european_parity_error": 2.2031265700661606e-12,
+    "convergence_last_rows": [
+      {
+        "n": 400,
+        "american_call_no_dividend": 3.924661065323808,
+        "american_call_with_dividend": 3.467611765560493,
+        "european_call_with_dividend": 3.1740610733382,
+        "american_put_no_dividend": 4.440088734138542,
+        "american_put_with_dividend": 5.369522728651591,
+        "european_put_with_dividend": 5.2837420089973675
+      },
+      {
+        "n": 405,
+        "american_call_no_dividend": 3.9207152152579603,
+        "american_call_with_dividend": 3.4690184200654217,
+        "european_call_with_dividend": 3.1765067509155616,
+        "american_put_no_dividend": 4.4367904997638865,
+        "american_put_with_dividend": 5.371743746434743,
+        "european_put_with_dividend": 5.28618768657972
+      },
+      {
+        "n": 500,
+        "american_call_no_dividend": 3.9240694566022665,
+        "american_call_with_dividend": 3.4694525884962055,
+        "european_call_with_dividend": 3.176278725552066,
+        "american_put_no_dividend": 4.439415359132902,
+        "american_put_with_dividend": 5.371403408627196,
+        "european_put_with_dividend": 5.285959661211527
+      },
+      {
+        "n": 505,
+        "american_call_no_dividend": 3.9218043696018765,
+        "american_call_with_dividend": 3.4676847169375202,
+        "european_call_with_dividend": 3.1741208846557143,
+        "american_put_no_dividend": 4.437782294709118,
+        "american_put_with_dividend": 5.3694896960501355,
+        "european_put_with_dividend": 5.283801820317828
+      }
+    ],
+    "conventions": {
+      "tree": "Cash-dividend non-recombining CRR; recombination only within intervals",
+      "exercise_timing": "Compare before-dividend exercise with ex-dividend continuation; continuation also allows immediate post-dividend exercise",
+      "low_price_policy": "Stock equity is absorbing at zero and cash dividends cannot exceed it; only negligible-probability extreme nodes affected here",
+      "premiums": "Use American minus European on the same lattice to remove GBSM-vs-tree discretization error",
+      "greeks": "Central finite differences on a FIXED N grid; extra 1e-4 and 1e-5 bumps are diagnostic",
+      "dividend_sensitivity": "Central amount differences, primary bump0.001; bump0.01 exported as robustness check"
+    }
+  },
+  "q3": {
+    "parameters": {
+      "spot": 99.12,
+      "rate": 0.0425,
+      "trading_days": 255,
+      "horizon_days": 10,
+      "paths": 1000000,
+      "seed": 545,
+      "return_forecast_mean": 0.0,
+      "fixed_IV": true,
+      "theta_units": "dollars per model year",
+      "option_contract_multiplier": 1
+    },
+    "moments": {
+      "n": 500,
+      "mean": 0.0003214030835291255,
+      "variance": 0.0002780317437108165,
+      "sd": 0.016674283903988694,
+      "skewness": 0.01905810779520306,
+      "excess_kurtosis": 2.4273908446344024
+    },
+    "distribution_fits": [
+      {
+        "family": "normal",
+        "mu": 0.0003214030835291255,
+        "sigma": 0.016657601274595178,
+        "ll": 1337.97505026089,
+        "AICc": -2671.9259556525644,
+        "BIC": -2663.5208843249357
+      },
+      {
+        "family": "t",
+        "mu": 1.1816709447178893e-06,
+        "scale": 0.013506186025001327,
+        "nu": 5.789180927364093,
+        "ll": 1353.1985217754154,
+        "AICc": -2700.3486564540567,
+        "BIC": -2687.753219255564
+      }
+    ],
+    "selected_family_AICc": "t",
+    "book_greeks": [
+      {
+        "Portfolio": "CoveredCall",
+        "price": 9744.780576671694,
+        "delta": 69.91605356191633,
+        "gamma": -3.792522114471139,
+        "theta": 1477.7763811962159,
+        "vega": -1183.5743563595624,
+        "dollar_delta": 6930.079229057147,
+        "theta_per_trading_day": 5.795201494887121
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "price": -788.4393935975347,
+        "delta": -0.8888438644682921,
+        "gamma": -8.092138067165523,
+        "theta": 3313.354939770981,
+        "vega": -2712.469996215349,
+        "dollar_delta": -88.10220384609711,
+        "theta_per_trading_day": 12.993548783415612
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "price": -65.79304919804017,
+        "delta": 61.388729470732486,
+        "gamma": 0.5359619984786717,
+        "theta": 18.588444852866132,
+        "vega": -20.942103298370284,
+        "dollar_delta": 6084.850865139004,
+        "theta_per_trading_day": 0.07289586216810248
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "price": 4580.842699164644,
+        "delta": -0.4444219322341496,
+        "gamma": -4.046069033582762,
+        "theta": 1868.1176217139357,
+        "vega": -1356.2349981076745,
+        "dollar_delta": -44.05110192304891,
+        "theta_per_trading_day": 7.325951457701708
+      }
+    ],
+    "delta_normal_risk": [
+      {
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "mean_PnL": 0.0,
+        "sd_PnL": 365.41417598441103,
+        "VaR": 601.0528327074422,
+        "ES": 753.744500847817
+      },
+      {
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "mean_PnL": 0.0,
+        "sd_PnL": 365.41417598441103,
+        "VaR": 850.0804914457202,
+        "ES": 973.907058149598
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "mean_PnL": 0.0,
+        "sd_PnL": 4.645516040544925,
+        "VaR": 7.641193908351566,
+        "ES": 9.582365434313202
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "mean_PnL": 0.0,
+        "sd_PnL": 4.645516040544925,
+        "VaR": 10.807086364744311,
+        "ES": 12.381295412104889
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "mean_PnL": 0.0,
+        "sd_PnL": 320.8463700602324,
+        "VaR": 527.7453154877877,
+        "ES": 661.8139167655082
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "mean_PnL": 0.0,
+        "sd_PnL": 320.8463700602324,
+        "VaR": 746.4002708833425,
+        "ES": 855.124308030865
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "mean_PnL": 0.0,
+        "sd_PnL": 2.3227580202724813,
+        "VaR": 3.8205969541758136,
+        "ES": 4.791182717156639
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "mean_PnL": 0.0,
+        "sd_PnL": 2.3227580202724813,
+        "VaR": 5.403543182372199,
+        "ES": 6.190647706052494
+      }
+    ],
+    "full_revaluation_risk": [
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "mean_PnL": 7.007621193059128,
+        "VaR": 677.8798328384582,
+        "ES": 873.464192364915,
+        "ES_VaR_ratio": 1.288523643943639
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "mean_PnL": 7.007621193059128,
+        "VaR": 996.5889375678889,
+        "ES": 1153.7200730682675,
+        "ES_VaR_ratio": 1.1576689541465783
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "mean_PnL": 19.77052224610546,
+        "VaR": 316.5633235165494,
+        "ES": 486.89541354258,
+        "ES_VaR_ratio": 1.538066406853117
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "mean_PnL": 19.77052224610546,
+        "VaR": 592.5335693128291,
+        "ES": 751.4193842594943,
+        "ES_VaR_ratio": 1.2681465205944833
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "mean_PnL": 9.14271275989202,
+        "VaR": 489.97797928372177,
+        "ES": 641.0213635114434,
+        "ES_VaR_ratio": 1.3082656580781968
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "mean_PnL": 9.14271275989202,
+        "VaR": 734.972189493893,
+        "ES": 869.13551275547,
+        "ES_VaR_ratio": 1.1825420406096765
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "mean_PnL": 18.18394543225786,
+        "VaR": 149.98297744906995,
+        "ES": 235.14902246208484,
+        "ES_VaR_ratio": 1.5678380737703044
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "mean_PnL": 18.18394543225786,
+        "VaR": 287.96810034720966,
+        "ES": 367.41100782054207,
+        "ES_VaR_ratio": 1.2758739852697096
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "mean_PnL": 7.129616244629271,
+        "VaR": 677.97980299548,
+        "ES": 897.1313219385004,
+        "ES_VaR_ratio": 1.323241957909005
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "mean_PnL": 7.129616244629271,
+        "VaR": 1032.6347580038582,
+        "ES": 1228.6409590406847,
+        "ES_VaR_ratio": 1.1898117408092264
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "mean_PnL": 20.04411874405306,
+        "VaR": 323.6177790349052,
+        "ES": 522.242176883955,
+        "ES_VaR_ratio": 1.6137623168955324
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "mean_PnL": 20.04411874405306,
+        "VaR": 639.8621161056487,
+        "ES": 847.0654287788728,
+        "ES_VaR_ratio": 1.3238249420583175
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "mean_PnL": 9.011590684100641,
+        "VaR": 490.0501155785993,
+        "ES": 661.1713468348415,
+        "ES_VaR_ratio": 1.349191288434246
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "mean_PnL": 9.011590684100641,
+        "VaR": 764.5827898285288,
+        "ES": 935.8972717885321,
+        "ES_VaR_ratio": 1.2240626969885413
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "mean_PnL": 18.32074368123166,
+        "VaR": 153.5102052082466,
+        "ES": 252.8224041327724,
+        "ES_VaR_ratio": 1.646941998349897
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "mean_PnL": 18.32074368123166,
+        "VaR": 311.6323737436187,
+        "ES": 415.23403008023126,
+        "ES_VaR_ratio": 1.3324483111046932
+      }
+    ],
+    "approximation_risk": [
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": 0.746515925520635,
+        "VaR": 584.9304264392813,
+        "ES": 724.4247389109084
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -51.05317073763835,
+        "VaR": 717.6554279214648,
+        "ES": 933.7840945716441
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 6.898844211232867,
+        "VaR": 659.7034129725936,
+        "ES": 875.8320796227729
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": 0.746515925520635,
+        "VaR": 812.1682087457585,
+        "ES": 922.7032268878731
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -51.05317073763835,
+        "VaR": 1068.0481749020848,
+        "ES": 1256.7430700735083
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 6.898844211232867,
+        "VaR": 1010.0961599532136,
+        "ES": 1198.791055124637
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": -0.009490468444979805,
+        "VaR": 7.838271126007411,
+        "ES": 9.979138381162745
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -110.53494125349533,
+        "VaR": 425.3691947120089,
+        "ES": 625.8552405023421
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 19.400546580660755,
+        "VaR": 295.4337068778528,
+        "ES": 495.91975266818605
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": -0.009490468444979805,
+        "VaR": 11.32476535654896,
+        "ES": 13.101998777906951
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -110.53494125349533,
+        "VaR": 744.7018266842738,
+        "ES": 963.758486051137
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 19.400546580660755,
+        "VaR": 614.7663388501177,
+        "ES": 833.8229982169809
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": 0.6554669759327251,
+        "VaR": 513.5892814099078,
+        "ES": 636.0701448848888
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": 7.975836573415518,
+        "VaR": 494.8324871459947,
+        "ES": 606.4833276499991
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 8.70479519509655,
+        "VaR": 494.1035285243137,
+        "ES": 605.754369028318
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": 0.6554669759327251,
+        "VaR": 713.1119665853206,
+        "ES": 810.1655612902845
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": 7.975836573415518,
+        "VaR": 676.9508226572452,
+        "ES": 762.9588063864331
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 8.70479519509655,
+        "VaR": 676.2218640355642,
+        "ES": 762.2298477647521
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": -0.004745234222489941,
+        "VaR": 3.919135563003737,
+        "ES": 4.9895691905814115
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -55.26747062674767,
+        "VaR": 212.68459735600442,
+        "ES": 312.92762025117105
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 17.992043950269412,
+        "VaR": 139.42508277898733,
+        "ES": 239.66810567415402
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": -0.004745234222489941,
+        "VaR": 5.6623826782745255,
+        "ES": 6.550999388953529
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -55.26747062674767,
+        "VaR": 372.35091334213695,
+        "ES": 481.8792430255685
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 17.992043950269412,
+        "VaR": 299.09139876511983,
+        "ES": 408.6197284485515
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": 0.7630672415477722,
+        "VaR": 585.0026627940933,
+        "ES": 741.1103161657334
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -51.27716913854723,
+        "VaR": 717.7656515362644,
+        "ES": 962.4950565120716
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 6.67484581032399,
+        "VaR": 659.8136365873931,
+        "ES": 904.5430415632004
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": 0.7630672415477722,
+        "VaR": 837.6049905755009,
+        "ES": 975.2788351312374
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -51.27716913854723,
+        "VaR": 1109.7640691643721,
+        "ES": 1351.908883108527
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 6.67484581032399,
+        "VaR": 1051.812054215501,
+        "ES": 1293.956868159656
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": -0.009700885580245715,
+        "VaR": 7.803605916987616,
+        "ES": 10.131227274489593
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -111.04841473481588,
+        "VaR": 432.57909271079154,
+        "ES": 670.6590965758788
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 18.88707309934023,
+        "VaR": 302.64360487663544,
+        "ES": 540.7236087417226
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": -0.009700885580245715,
+        "VaR": 11.5582844434556,
+        "ES": 13.687777120265242
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -111.04841473481588,
+        "VaR": 798.4863398728123,
+        "ES": 1098.6386542655412
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 18.88707309934023,
+        "VaR": 668.5508520386562,
+        "ES": 968.7031664313853
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": 0.669999607713418,
+        "VaR": 513.6527074446678,
+        "ES": 650.7206626984029
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": 8.024363867094308,
+        "VaR": 494.8912801302317,
+        "ES": 619.4345201249406
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 8.75332248877534,
+        "VaR": 494.16232150855063,
+        "ES": 618.7055615032596
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": 0.669999607713418,
+        "VaR": 735.4463467283479,
+        "ES": 856.3287759853594
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": 8.024363867094308,
+        "VaR": 696.9846267272909,
+        "ES": 803.103142196491
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 8.75332248877534,
+        "VaR": 696.2556681056099,
+        "ES": 802.37418357481
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_only",
+        "alpha": 0.05,
+        "mean_PnL": -0.004850442790122896,
+        "VaR": 3.9018029584938394,
+        "ES": 5.065613637244837
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.05,
+        "mean_PnL": -55.52420736740794,
+        "VaR": 216.28954635539583,
+        "ES": 335.3295482879394
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.05,
+        "mean_PnL": 17.73530720960915,
+        "VaR": 143.03003177837874,
+        "ES": 262.0700337109223
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_only",
+        "alpha": 0.01,
+        "mean_PnL": -0.004850442790122896,
+        "VaR": 5.779142221727846,
+        "ES": 6.843888560132677
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma",
+        "alpha": 0.01,
+        "mean_PnL": -55.52420736740794,
+        "VaR": 399.2431699364061,
+        "ES": 549.3193271327706
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "approximation": "delta_gamma_theta",
+        "alpha": 0.01,
+        "mean_PnL": 17.73530720960915,
+        "VaR": 325.983655359389,
+        "ES": 476.05981255575364
+      }
+    ],
+    "flat_price_pnl": [
+      {
+        "Portfolio": "CoveredCall",
+        "current_value": 9744.780576671694,
+        "flat_price_PnL": 60.553437207890966,
+        "theta_linear_PnL": 57.95201494887121
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "current_value": -788.4393935975347,
+        "flat_price_PnL": 143.05583594215614,
+        "theta_linear_PnL": 129.9354878341561
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "current_value": -65.79304919804017,
+        "flat_price_PnL": 3.728684690916154,
+        "theta_linear_PnL": 0.7289586216810248
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "current_value": 4580.842699164644,
+        "flat_price_PnL": 79.82660228028271,
+        "theta_linear_PnL": 73.25951457701709
+      }
+    ],
+    "method_comparison": [
+      {
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "delta_normal_VaR": 601.0528327074422,
+        "normal_full_VaR": 677.8798328384582,
+        "t_full_VaR": 677.97980299548,
+        "delta_normal_ES": 753.744500847817,
+        "normal_full_ES": 873.464192364915,
+        "t_full_ES": 897.1313219385004,
+        "normal_VaR_minus_delta_normal": 76.827000131016,
+        "t_minus_normal_VaR": 0.09997015702174394,
+        "t_minus_normal_ES": 23.667129573585385
+      },
+      {
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "delta_normal_VaR": 850.0804914457202,
+        "normal_full_VaR": 996.5889375678889,
+        "t_full_VaR": 1032.6347580038582,
+        "delta_normal_ES": 973.907058149598,
+        "normal_full_ES": 1153.7200730682675,
+        "t_full_ES": 1228.6409590406847,
+        "normal_VaR_minus_delta_normal": 146.50844612216872,
+        "t_minus_normal_VaR": 36.04582043596929,
+        "t_minus_normal_ES": 74.92088597241718
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "delta_normal_VaR": 7.641193908351566,
+        "normal_full_VaR": 316.5633235165494,
+        "t_full_VaR": 323.6177790349052,
+        "delta_normal_ES": 9.582365434313202,
+        "normal_full_ES": 486.89541354258,
+        "t_full_ES": 522.242176883955,
+        "normal_VaR_minus_delta_normal": 308.92212960819785,
+        "t_minus_normal_VaR": 7.05445551835578,
+        "t_minus_normal_ES": 35.34676334137504
+      },
+      {
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "delta_normal_VaR": 10.807086364744311,
+        "normal_full_VaR": 592.5335693128291,
+        "t_full_VaR": 639.8621161056487,
+        "delta_normal_ES": 12.381295412104889,
+        "normal_full_ES": 751.4193842594943,
+        "t_full_ES": 847.0654287788728,
+        "normal_VaR_minus_delta_normal": 581.7264829480847,
+        "t_minus_normal_VaR": 47.32854679281968,
+        "t_minus_normal_ES": 95.6460445193785
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "delta_normal_VaR": 527.7453154877877,
+        "normal_full_VaR": 489.97797928372177,
+        "t_full_VaR": 490.0501155785993,
+        "delta_normal_ES": 661.8139167655082,
+        "normal_full_ES": 641.0213635114434,
+        "t_full_ES": 661.1713468348415,
+        "normal_VaR_minus_delta_normal": -37.76733620406594,
+        "t_minus_normal_VaR": 0.0721362948775095,
+        "t_minus_normal_ES": 20.149983323398146
+      },
+      {
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "delta_normal_VaR": 746.4002708833425,
+        "normal_full_VaR": 734.972189493893,
+        "t_full_VaR": 764.5827898285288,
+        "delta_normal_ES": 855.124308030865,
+        "normal_full_ES": 869.13551275547,
+        "t_full_ES": 935.8972717885321,
+        "normal_VaR_minus_delta_normal": -11.428081389449517,
+        "t_minus_normal_VaR": 29.61060033463582,
+        "t_minus_normal_ES": 66.76175903306205
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "delta_normal_VaR": 3.8205969541758136,
+        "normal_full_VaR": 149.98297744906995,
+        "t_full_VaR": 153.5102052082466,
+        "delta_normal_ES": 4.791182717156639,
+        "normal_full_ES": 235.14902246208484,
+        "t_full_ES": 252.8224041327724,
+        "normal_VaR_minus_delta_normal": 146.16238049489414,
+        "t_minus_normal_VaR": 3.5272277591766397,
+        "t_minus_normal_ES": 17.673381670687547
+      },
+      {
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "delta_normal_VaR": 5.403543182372199,
+        "normal_full_VaR": 287.96810034720966,
+        "t_full_VaR": 311.6323737436187,
+        "delta_normal_ES": 6.190647706052494,
+        "normal_full_ES": 367.41100782054207,
+        "t_full_ES": 415.23403008023126,
+        "normal_VaR_minus_delta_normal": 282.5645571648375,
+        "t_minus_normal_VaR": 23.664273396409044,
+        "t_minus_normal_ES": 47.823022259689196
+      }
+    ],
+    "mean_pnl_checks": [
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "empirical_mean_PnL": 7.007621193059128,
+        "empirical_mean_SE": 0.374509224482104,
+        "second_order_expected_PnL": 6.1927645511077,
+        "mean_delta_gamma_theta": 6.898844211232867
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "empirical_mean_PnL": 19.77052224610546,
+        "empirical_mean_SE": 0.16143765064858617,
+        "second_order_expected_PnL": 19.49631626716281,
+        "mean_delta_gamma_theta": 19.400546580660755
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "empirical_mean_PnL": 9.14271275989202,
+        "empirical_mean_SE": 0.31730838221911306,
+        "second_order_expected_PnL": 8.043613736569325,
+        "mean_delta_gamma_theta": 8.70479519509655
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "empirical_mean_PnL": 18.18394543225786,
+        "empirical_mean_SE": 0.08071882532429309,
+        "second_order_expected_PnL": 18.03992879352044,
+        "mean_delta_gamma_theta": 17.992043950269412
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "empirical_mean_PnL": 7.129616244629271,
+        "empirical_mean_SE": 0.37531392228055066,
+        "second_order_expected_PnL": 5.964066319675226,
+        "mean_delta_gamma_theta": 6.67484581032399
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "empirical_mean_PnL": 20.04411874405306,
+        "empirical_mean_SE": 0.16945375410259572,
+        "second_order_expected_PnL": 19.008340822693654,
+        "mean_delta_gamma_theta": 18.88707309934023
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "empirical_mean_PnL": 9.011590684100641,
+        "empirical_mean_SE": 0.3204423104786917,
+        "second_order_expected_PnL": 8.075933537869727,
+        "mean_delta_gamma_theta": 8.75332248877534
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "empirical_mean_PnL": 18.32074368123166,
+        "empirical_mean_SE": 0.08472687705129786,
+        "second_order_expected_PnL": 17.79594107128586,
+        "mean_delta_gamma_theta": 17.73530720960915
+      }
+    ],
+    "terminal_price_checks": [
+      {
+        "family": "normal",
+        "paths": 1000000,
+        "invalid_paths": 0,
+        "mean_terminal_price": 99.13067731783316,
+        "terminal_price_sd": 5.226534411553216,
+        "daily_simulated_mean": 1.0652774179783061e-05,
+        "daily_simulated_sd": 0.01665525861169311
+      },
+      {
+        "family": "t",
+        "paths": 1000000,
+        "invalid_paths": 0,
+        "mean_terminal_price": 99.13091404910135,
+        "terminal_price_sd": 5.2386555257807075,
+        "daily_simulated_mean": 1.0850653340122706e-05,
+        "daily_simulated_sd": 0.016692270160434987
+      }
+    ],
+    "monte_carlo_errors": [
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "VaR_MCSE": 1.0355575035521554,
+        "ES_MCSE": 1.1283161391354664,
+        "mean_PnL_MCSE": 0.374509224482104
+      },
+      {
+        "family": "normal",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.5789465812369237,
+        "ES_MCSE": 2.2750770885831306,
+        "mean_PnL_MCSE": 0.374509224482104
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.6785882280053012,
+        "ES_MCSE": 1.0055829252486341,
+        "mean_PnL_MCSE": 0.16143765064858617
+      },
+      {
+        "family": "normal",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.6946806481696965,
+        "ES_MCSE": 2.2961447002442,
+        "mean_PnL_MCSE": 0.16143765064858617
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.7474276028265622,
+        "ES_MCSE": 0.8988461773618129,
+        "mean_PnL_MCSE": 0.31730838221911306
+      },
+      {
+        "family": "normal",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.288771932349896,
+        "ES_MCSE": 1.9741662853552733,
+        "mean_PnL_MCSE": 0.31730838221911306
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.33929411400266024,
+        "ES_MCSE": 0.5027914626243157,
+        "mean_PnL_MCSE": 0.08071882532429309
+      },
+      {
+        "family": "normal",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "VaR_MCSE": 0.8473403240848263,
+        "ES_MCSE": 1.148072350122098,
+        "mean_PnL_MCSE": 0.08071882532429309
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.9619609511179772,
+        "ES_MCSE": 1.2122429555025562,
+        "mean_PnL_MCSE": 0.37531392228055066
+      },
+      {
+        "family": "t",
+        "Portfolio": "CoveredCall",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.5226721691278067,
+        "ES_MCSE": 2.412407797263708,
+        "mean_PnL_MCSE": 0.37531392228055066
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.751751735950062,
+        "ES_MCSE": 1.1485403199839879,
+        "mean_PnL_MCSE": 0.16945375410259572
+      },
+      {
+        "family": "t",
+        "Portfolio": "ShortStraddle",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.9358746542749814,
+        "ES_MCSE": 2.986618890860848,
+        "mean_PnL_MCSE": 0.16945375410259572
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.6941669819990042,
+        "ES_MCSE": 0.9729373036049047,
+        "mean_PnL_MCSE": 0.3204423104786917
+      },
+      {
+        "family": "t",
+        "Portfolio": "RiskReversal",
+        "alpha": 0.01,
+        "VaR_MCSE": 1.2589661749311272,
+        "ES_MCSE": 2.166282551659001,
+        "mean_PnL_MCSE": 0.3204423104786917
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.05,
+        "VaR_MCSE": 0.37587586797498407,
+        "ES_MCSE": 0.5742701599919917,
+        "mean_PnL_MCSE": 0.08472687705129786
+      },
+      {
+        "family": "t",
+        "Portfolio": "HedgedShortCall",
+        "alpha": 0.01,
+        "VaR_MCSE": 0.9679373271375257,
+        "ES_MCSE": 1.4933094454304254,
+        "mean_PnL_MCSE": 0.08472687705129786
+      }
+    ],
+    "figures": [
+      "q3_pnl_curves.png"
+    ],
+    "conventions": {
+      "moments": "sample variance; population standardized skewness/excess kurtosis",
+      "delta_normal_sigma": "sample standard deviation",
+      "normal_fit_sigma": "MLE standard deviation",
+      "historical_tail": "course floor/ceil order average and threshold-mean ES",
+      "common_random_numbers": true,
+      "model_limit": "Unbounded Normal/t arithmetic returns can theoretically be <=-100%; any observed such path raises rather than silently truncating"
+    }
+  },
+  "q4": {
+    "n": 240,
+    "assets": [
+      "EQ",
+      "BOND",
+      "STK",
+      "PUTW"
+    ],
+    "risk_free_annual": 0.03,
+    "risk_free_monthly": 0.0024662697723036864,
+    "annualization": "Sharpe uses sqrt(12); plots and VaR/ES use monthly returns",
+    "data_start": "2006-12-31",
+    "data_end": "2026-11-30",
+    "moments": [
+      {
+        "asset": "EQ",
+        "n": 240,
+        "mean": 0.007901411245415473,
+        "variance": 0.0024272224308966024,
+        "sd": 0.04926684920812983,
+        "skewness": -0.38492011220099454,
+        "excess_kurtosis": 3.421231466560095,
+        "annual_sharpe": 0.38216128407094946,
+        "mean_standard_error": 0.0031801614417199813
+      },
+      {
+        "asset": "BOND",
+        "n": 240,
+        "mean": 0.003326686433831667,
+        "variance": 0.0001811671917055629,
+        "sd": 0.013459836243638439,
+        "skewness": 0.08667283111214168,
+        "excess_kurtosis": 0.48155317799186603,
+        "annual_sharpe": 0.2214418283357071,
+        "mean_standard_error": 0.0008688286935715111
+      },
+      {
+        "asset": "STK",
+        "n": 240,
+        "mean": 0.011244336913781657,
+        "variance": 0.008698622074677127,
+        "sd": 0.09326640378334058,
+        "skewness": -0.060628985882903615,
+        "excess_kurtosis": 0.7702514187666303,
+        "annual_sharpe": 0.3260350493755506,
+        "mean_standard_error": 0.006020320476892242
+      },
+      {
+        "asset": "PUTW",
+        "n": 240,
+        "mean": 0.0062429141655662,
+        "variance": 0.00027393301537238974,
+        "sd": 0.0165509218888976,
+        "skewness": -6.52542307446727,
+        "excess_kurtosis": 59.85049820890249,
+        "annual_sharpe": 0.7904502256927157,
+        "mean_standard_error": 0.001068357414001337
+      }
+    ],
+    "single_month_influence": [
+      {
+        "asset": "EQ",
+        "month": "2008-06-30",
+        "event_return": -0.2350976381527448,
+        "variance_share": 0.10178919304738919,
+        "fourth_moment_share": 0.3872543094026476,
+        "excess_kurtosis_full": 3.421231466560095,
+        "excess_kurtosis_without_event": 1.851936461608794,
+        "annual_sharpe_full": 0.38216128407094946,
+        "annual_sharpe_without_event": 0.4777768272755427
+      },
+      {
+        "asset": "BOND",
+        "month": "2012-12-31",
+        "event_return": 0.049857345279027,
+        "variance_share": 0.050003562942174375,
+        "fourth_moment_share": 0.17236143840979726,
+        "excess_kurtosis_full": 0.48155317799186603,
+        "excess_kurtosis_without_event": 0.176665839869957,
+        "annual_sharpe_full": 0.2214418283357071,
+        "annual_sharpe_without_event": 0.17543807386573596
+      },
+      {
+        "asset": "STK",
+        "month": "2008-06-30",
+        "event_return": -0.3766826295147244,
+        "variance_share": 0.07238549972382485,
+        "fourth_moment_share": 0.33353705023620367,
+        "excess_kurtosis_full": 0.7702514187666303,
+        "excess_kurtosis_without_event": -0.10759182164438608,
+        "annual_sharpe_full": 0.3260350493755506,
+        "annual_sharpe_without_event": 0.40033651213443455
+      },
+      {
+        "asset": "PUTW",
+        "month": "2008-06-30",
+        "event_return": -0.1671967691777659,
+        "variance_share": 0.4594673597560314,
+        "fourth_moment_share": 0.8061425536370074,
+        "excess_kurtosis_full": 59.85049820890249,
+        "excess_kurtosis_without_event": 39.87168931923693,
+        "annual_sharpe_full": 0.7904502256927157,
+        "annual_sharpe_without_event": 1.281322162682325
+      }
+    ],
+    "portfolios": [
+      {
+        "portfolio": "Unconstrained",
+        "EQ": -0.04308995470778699,
+        "BOND": 0.25237919035714285,
+        "STK": 0.02210478967402745,
+        "PUTW": 0.7686059746766166,
+        "mean": 0.005546009805600489,
+        "sd": 0.012871841243862713,
+        "annual_sharpe": 0.8288272222619745
+      },
+      {
+        "portfolio": "LongOnly",
+        "EQ": 0.0,
+        "BOND": 0.26630156869604943,
+        "STK": 0.008844657249808941,
+        "PUTW": 0.7248537740541415,
+        "mean": 0.0055105540158997355,
+        "sd": 0.012791967183966657,
+        "annual_sharpe": 0.8244009551867354
+      },
+      {
+        "portfolio": "PUTW20",
+        "EQ": 0.14454774388329908,
+        "BOND": 0.6386539223246819,
+        "STK": 0.016798333792008596,
+        "PUTW": 0.2,
+        "mean": 0.004704201466190586,
+        "sd": 0.012938688859045155,
+        "annual_sharpe": 0.5991660267757436
+      }
+    ],
+    "risk": [
+      {
+        "portfolio": "Unconstrained",
+        "alpha": 0.05,
+        "mean": 0.005546009805600489,
+        "sd": 0.012871841243862713,
+        "annual_sharpe": 0.8288272222619745,
+        "historical_VaR": 0.00392380453893883,
+        "historical_ES": 0.028746349071864158,
+        "normal_VaR": 0.01562628494991065,
+        "normal_ES": 0.021004901984317436,
+        "historical_tail_count": 12,
+        "weighted_standalone_ES": 0.0364300758683674
+      },
+      {
+        "portfolio": "Unconstrained",
+        "alpha": 0.01,
+        "mean": 0.005546009805600489,
+        "sd": 0.012871841243862713,
+        "annual_sharpe": 0.8288272222619745,
+        "historical_VaR": 0.05856763279819966,
+        "historical_ES": 0.10248197429690517,
+        "normal_VaR": 0.024398370707050743,
+        "normal_ES": 0.028760204519576085,
+        "historical_tail_count": 2,
+        "weighted_standalone_ES": 0.11151263475978147
+      },
+      {
+        "portfolio": "LongOnly",
+        "alpha": 0.05,
+        "mean": 0.0055105540158997355,
+        "sd": 0.012791967183966657,
+        "annual_sharpe": 0.8244009551867354,
+        "historical_VaR": 0.002862556197082245,
+        "historical_ES": 0.028983110844205764,
+        "normal_VaR": 0.015530359602492041,
+        "normal_ES": 0.020875600527682982,
+        "historical_tail_count": 12,
+        "weighted_standalone_ES": 0.03714102825561813
+      },
+      {
+        "portfolio": "LongOnly",
+        "alpha": 0.01,
+        "mean": 0.0055105540158997355,
+        "sd": 0.012791967183966657,
+        "annual_sharpe": 0.8244009551867354,
+        "historical_VaR": 0.059470446793571,
+        "historical_ES": 0.1017926768602283,
+        "normal_VaR": 0.0242480116473213,
+        "normal_ES": 0.028582778829005125,
+        "historical_tail_count": 2,
+        "weighted_standalone_ES": 0.11105393712865011
+      },
+      {
+        "portfolio": "PUTW20",
+        "alpha": 0.05,
+        "mean": 0.004704201466190586,
+        "sd": 0.012938688859045155,
+        "annual_sharpe": 0.5991660267757436,
+        "historical_VaR": 0.015439339721387762,
+        "historical_ES": 0.028164335764674215,
+        "normal_VaR": 0.01657804783160645,
+        "normal_ES": 0.021984597755715492,
+        "historical_tail_count": 12,
+        "weighted_standalone_ES": 0.04175369935437934
+      },
+      {
+        "portfolio": "PUTW20",
+        "alpha": 0.01,
+        "mean": 0.004704201466190586,
+        "sd": 0.012938688859045155,
+        "annual_sharpe": 0.5991660267757436,
+        "historical_VaR": 0.03898003772441817,
+        "historical_ES": 0.05916742244892374,
+        "normal_VaR": 0.02539568985392502,
+        "normal_ES": 0.029780176073566443,
+        "historical_tail_count": 2,
+        "weighted_standalone_ES": 0.08129655345251088
+      }
+    ],
+    "capm": [
+      {
+        "sample": "AllMonths",
+        "n": 240,
+        "alpha": 0.0027723068987828485,
+        "alpha_t": 3.0819186816989617,
+        "beta": 0.18478589737695436,
+        "rsquared": 0.3025539627397207,
+        "aicc": -1368.9195987143369
+      },
+      {
+        "sample": "EQExcessBelowMinus5pct",
+        "n": 26,
+        "alpha": 0.05865353045767041,
+        "alpha_t": 15.137146632238306,
+        "beta": 0.9428470935773211,
+        "rsquared": 0.9520862727455354,
+        "aicc": -162.97572769492885
+      }
+    ],
+    "optimizer_diagnostics": {
+      "Unconstrained": {
+        "method": "analytic",
+        "successful_starts": 1,
+        "objective": 0.23926180994232038
+      },
+      "LongOnly": {
+        "method": "SLSQP",
+        "successful_starts": 13,
+        "objective": 0.23798405669862316,
+        "objective_spread": 3.0558888752807434e-14
+      },
+      "PUTW20": {
+        "method": "SLSQP",
+        "successful_starts": 13,
+        "objective": 0.17296433342412706,
+        "objective_spread": 2.550737399076297e-14
+      }
+    },
+    "mean_se": [
+      {
+        "asset": "EQ",
+        "mean": 0.007901411245415473,
+        "mean_standard_error": 0.0031801614417199813
+      },
+      {
+        "asset": "BOND",
+        "mean": 0.003326686433831667,
+        "mean_standard_error": 0.0008688286935715111
+      },
+      {
+        "asset": "STK",
+        "mean": 0.011244336913781657,
+        "mean_standard_error": 0.006020320476892242
+      },
+      {
+        "asset": "PUTW",
+        "mean": 0.0062429141655662,
+        "mean_standard_error": 0.001068357414001337
+      }
+    ],
+    "bootstrap_replications": 300,
+    "bootstrap_failures": 3,
+    "bootstrap_intervals": [
+      {
+        "portfolio": "Unconstrained",
+        "asset": "EQ",
+        "n_success": 297,
+        "p05": -0.3279875893730553,
+        "median": -0.04012637490493014,
+        "p95": 0.20601491467488134,
+        "sd": 0.19513262651224464,
+        "zero_share": 0.0
+      },
+      {
+        "portfolio": "Unconstrained",
+        "asset": "BOND",
+        "n_success": 297,
+        "p05": -0.2618358733071594,
+        "median": 0.1870457506186829,
+        "p95": 0.6263599430250264,
+        "sd": 0.3299239853614726,
+        "zero_share": 0.0
+      },
+      {
+        "portfolio": "Unconstrained",
+        "asset": "STK",
+        "n_success": 297,
+        "p05": -0.08766393283118247,
+        "median": 0.01946772716974893,
+        "p95": 0.18964748961635297,
+        "sd": 0.08459727719358208,
+        "zero_share": 0.0
+      },
+      {
+        "portfolio": "Unconstrained",
+        "asset": "PUTW",
+        "n_success": 297,
+        "p05": 0.28140477411385806,
+        "median": 0.82613978419581,
+        "p95": 1.387764497427375,
+        "sd": 0.3934432028797053,
+        "zero_share": 0.0
+      },
+      {
+        "portfolio": "LongOnly",
+        "asset": "EQ",
+        "n_success": 300,
+        "p05": 0.0,
+        "median": 8.753153773631214e-17,
+        "p95": 0.13525026398668707,
+        "sd": 0.06740492665950513,
+        "zero_share": 0.7166666666666667
+      },
+      {
+        "portfolio": "LongOnly",
+        "asset": "BOND",
+        "n_success": 300,
+        "p05": 0.0,
+        "median": 0.21142217262704255,
+        "p95": 0.6497567412300568,
+        "sd": 0.21836110693228827,
+        "zero_share": 0.16333333333333333
+      },
+      {
+        "portfolio": "LongOnly",
+        "asset": "STK",
+        "n_success": 300,
+        "p05": 0.0,
+        "median": 0.002111898954236536,
+        "p95": 0.1031240587929672,
+        "sd": 0.03969695077927237,
+        "zero_share": 0.4666666666666667
+      },
+      {
+        "portfolio": "LongOnly",
+        "asset": "PUTW",
+        "n_success": 300,
+        "p05": 0.22959247074013275,
+        "median": 0.7414722304745717,
+        "p95": 0.9982591510878743,
+        "sd": 0.24585965979888905,
+        "zero_share": 0.023333333333333334
+      },
+      {
+        "portfolio": "PUTW20",
+        "asset": "EQ",
+        "n_success": 300,
+        "p05": 1.769420491642534e-17,
+        "median": 0.1339230057317934,
+        "p95": 0.49479968001439356,
+        "sd": 0.1652988937638039,
+        "zero_share": 0.14
+      },
+      {
+        "portfolio": "PUTW20",
+        "asset": "BOND",
+        "n_success": 300,
+        "p05": 0.13089195093084605,
+        "median": 0.6210584602480096,
+        "p95": 0.7928328906406746,
+        "sd": 0.1800118908496043,
+        "zero_share": 0.043333333333333335
+      },
+      {
+        "portfolio": "PUTW20",
+        "asset": "STK",
+        "n_success": 300,
+        "p05": 0.0,
+        "median": 0.011996506377298311,
+        "p95": 0.19556794964186186,
+        "sd": 0.11459110570943469,
+        "zero_share": 0.42333333333333334
+      },
+      {
+        "portfolio": "PUTW20",
+        "asset": "PUTW",
+        "n_success": 300,
+        "p05": 0.19999999999998966,
+        "median": 0.2,
+        "p95": 0.2,
+        "sd": 0.03126400429098825,
+        "zero_share": 0.023333333333333334
+      }
+    ],
+    "historical_risk_convention": "course order-statistic average and threshold-tail mean; fractional-tail sensitivity separately reported"
+  },
+  "q5": {
+    "n": 1257,
+    "fund_sample_start": "1996-10-01",
+    "fund_sample_end": "2001-09-28",
+    "factor_file_end": "2024-09-30",
+    "forecast_window_start_exclusive": "2014-09-30",
+    "forecast_first_date": "2014-10-01",
+    "forecast_last_date": "2024-09-30",
+    "forecast_n": 2516,
+    "annual_days": 255,
+    "annualization": "255 times daily arithmetic expected returns; Sharpe multiplied by sqrt(255); geometric sample return reported separately",
+    "unit_conversion": "Fund returns already decimals; every factor and RF column divided by 100 exactly once",
+    "regression_covariance": "Classical OLS homoskedastic standard errors, intercept plus all specified factor slopes; Gaussian AICc k includes sigma",
+    "stress_convention": "Incremental momentum factor shock only: -$10m * beta_Mom * worst_Mom; other factor shocks are zero and alpha/RF drift excluded",
+    "initial_statistics": [
+      {
+        "fund": "FUND1",
+        "n": 1257,
+        "mean_daily_return": 0.0008196136038186157,
+        "mean_daily_excess": 0.0006236470167064439,
+        "daily_volatility": 0.011745370075744407,
+        "daily_excess_volatility": 0.01174598835618051,
+        "daily_sharpe": 0.053094469174941164,
+        "annual_sharpe": 0.8478506811503062,
+        "capm_alpha_daily": 0.00044065955499454423,
+        "capm_alpha_t": 3.2043307276848436
+      },
+      {
+        "fund": "FUND2",
+        "n": 1257,
+        "mean_daily_return": 0.0005335179793158313,
+        "mean_daily_excess": 0.00033755139220365953,
+        "daily_volatility": 0.007186030477873586,
+        "daily_excess_volatility": 0.007186627473299567,
+        "daily_sharpe": 0.04696937380680467,
+        "annual_sharpe": 0.750040751779431,
+        "capm_alpha_daily": 0.0002449069523269171,
+        "capm_alpha_t": 1.8348725273813877
+      }
+    ],
+    "residual_correlations": [
+      {
+        "fund": "FUND1",
+        "factor": "SMB",
+        "residual_correlation": -0.06117325285499549,
+        "sample_factor_premium": -0.00016276849642004774
+      },
+      {
+        "fund": "FUND1",
+        "factor": "HML",
+        "residual_correlation": 0.20520338301932223,
+        "sample_factor_premium": 0.00037167859984089095
+      },
+      {
+        "fund": "FUND1",
+        "factor": "Mom",
+        "residual_correlation": 0.801464452406162,
+        "sample_factor_premium": 0.0007818615751789977
+      },
+      {
+        "fund": "FUND2",
+        "factor": "SMB",
+        "residual_correlation": 0.32952616957917524,
+        "sample_factor_premium": -0.00016276849642004774
+      },
+      {
+        "fund": "FUND2",
+        "factor": "HML",
+        "residual_correlation": -0.12063340171044434,
+        "sample_factor_premium": 0.00037167859984089095
+      },
+      {
+        "fund": "FUND2",
+        "factor": "Mom",
+        "residual_correlation": 0.05302066302299169,
+        "sample_factor_premium": 0.0007818615751789977
+      }
+    ],
+    "regressions": [
+      {
+        "fund": "FUND1",
+        "model": "CAPM",
+        "n": 1257,
+        "k": 3,
+        "alpha_daily": 0.00044065955499454423,
+        "alpha_standard_error": 0.00013751999791635882,
+        "alpha_t": 3.2043307276848436,
+        "rsquared": 0.8278866533090184,
+        "ll": 4909.218432680686,
+        "AICc": -9812.417711331045,
+        "BIC": -9797.027415735602
+      },
+      {
+        "fund": "FUND1",
+        "model": "FF3",
+        "n": 1257,
+        "k": 5,
+        "alpha_daily": 0.0002963092808383307,
+        "alpha_standard_error": 0.00013108983387488364,
+        "alpha_t": 2.2603528594073725,
+        "rsquared": 0.8452057588803478,
+        "ll": 4975.874939014226,
+        "AICc": -9941.701916397757,
+        "BIC": -9916.0674619855
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "n": 1257,
+        "k": 6,
+        "alpha_daily": 2.937999702307285e-06,
+        "alpha_standard_error": 6.984730428153813e-05,
+        "alpha_t": 0.04206317956760215,
+        "rsquared": 0.9563325350972732,
+        "ll": 5771.237568450763,
+        "AICc": -11530.407936901527,
+        "BIC": -11499.656237649986
+      },
+      {
+        "fund": "FUND2",
+        "model": "CAPM",
+        "n": 1257,
+        "k": 3,
+        "alpha_daily": 0.0002449069523269171,
+        "alpha_standard_error": 0.00013347355125341192,
+        "alpha_t": 1.8348725273813877,
+        "rsquared": 0.5668860900146977,
+        "ll": 4946.760001798655,
+        "AICc": -9887.500849566983,
+        "BIC": -9872.110553971539
+      },
+      {
+        "fund": "FUND2",
+        "model": "FF3",
+        "n": 1257,
+        "k": 5,
+        "alpha_daily": 0.00027714639011508757,
+        "alpha_standard_error": 0.00012651816263808797,
+        "alpha_t": 2.1905660368138586,
+        "rsquared": 0.6148309423524778,
+        "ll": 5020.4946264338905,
+        "AICc": -10030.941291237086,
+        "BIC": -10005.30683682483
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "n": 1257,
+        "k": 6,
+        "alpha_daily": 0.0002727972444234224,
+        "alpha_standard_error": 0.00012690979372869394,
+        "alpha_t": 2.1495365834933486,
+        "rsquared": 0.6148961833058633,
+        "ll": 5020.601092442668,
+        "AICc": -10029.134984885337,
+        "BIC": -9998.383285633796
+      }
+    ],
+    "coefficients": [
+      {
+        "fund": "FUND1",
+        "model": "CAPM",
+        "term": "alpha",
+        "coefficient": 0.00044065955499454423,
+        "standard_error": 0.00013751999791635882,
+        "t_statistic": 3.2043307276848436,
+        "p_value": 0.0013878355624750655
+      },
+      {
+        "fund": "FUND1",
+        "model": "CAPM",
+        "term": "Mkt-RF",
+        "coefficient": 0.8468896884089022,
+        "standard_error": 0.010900007987411277,
+        "t_statistic": 77.69624475385694,
+        "p_value": 0.0
+      },
+      {
+        "fund": "FUND1",
+        "model": "FF3",
+        "term": "alpha",
+        "coefficient": 0.0002963092808383307,
+        "standard_error": 0.00013108983387488364,
+        "t_statistic": 2.2603528594073725,
+        "p_value": 0.023970395477703063
+      },
+      {
+        "fund": "FUND1",
+        "model": "FF3",
+        "term": "Mkt-RF",
+        "coefficient": 1.0017271235159695,
+        "standard_error": 0.01716202332328533,
+        "t_statistic": 58.36882427241735,
+        "p_value": 0.0
+      },
+      {
+        "fund": "FUND1",
+        "model": "FF3",
+        "term": "SMB",
+        "coefficient": 0.08278215407505757,
+        "standard_error": 0.020499809612549613,
+        "t_statistic": 4.038191360781216,
+        "p_value": 5.7134738915225263e-05
+      },
+      {
+        "fund": "FUND1",
+        "model": "FF3",
+        "term": "HML",
+        "coefficient": 0.3346140324554758,
+        "standard_error": 0.028812090715027584,
+        "t_statistic": 11.613667184552853,
+        "p_value": 1.0947938849125488e-29
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "term": "alpha",
+        "coefficient": 2.937999702307285e-06,
+        "standard_error": 6.984730428153813e-05,
+        "t_statistic": 0.04206317956760215,
+        "p_value": 0.9664550394651618
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "term": "Mkt-RF",
+        "coefficient": 0.9491597427546808,
+        "standard_error": 0.00916635233596156,
+        "t_statistic": 103.54824994353798,
+        "p_value": 0.0
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "term": "SMB",
+        "coefficient": 0.0008347155810970111,
+        "standard_error": 0.010988754364101164,
+        "t_statistic": 0.07596089178441541,
+        "p_value": 0.9394623478881742
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "term": "HML",
+        "coefficient": 0.2907278717197479,
+        "standard_error": 0.015328832799989816,
+        "t_statistic": 18.966080164951702,
+        "p_value": 1.0371933777510939e-70
+      },
+      {
+        "fund": "FUND1",
+        "model": "Carhart4",
+        "term": "Mom",
+        "coefficient": 0.3935512508987317,
+        "standard_error": 0.006972182794682439,
+        "t_statistic": 56.44591693707261,
+        "p_value": 0.0
+      },
+      {
+        "fund": "FUND2",
+        "model": "CAPM",
+        "term": "alpha",
+        "coefficient": 0.0002449069523269171,
+        "standard_error": 0.00013347355125341192,
+        "t_statistic": 1.8348725273813877,
+        "p_value": 0.06676115448792468
+      },
+      {
+        "fund": "FUND2",
+        "model": "CAPM",
+        "term": "Mkt-RF",
+        "coefficient": 0.42877047468727963,
+        "standard_error": 0.010579281535876709,
+        "t_statistic": 40.52926214632091,
+        "p_value": 2.775606864532857e-230
+      },
+      {
+        "fund": "FUND2",
+        "model": "FF3",
+        "term": "alpha",
+        "coefficient": 0.00027714639011508757,
+        "standard_error": 0.00012651816263808797,
+        "t_statistic": 2.1905660368138586,
+        "p_value": 0.02866693460966932
+      },
+      {
+        "fund": "FUND2",
+        "model": "FF3",
+        "term": "Mkt-RF",
+        "coefficient": 0.4443028098333001,
+        "standard_error": 0.016563509113044102,
+        "t_statistic": 26.824195694341277,
+        "p_value": 1.2713997143824211e-125
+      },
+      {
+        "fund": "FUND2",
+        "model": "FF3",
+        "term": "SMB",
+        "coefficient": 0.21001044046131975,
+        "standard_error": 0.01978489231350926,
+        "t_statistic": 10.614687061901428,
+        "p_value": 2.9025753788135555e-25
+      },
+      {
+        "fund": "FUND2",
+        "model": "FF3",
+        "term": "HML",
+        "coefficient": -0.0038001271552408405,
+        "standard_error": 0.0278072881113447,
+        "t_statistic": -0.13665939447329567,
+        "p_value": 0.8913219804098863
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "term": "alpha",
+        "coefficient": 0.0002727972444234224,
+        "standard_error": 0.00012690979372869394,
+        "t_statistic": 2.1495365834933486,
+        "p_value": 0.031783039369811236
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "term": "Mkt-RF",
+        "coefficient": 0.4435235133844956,
+        "standard_error": 0.016654900230829578,
+        "t_statistic": 26.63021136346992,
+        "p_value": 3.625342217687904e-124
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "term": "SMB",
+        "coefficient": 0.20879559302395262,
+        "standard_error": 0.019966132752412838,
+        "t_statistic": 10.457487967905072,
+        "p_value": 1.3494017028756989e-24
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "term": "HML",
+        "coefficient": -0.004450726989543705,
+        "standard_error": 0.027851883888130854,
+        "t_statistic": -0.15979985438042102,
+        "p_value": 0.8730645146909692
+      },
+      {
+        "fund": "FUND2",
+        "model": "Carhart4",
+        "term": "Mom",
+        "coefficient": 0.005834285212738588,
+        "standard_error": 0.012668180818336542,
+        "t_statistic": 0.460546411233234,
+        "p_value": 0.6452040460309819
+      }
+    ],
+    "expected_returns": [
+      {
+        "fund": "FUND1",
+        "expected_annual_without_alpha": 0.13705016778908785,
+        "expected_annual_with_alpha": 0.13779935771317622,
+        "annual_fitted_alpha": 0.0007491899240883576,
+        "realized_annual_arithmetic": 0.20900146897374702,
+        "realized_annual_geometric": 0.21084632436945636,
+        "realized_total_compounded": 1.5679113746868965,
+        "sample_daily_sd": 0.011745370075744407
+      },
+      {
+        "fund": "FUND2",
+        "expected_annual_without_alpha": 0.06891512961361045,
+        "expected_annual_with_alpha": 0.13847842694158316,
+        "annual_fitted_alpha": 0.06956329732797271,
+        "realized_annual_arithmetic": 0.13604708472553698,
+        "realized_annual_geometric": 0.13817566525502786,
+        "realized_total_compounded": 0.8926868498899011,
+        "sample_daily_sd": 0.007186030477873586
+      }
+    ],
+    "stress": [
+      {
+        "fund": "FUND1",
+        "worst_momentum_date": "1939-09-05",
+        "worst_momentum_return": -0.1844,
+        "momentum_beta": 0.3935512508987317,
+        "incremental_fund_return": -0.07257085066572613,
+        "position_value": 10000000.0,
+        "loss_dollars": 725708.5066572613,
+        "daily_sample_sd": 0.011745370075744407,
+        "loss_in_daily_sigmas": 6.178677231770978
+      },
+      {
+        "fund": "FUND2",
+        "worst_momentum_date": "1939-09-05",
+        "worst_momentum_return": -0.1844,
+        "momentum_beta": 0.005834285212738588,
+        "incremental_fund_return": -0.0010758421932289956,
+        "position_value": 10000000.0,
+        "loss_dollars": 10758.421932289955,
+        "daily_sample_sd": 0.007186030477873586,
+        "loss_in_daily_sigmas": 0.14971300171097346
+      }
+    ],
+    "recent_factor_premia": {
+      "Mkt-RF": 0.0004899841017488076,
+      "SMB": -4.6621621621621615e-05,
+      "HML": -9.383942766295704e-05,
+      "Mom": 9.658187599364072e-05,
+      "RF": 6.168918918918919e-05
+    },
+    "sample_factor_premia": {
+      "Mkt-RF": 0.00021607000795544943,
+      "SMB": -0.00016276849642004774,
+      "HML": 0.00037167859984089095,
+      "Mom": 0.0007818615751789977
+    },
+    "alpha_attribution": [
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "Mkt-RF",
+        "delta_beta": 0.15483743510706727,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": 3.345572583538541e-05,
+        "contribution_to_alpha_drop_annual": 0.00853121008802328
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "SMB",
+        "delta_beta": 0.08278215407505757,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": -1.3474326749209848e-05,
+        "contribution_to_alpha_drop_annual": -0.003435953321048511
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "HML",
+        "delta_beta": 0.3346140324554758,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": 0.0001243688750701657,
+        "contribution_to_alpha_drop_annual": 0.03171406314289225
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "Mkt-RF",
+        "delta_beta": -0.05256738076128864,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": -1.1358234379288776e-05,
+        "contribution_to_alpha_drop_annual": -0.0028963497667186377
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "SMB",
+        "delta_beta": -0.08194743849396055,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": 1.3338461349136301e-05,
+        "contribution_to_alpha_drop_annual": 0.0034013076440297567
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "HML",
+        "delta_beta": -0.043886160735727875,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": -1.631154677464762e-05,
+        "contribution_to_alpha_drop_annual": -0.004159444427535143
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "Mom",
+        "delta_beta": 0.3935512508987317,
+        "sample_daily_premium": 0.0007818615751789977,
+        "contribution_to_alpha_drop_daily": 0.0003077026009413473,
+        "contribution_to_alpha_drop_annual": 0.07846416324004356
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "Mkt-RF",
+        "delta_beta": 0.10227005434577863,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": 2.2097491456096632e-05,
+        "contribution_to_alpha_drop_annual": 0.005634860321304641
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "SMB",
+        "delta_beta": 0.0008347155810970111,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": -1.3586540007354692e-07,
+        "contribution_to_alpha_drop_annual": -3.4645677018754465e-05
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "HML",
+        "delta_beta": 0.2907278717197479,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": 0.00010805732829551806,
+        "contribution_to_alpha_drop_annual": 0.027554618715357106
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "Mom",
+        "delta_beta": 0.3935512508987317,
+        "sample_daily_premium": 0.0007818615751789977,
+        "contribution_to_alpha_drop_daily": 0.0003077026009413473,
+        "contribution_to_alpha_drop_annual": 0.07846416324004356
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "Mkt-RF",
+        "delta_beta": 0.015532335146020482,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": 3.3560717785673522e-06,
+        "contribution_to_alpha_drop_annual": 0.0008557983035346748
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "SMB",
+        "delta_beta": 0.21001044046131975,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": -3.418308362640097e-05,
+        "contribution_to_alpha_drop_annual": -0.008716686324732248
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "factor": "HML",
+        "delta_beta": -0.0038001271552408405,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": -1.4124259402772636e-06,
+        "contribution_to_alpha_drop_annual": -0.00036016861477070224
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "Mkt-RF",
+        "delta_beta": -0.000779296448804534,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": -1.6838258989284914e-07,
+        "contribution_to_alpha_drop_annual": -4.293756042267653e-05
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "SMB",
+        "delta_beta": -0.0012148474373671336,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": 1.9773889075999647e-07,
+        "contribution_to_alpha_drop_annual": 5.04234171437991e-05
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "HML",
+        "delta_beta": -0.0006505998343028646,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": -2.418140354704044e-07,
+        "contribution_to_alpha_drop_annual": -6.166257904495312e-05
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "factor": "Mom",
+        "delta_beta": 0.005834285212738588,
+        "sample_daily_premium": 0.0007818615751789977,
+        "contribution_to_alpha_drop_daily": 4.561603426475326e-06,
+        "contribution_to_alpha_drop_annual": 0.001163208873751208
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "Mkt-RF",
+        "delta_beta": 0.014753038697215948,
+        "sample_daily_premium": 0.00021607000795544943,
+        "contribution_to_alpha_drop_daily": 3.187689188674503e-06,
+        "contribution_to_alpha_drop_annual": 0.0008128607431119983
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "SMB",
+        "delta_beta": 0.20879559302395262,
+        "sample_daily_premium": -0.00016276849642004774,
+        "contribution_to_alpha_drop_daily": -3.3985344735640974e-05,
+        "contribution_to_alpha_drop_annual": -0.008666262907588448
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "HML",
+        "delta_beta": -0.004450726989543705,
+        "sample_daily_premium": 0.00037167859984089095,
+        "contribution_to_alpha_drop_daily": -1.654239975747668e-06,
+        "contribution_to_alpha_drop_annual": -0.0004218311938156553
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "factor": "Mom",
+        "delta_beta": 0.005834285212738588,
+        "sample_daily_premium": 0.0007818615751789977,
+        "contribution_to_alpha_drop_daily": 4.561603426475326e-06,
+        "contribution_to_alpha_drop_annual": 0.001163208873751208
+      }
+    ],
+    "alpha_attribution_checks": [
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "actual_alpha_drop_daily": 0.00014435027415621353,
+        "explained_alpha_drop_daily": 0.00014435027415634125,
+        "residual": -1.2771901591879242e-16
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "actual_alpha_drop_daily": 0.00029337128113602343,
+        "explained_alpha_drop_daily": 0.0002933712811365472,
+        "residual": -5.237780695277472e-16
+      },
+      {
+        "fund": "FUND1",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "actual_alpha_drop_daily": 0.00043772155529223696,
+        "explained_alpha_drop_daily": 0.00043772155529288846,
+        "residual": -6.514970854465396e-16
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "FF3",
+        "actual_alpha_drop_daily": -3.223943778817045e-05,
+        "explained_alpha_drop_daily": -3.2239437788110885e-05,
+        "residual": -5.95633568509224e-17
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "FF3",
+        "later_model": "Carhart4",
+        "actual_alpha_drop_daily": 4.349145691665175e-06,
+        "explained_alpha_drop_daily": 4.349145691872069e-06,
+        "residual": -2.0689372659749364e-16
+      },
+      {
+        "fund": "FUND2",
+        "earlier_model": "CAPM",
+        "later_model": "Carhart4",
+        "actual_alpha_drop_daily": -2.7890292096505274e-05,
+        "explained_alpha_drop_daily": -2.7890292096238817e-05,
+        "residual": -2.664562364154688e-16
+      }
+    ]
+  }
+}

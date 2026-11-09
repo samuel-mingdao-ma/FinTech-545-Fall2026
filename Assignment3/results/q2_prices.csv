@@ -1,0 +1,5 @@
+option,n,no_dividend_value,with_dividend_value,no_dividend_method,with_dividend_method,pv_dividend_gbsm,tree_minus_pv_gbsm
+EuropeanCall,500,3.922268008431505,3.176278725552066,GBSM,non-recombining cash-dividend CRR tree,3.0722931897598365,0.10398553579222947
+AmericanCall,500,3.9240694566022665,3.4694525884962055,CRR tree,non-recombining cash-dividend CRR tree,,
+EuropeanPut,500,4.309829868098319,5.285959661211527,GBSM,non-recombining cash-dividend CRR tree,5.1819741254214975,0.10398553579002989
+AmericanPut,500,4.439415359132902,5.371403408627196,CRR tree,non-recombining cash-dividend CRR tree,,

@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-11-09T17:14:56.757749+00:00",
+  "origin": "AI-assisted analytical prediction draft; chronology is not verified and this is not an unaided student prediction",
+  "predictions": {
+    "a": {
+      "metric": "Expected absolute dollar error, with nearly delta-neutral short-gamma books also having the largest relative error",
+      "predicted_order": [
+        "ShortStraddle",
+        "HedgedShortCall",
+        "CoveredCall",
+        "RiskReversal"
+      ],
+      "reasoning": "A delta-only model omits local curvature and time decay. Order the initial concern by absolute gamma. Local negative gamma suggests understated tail loss; a locally positive-gamma risk reversal can instead make the linear estimate conservative locally, but crossing its strikes can reverse that prediction in a far tail.",
+      "local_direction": {
+        "CoveredCall": "understate from omitted short gamma",
+        "ShortStraddle": "understate from omitted short gamma",
+        "RiskReversal": "overstate locally from positive gamma; strike crossings may reverse it",
+        "HedgedShortCall": "understate from omitted short gamma"
+      }
+    },
+    "b": {
+      "flat_price_sign": {
+        "CoveredCall": "positive",
+        "ShortStraddle": "positive",
+        "RiskReversal": "positive",
+        "HedgedShortCall": "positive"
+      },
+      "expected_high_ES_VaR": [
+        "ShortStraddle",
+        "HedgedShortCall"
+      ],
+      "reasoning": "Theta suggests the flat-price sign; short convexity concentrates losses in unusually large moves, so the near-delta-neutral short-gamma books should have a non-Normal tail ratio."
+    },
+    "theta_units": "Dollar change per model year; divide by255 for one trading day"
+  }
+}

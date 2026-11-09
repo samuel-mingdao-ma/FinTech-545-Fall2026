@@ -1,0 +1,9 @@
+{
+  "origin": "Retrospective AI-assisted review after fitted results were available",
+  "original_draft_file": "q4_predictions.json",
+  "putw_weight_range": [
+    0.5,
+    0.9
+  ],
+  "text": "Retrospective AI-assisted illustrative draft: no authenticated student pre-fit prediction was supplied. PUTW has annual sample Sharpe 0.7905. For the requested pre-optimization economic judgment, an illustrative expectation is roughly 50%-90% PUTW (a majority holding) in the long-only tangency portfolio. Its regular option premium and strong sample risk-adjusted return give a mean-variance objective reasons to favor a large allocation, while asset covariances can shift the weight. This illustrative range was added during review after the fitted results were available. Its negatively skewed loss observations suggest historical 1% ES will exceed a matched Normal ES. This draft does not establish what the student predicted before fitting."
+}

@@ -1,0 +1,1089 @@
+{
+  "parameters": {
+    "spot": 99.12,
+    "rate": 0.0425,
+    "trading_days": 255,
+    "horizon_days": 10,
+    "paths": 1000000,
+    "seed": 545,
+    "return_forecast_mean": 0.0,
+    "fixed_IV": true,
+    "theta_units": "dollars per model year",
+    "option_contract_multiplier": 1
+  },
+  "moments": {
+    "n": 500,
+    "mean": 0.0003214030835291255,
+    "variance": 0.0002780317437108165,
+    "sd": 0.016674283903988694,
+    "skewness": 0.01905810779520306,
+    "excess_kurtosis": 2.4273908446344024
+  },
+  "distribution_fits": [
+    {
+      "family": "normal",
+      "mu": 0.0003214030835291255,
+      "sigma": 0.016657601274595178,
+      "ll": 1337.97505026089,
+      "AICc": -2671.9259556525644,
+      "BIC": -2663.5208843249357
+    },
+    {
+      "family": "t",
+      "mu": 1.1816709447178893e-06,
+      "scale": 0.013506186025001327,
+      "nu": 5.789180927364093,
+      "ll": 1353.1985217754154,
+      "AICc": -2700.3486564540567,
+      "BIC": -2687.753219255564
+    }
+  ],
+  "selected_family_AICc": "t",
+  "book_greeks": [
+    {
+      "Portfolio": "CoveredCall",
+      "price": 9744.780576671694,
+      "delta": 69.91605356191633,
+      "gamma": -3.792522114471139,
+      "theta": 1477.7763811962159,
+      "vega": -1183.5743563595624,
+      "dollar_delta": 6930.079229057147,
+      "theta_per_trading_day": 5.795201494887121
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "price": -788.4393935975347,
+      "delta": -0.8888438644682921,
+      "gamma": -8.092138067165523,
+      "theta": 3313.354939770981,
+      "vega": -2712.469996215349,
+      "dollar_delta": -88.10220384609711,
+      "theta_per_trading_day": 12.993548783415612
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "price": -65.79304919804017,
+      "delta": 61.388729470732486,
+      "gamma": 0.5359619984786717,
+      "theta": 18.588444852866132,
+      "vega": -20.942103298370284,
+      "dollar_delta": 6084.850865139004,
+      "theta_per_trading_day": 0.07289586216810248
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "price": 4580.842699164644,
+      "delta": -0.4444219322341496,
+      "gamma": -4.046069033582762,
+      "theta": 1868.1176217139357,
+      "vega": -1356.2349981076745,
+      "dollar_delta": -44.05110192304891,
+      "theta_per_trading_day": 7.325951457701708
+    }
+  ],
+  "delta_normal_risk": [
+    {
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "mean_PnL": 0.0,
+      "sd_PnL": 365.41417598441103,
+      "VaR": 601.0528327074422,
+      "ES": 753.744500847817
+    },
+    {
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "mean_PnL": 0.0,
+      "sd_PnL": 365.41417598441103,
+      "VaR": 850.0804914457202,
+      "ES": 973.907058149598
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "mean_PnL": 0.0,
+      "sd_PnL": 4.645516040544925,
+      "VaR": 7.641193908351566,
+      "ES": 9.582365434313202
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "mean_PnL": 0.0,
+      "sd_PnL": 4.645516040544925,
+      "VaR": 10.807086364744311,
+      "ES": 12.381295412104889
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "mean_PnL": 0.0,
+      "sd_PnL": 320.8463700602324,
+      "VaR": 527.7453154877877,
+      "ES": 661.8139167655082
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "mean_PnL": 0.0,
+      "sd_PnL": 320.8463700602324,
+      "VaR": 746.4002708833425,
+      "ES": 855.124308030865
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "mean_PnL": 0.0,
+      "sd_PnL": 2.3227580202724813,
+      "VaR": 3.8205969541758136,
+      "ES": 4.791182717156639
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "mean_PnL": 0.0,
+      "sd_PnL": 2.3227580202724813,
+      "VaR": 5.403543182372199,
+      "ES": 6.190647706052494
+    }
+  ],
+  "full_revaluation_risk": [
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "mean_PnL": 7.007621193059128,
+      "VaR": 677.8798328384582,
+      "ES": 873.464192364915,
+      "ES_VaR_ratio": 1.288523643943639
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "mean_PnL": 7.007621193059128,
+      "VaR": 996.5889375678889,
+      "ES": 1153.7200730682675,
+      "ES_VaR_ratio": 1.1576689541465783
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "mean_PnL": 19.77052224610546,
+      "VaR": 316.5633235165494,
+      "ES": 486.89541354258,
+      "ES_VaR_ratio": 1.538066406853117
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "mean_PnL": 19.77052224610546,
+      "VaR": 592.5335693128291,
+      "ES": 751.4193842594943,
+      "ES_VaR_ratio": 1.2681465205944833
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "mean_PnL": 9.14271275989202,
+      "VaR": 489.97797928372177,
+      "ES": 641.0213635114434,
+      "ES_VaR_ratio": 1.3082656580781968
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "mean_PnL": 9.14271275989202,
+      "VaR": 734.972189493893,
+      "ES": 869.13551275547,
+      "ES_VaR_ratio": 1.1825420406096765
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "mean_PnL": 18.18394543225786,
+      "VaR": 149.98297744906995,
+      "ES": 235.14902246208484,
+      "ES_VaR_ratio": 1.5678380737703044
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "mean_PnL": 18.18394543225786,
+      "VaR": 287.96810034720966,
+      "ES": 367.41100782054207,
+      "ES_VaR_ratio": 1.2758739852697096
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "mean_PnL": 7.129616244629271,
+      "VaR": 677.97980299548,
+      "ES": 897.1313219385004,
+      "ES_VaR_ratio": 1.323241957909005
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "mean_PnL": 7.129616244629271,
+      "VaR": 1032.6347580038582,
+      "ES": 1228.6409590406847,
+      "ES_VaR_ratio": 1.1898117408092264
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "mean_PnL": 20.04411874405306,
+      "VaR": 323.6177790349052,
+      "ES": 522.242176883955,
+      "ES_VaR_ratio": 1.6137623168955324
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "mean_PnL": 20.04411874405306,
+      "VaR": 639.8621161056487,
+      "ES": 847.0654287788728,
+      "ES_VaR_ratio": 1.3238249420583175
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "mean_PnL": 9.011590684100641,
+      "VaR": 490.0501155785993,
+      "ES": 661.1713468348415,
+      "ES_VaR_ratio": 1.349191288434246
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "mean_PnL": 9.011590684100641,
+      "VaR": 764.5827898285288,
+      "ES": 935.8972717885321,
+      "ES_VaR_ratio": 1.2240626969885413
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "mean_PnL": 18.32074368123166,
+      "VaR": 153.5102052082466,
+      "ES": 252.8224041327724,
+      "ES_VaR_ratio": 1.646941998349897
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "mean_PnL": 18.32074368123166,
+      "VaR": 311.6323737436187,
+      "ES": 415.23403008023126,
+      "ES_VaR_ratio": 1.3324483111046932
+    }
+  ],
+  "approximation_risk": [
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": 0.746515925520635,
+      "VaR": 584.9304264392813,
+      "ES": 724.4247389109084
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -51.05317073763835,
+      "VaR": 717.6554279214648,
+      "ES": 933.7840945716441
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 6.898844211232867,
+      "VaR": 659.7034129725936,
+      "ES": 875.8320796227729
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": 0.746515925520635,
+      "VaR": 812.1682087457585,
+      "ES": 922.7032268878731
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -51.05317073763835,
+      "VaR": 1068.0481749020848,
+      "ES": 1256.7430700735083
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 6.898844211232867,
+      "VaR": 1010.0961599532136,
+      "ES": 1198.791055124637
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": -0.009490468444979805,
+      "VaR": 7.838271126007411,
+      "ES": 9.979138381162745
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -110.53494125349533,
+      "VaR": 425.3691947120089,
+      "ES": 625.8552405023421
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 19.400546580660755,
+      "VaR": 295.4337068778528,
+      "ES": 495.91975266818605
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": -0.009490468444979805,
+      "VaR": 11.32476535654896,
+      "ES": 13.101998777906951
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -110.53494125349533,
+      "VaR": 744.7018266842738,
+      "ES": 963.758486051137
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 19.400546580660755,
+      "VaR": 614.7663388501177,
+      "ES": 833.8229982169809
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": 0.6554669759327251,
+      "VaR": 513.5892814099078,
+      "ES": 636.0701448848888
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": 7.975836573415518,
+      "VaR": 494.8324871459947,
+      "ES": 606.4833276499991
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 8.70479519509655,
+      "VaR": 494.1035285243137,
+      "ES": 605.754369028318
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": 0.6554669759327251,
+      "VaR": 713.1119665853206,
+      "ES": 810.1655612902845
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": 7.975836573415518,
+      "VaR": 676.9508226572452,
+      "ES": 762.9588063864331
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 8.70479519509655,
+      "VaR": 676.2218640355642,
+      "ES": 762.2298477647521
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": -0.004745234222489941,
+      "VaR": 3.919135563003737,
+      "ES": 4.9895691905814115
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -55.26747062674767,
+      "VaR": 212.68459735600442,
+      "ES": 312.92762025117105
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 17.992043950269412,
+      "VaR": 139.42508277898733,
+      "ES": 239.66810567415402
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": -0.004745234222489941,
+      "VaR": 5.6623826782745255,
+      "ES": 6.550999388953529
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -55.26747062674767,
+      "VaR": 372.35091334213695,
+      "ES": 481.8792430255685
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 17.992043950269412,
+      "VaR": 299.09139876511983,
+      "ES": 408.6197284485515
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": 0.7630672415477722,
+      "VaR": 585.0026627940933,
+      "ES": 741.1103161657334
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -51.27716913854723,
+      "VaR": 717.7656515362644,
+      "ES": 962.4950565120716
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 6.67484581032399,
+      "VaR": 659.8136365873931,
+      "ES": 904.5430415632004
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": 0.7630672415477722,
+      "VaR": 837.6049905755009,
+      "ES": 975.2788351312374
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -51.27716913854723,
+      "VaR": 1109.7640691643721,
+      "ES": 1351.908883108527
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 6.67484581032399,
+      "VaR": 1051.812054215501,
+      "ES": 1293.956868159656
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": -0.009700885580245715,
+      "VaR": 7.803605916987616,
+      "ES": 10.131227274489593
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -111.04841473481588,
+      "VaR": 432.57909271079154,
+      "ES": 670.6590965758788
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 18.88707309934023,
+      "VaR": 302.64360487663544,
+      "ES": 540.7236087417226
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": -0.009700885580245715,
+      "VaR": 11.5582844434556,
+      "ES": 13.687777120265242
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -111.04841473481588,
+      "VaR": 798.4863398728123,
+      "ES": 1098.6386542655412
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 18.88707309934023,
+      "VaR": 668.5508520386562,
+      "ES": 968.7031664313853
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": 0.669999607713418,
+      "VaR": 513.6527074446678,
+      "ES": 650.7206626984029
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": 8.024363867094308,
+      "VaR": 494.8912801302317,
+      "ES": 619.4345201249406
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 8.75332248877534,
+      "VaR": 494.16232150855063,
+      "ES": 618.7055615032596
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": 0.669999607713418,
+      "VaR": 735.4463467283479,
+      "ES": 856.3287759853594
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": 8.024363867094308,
+      "VaR": 696.9846267272909,
+      "ES": 803.103142196491
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 8.75332248877534,
+      "VaR": 696.2556681056099,
+      "ES": 802.37418357481
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_only",
+      "alpha": 0.05,
+      "mean_PnL": -0.004850442790122896,
+      "VaR": 3.9018029584938394,
+      "ES": 5.065613637244837
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.05,
+      "mean_PnL": -55.52420736740794,
+      "VaR": 216.28954635539583,
+      "ES": 335.3295482879394
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.05,
+      "mean_PnL": 17.73530720960915,
+      "VaR": 143.03003177837874,
+      "ES": 262.0700337109223
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_only",
+      "alpha": 0.01,
+      "mean_PnL": -0.004850442790122896,
+      "VaR": 5.779142221727846,
+      "ES": 6.843888560132677
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma",
+      "alpha": 0.01,
+      "mean_PnL": -55.52420736740794,
+      "VaR": 399.2431699364061,
+      "ES": 549.3193271327706
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "approximation": "delta_gamma_theta",
+      "alpha": 0.01,
+      "mean_PnL": 17.73530720960915,
+      "VaR": 325.983655359389,
+      "ES": 476.05981255575364
+    }
+  ],
+  "flat_price_pnl": [
+    {
+      "Portfolio": "CoveredCall",
+      "current_value": 9744.780576671694,
+      "flat_price_PnL": 60.553437207890966,
+      "theta_linear_PnL": 57.95201494887121
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "current_value": -788.4393935975347,
+      "flat_price_PnL": 143.05583594215614,
+      "theta_linear_PnL": 129.9354878341561
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "current_value": -65.79304919804017,
+      "flat_price_PnL": 3.728684690916154,
+      "theta_linear_PnL": 0.7289586216810248
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "current_value": 4580.842699164644,
+      "flat_price_PnL": 79.82660228028271,
+      "theta_linear_PnL": 73.25951457701709
+    }
+  ],
+  "method_comparison": [
+    {
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "delta_normal_VaR": 601.0528327074422,
+      "normal_full_VaR": 677.8798328384582,
+      "t_full_VaR": 677.97980299548,
+      "delta_normal_ES": 753.744500847817,
+      "normal_full_ES": 873.464192364915,
+      "t_full_ES": 897.1313219385004,
+      "normal_VaR_minus_delta_normal": 76.827000131016,
+      "t_minus_normal_VaR": 0.09997015702174394,
+      "t_minus_normal_ES": 23.667129573585385
+    },
+    {
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "delta_normal_VaR": 850.0804914457202,
+      "normal_full_VaR": 996.5889375678889,
+      "t_full_VaR": 1032.6347580038582,
+      "delta_normal_ES": 973.907058149598,
+      "normal_full_ES": 1153.7200730682675,
+      "t_full_ES": 1228.6409590406847,
+      "normal_VaR_minus_delta_normal": 146.50844612216872,
+      "t_minus_normal_VaR": 36.04582043596929,
+      "t_minus_normal_ES": 74.92088597241718
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "delta_normal_VaR": 7.641193908351566,
+      "normal_full_VaR": 316.5633235165494,
+      "t_full_VaR": 323.6177790349052,
+      "delta_normal_ES": 9.582365434313202,
+      "normal_full_ES": 486.89541354258,
+      "t_full_ES": 522.242176883955,
+      "normal_VaR_minus_delta_normal": 308.92212960819785,
+      "t_minus_normal_VaR": 7.05445551835578,
+      "t_minus_normal_ES": 35.34676334137504
+    },
+    {
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "delta_normal_VaR": 10.807086364744311,
+      "normal_full_VaR": 592.5335693128291,
+      "t_full_VaR": 639.8621161056487,
+      "delta_normal_ES": 12.381295412104889,
+      "normal_full_ES": 751.4193842594943,
+      "t_full_ES": 847.0654287788728,
+      "normal_VaR_minus_delta_normal": 581.7264829480847,
+      "t_minus_normal_VaR": 47.32854679281968,
+      "t_minus_normal_ES": 95.6460445193785
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "delta_normal_VaR": 527.7453154877877,
+      "normal_full_VaR": 489.97797928372177,
+      "t_full_VaR": 490.0501155785993,
+      "delta_normal_ES": 661.8139167655082,
+      "normal_full_ES": 641.0213635114434,
+      "t_full_ES": 661.1713468348415,
+      "normal_VaR_minus_delta_normal": -37.76733620406594,
+      "t_minus_normal_VaR": 0.0721362948775095,
+      "t_minus_normal_ES": 20.149983323398146
+    },
+    {
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "delta_normal_VaR": 746.4002708833425,
+      "normal_full_VaR": 734.972189493893,
+      "t_full_VaR": 764.5827898285288,
+      "delta_normal_ES": 855.124308030865,
+      "normal_full_ES": 869.13551275547,
+      "t_full_ES": 935.8972717885321,
+      "normal_VaR_minus_delta_normal": -11.428081389449517,
+      "t_minus_normal_VaR": 29.61060033463582,
+      "t_minus_normal_ES": 66.76175903306205
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "delta_normal_VaR": 3.8205969541758136,
+      "normal_full_VaR": 149.98297744906995,
+      "t_full_VaR": 153.5102052082466,
+      "delta_normal_ES": 4.791182717156639,
+      "normal_full_ES": 235.14902246208484,
+      "t_full_ES": 252.8224041327724,
+      "normal_VaR_minus_delta_normal": 146.16238049489414,
+      "t_minus_normal_VaR": 3.5272277591766397,
+      "t_minus_normal_ES": 17.673381670687547
+    },
+    {
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "delta_normal_VaR": 5.403543182372199,
+      "normal_full_VaR": 287.96810034720966,
+      "t_full_VaR": 311.6323737436187,
+      "delta_normal_ES": 6.190647706052494,
+      "normal_full_ES": 367.41100782054207,
+      "t_full_ES": 415.23403008023126,
+      "normal_VaR_minus_delta_normal": 282.5645571648375,
+      "t_minus_normal_VaR": 23.664273396409044,
+      "t_minus_normal_ES": 47.823022259689196
+    }
+  ],
+  "mean_pnl_checks": [
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "empirical_mean_PnL": 7.007621193059128,
+      "empirical_mean_SE": 0.374509224482104,
+      "second_order_expected_PnL": 6.1927645511077,
+      "mean_delta_gamma_theta": 6.898844211232867
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "empirical_mean_PnL": 19.77052224610546,
+      "empirical_mean_SE": 0.16143765064858617,
+      "second_order_expected_PnL": 19.49631626716281,
+      "mean_delta_gamma_theta": 19.400546580660755
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "empirical_mean_PnL": 9.14271275989202,
+      "empirical_mean_SE": 0.31730838221911306,
+      "second_order_expected_PnL": 8.043613736569325,
+      "mean_delta_gamma_theta": 8.70479519509655
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "empirical_mean_PnL": 18.18394543225786,
+      "empirical_mean_SE": 0.08071882532429309,
+      "second_order_expected_PnL": 18.03992879352044,
+      "mean_delta_gamma_theta": 17.992043950269412
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "empirical_mean_PnL": 7.129616244629271,
+      "empirical_mean_SE": 0.37531392228055066,
+      "second_order_expected_PnL": 5.964066319675226,
+      "mean_delta_gamma_theta": 6.67484581032399
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "empirical_mean_PnL": 20.04411874405306,
+      "empirical_mean_SE": 0.16945375410259572,
+      "second_order_expected_PnL": 19.008340822693654,
+      "mean_delta_gamma_theta": 18.88707309934023
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "empirical_mean_PnL": 9.011590684100641,
+      "empirical_mean_SE": 0.3204423104786917,
+      "second_order_expected_PnL": 8.075933537869727,
+      "mean_delta_gamma_theta": 8.75332248877534
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "empirical_mean_PnL": 18.32074368123166,
+      "empirical_mean_SE": 0.08472687705129786,
+      "second_order_expected_PnL": 17.79594107128586,
+      "mean_delta_gamma_theta": 17.73530720960915
+    }
+  ],
+  "terminal_price_checks": [
+    {
+      "family": "normal",
+      "paths": 1000000,
+      "invalid_paths": 0,
+      "mean_terminal_price": 99.13067731783316,
+      "terminal_price_sd": 5.226534411553216,
+      "daily_simulated_mean": 1.0652774179783061e-05,
+      "daily_simulated_sd": 0.01665525861169311
+    },
+    {
+      "family": "t",
+      "paths": 1000000,
+      "invalid_paths": 0,
+      "mean_terminal_price": 99.13091404910135,
+      "terminal_price_sd": 5.2386555257807075,
+      "daily_simulated_mean": 1.0850653340122706e-05,
+      "daily_simulated_sd": 0.016692270160434987
+    }
+  ],
+  "monte_carlo_errors": [
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "VaR_MCSE": 1.0355575035521554,
+      "ES_MCSE": 1.1283161391354664,
+      "mean_PnL_MCSE": 0.374509224482104
+    },
+    {
+      "family": "normal",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.5789465812369237,
+      "ES_MCSE": 2.2750770885831306,
+      "mean_PnL_MCSE": 0.374509224482104
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.6785882280053012,
+      "ES_MCSE": 1.0055829252486341,
+      "mean_PnL_MCSE": 0.16143765064858617
+    },
+    {
+      "family": "normal",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.6946806481696965,
+      "ES_MCSE": 2.2961447002442,
+      "mean_PnL_MCSE": 0.16143765064858617
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.7474276028265622,
+      "ES_MCSE": 0.8988461773618129,
+      "mean_PnL_MCSE": 0.31730838221911306
+    },
+    {
+      "family": "normal",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.288771932349896,
+      "ES_MCSE": 1.9741662853552733,
+      "mean_PnL_MCSE": 0.31730838221911306
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.33929411400266024,
+      "ES_MCSE": 0.5027914626243157,
+      "mean_PnL_MCSE": 0.08071882532429309
+    },
+    {
+      "family": "normal",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "VaR_MCSE": 0.8473403240848263,
+      "ES_MCSE": 1.148072350122098,
+      "mean_PnL_MCSE": 0.08071882532429309
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.9619609511179772,
+      "ES_MCSE": 1.2122429555025562,
+      "mean_PnL_MCSE": 0.37531392228055066
+    },
+    {
+      "family": "t",
+      "Portfolio": "CoveredCall",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.5226721691278067,
+      "ES_MCSE": 2.412407797263708,
+      "mean_PnL_MCSE": 0.37531392228055066
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.751751735950062,
+      "ES_MCSE": 1.1485403199839879,
+      "mean_PnL_MCSE": 0.16945375410259572
+    },
+    {
+      "family": "t",
+      "Portfolio": "ShortStraddle",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.9358746542749814,
+      "ES_MCSE": 2.986618890860848,
+      "mean_PnL_MCSE": 0.16945375410259572
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.6941669819990042,
+      "ES_MCSE": 0.9729373036049047,
+      "mean_PnL_MCSE": 0.3204423104786917
+    },
+    {
+      "family": "t",
+      "Portfolio": "RiskReversal",
+      "alpha": 0.01,
+      "VaR_MCSE": 1.2589661749311272,
+      "ES_MCSE": 2.166282551659001,
+      "mean_PnL_MCSE": 0.3204423104786917
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.05,
+      "VaR_MCSE": 0.37587586797498407,
+      "ES_MCSE": 0.5742701599919917,
+      "mean_PnL_MCSE": 0.08472687705129786
+    },
+    {
+      "family": "t",
+      "Portfolio": "HedgedShortCall",
+      "alpha": 0.01,
+      "VaR_MCSE": 0.9679373271375257,
+      "ES_MCSE": 1.4933094454304254,
+      "mean_PnL_MCSE": 0.08472687705129786
+    }
+  ],
+  "figures": [
+    "q3_pnl_curves.png"
+  ],
+  "conventions": {
+    "moments": "sample variance; population standardized skewness/excess kurtosis",
+    "delta_normal_sigma": "sample standard deviation",
+    "normal_fit_sigma": "MLE standard deviation",
+    "historical_tail": "course floor/ceil order average and threshold-mean ES",
+    "common_random_numbers": true,
+    "model_limit": "Unbounded Normal/t arithmetic returns can theoretically be <=-100%; any observed such path raises rather than silently truncating"
+  }
+}

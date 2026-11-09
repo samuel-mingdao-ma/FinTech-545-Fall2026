@@ -1,0 +1,317 @@
+{
+  "inputs": {
+    "spot": 48.5,
+    "strike": 50.0,
+    "maturity": 0.5,
+    "risk_free_rate": 0.045,
+    "volatility": 0.3,
+    "dividends": [
+      {
+        "time": 0.1,
+        "amount": 0.25
+      },
+      {
+        "time": 0.4,
+        "amount": 1.5
+      }
+    ]
+  },
+  "tree_n": 500,
+  "dividends_present_value": 1.722119075994844,
+  "dividend_conditions": [
+    {
+      "time": 0.1,
+      "dividend": 0.25,
+      "strike_interest": 0.8919483820849616,
+      "condition_holds": false
+    },
+    {
+      "time": 0.4,
+      "dividend": 1.5,
+      "strike_interest": 0.22449450852147224,
+      "condition_holds": true
+    }
+  ],
+  "prices": {
+    "Call": {
+      "european_no_div": 3.922268008431505,
+      "european_no_div_tree": 3.924069456602276,
+      "american_no_div": 3.9240694566022665,
+      "european_div": 3.176278725552066,
+      "american_div": 3.4694525884962055,
+      "pv_dividend_gbsm": 3.0722931897598365
+    },
+    "Put": {
+      "european_no_div": 4.309829868098319,
+      "european_no_div_tree": 4.31163131626687,
+      "american_no_div": 4.439415359132902,
+      "european_div": 5.285959661211527,
+      "american_div": 5.371403408627196,
+      "pv_dividend_gbsm": 5.1819741254214975
+    }
+  },
+  "exercise_premiums": [
+    {
+      "kind": "Call",
+      "dividends": "none",
+      "n": 500,
+      "american_value": 3.9240694566022665,
+      "european_value_same_tree": 3.924069456602276,
+      "early_exercise_premium": 0.0,
+      "european_gbsm_reference": 3.922268008431505,
+      "american_minus_gbsm": 0.0018014481707613328
+    },
+    {
+      "kind": "Call",
+      "dividends": "two cash payments",
+      "n": 500,
+      "american_value": 3.4694525884962055,
+      "european_value_same_tree": 3.176278725552066,
+      "early_exercise_premium": 0.2931738629441396,
+      "european_gbsm_reference": null,
+      "american_minus_gbsm": null
+    },
+    {
+      "kind": "Put",
+      "dividends": "none",
+      "n": 500,
+      "american_value": 4.439415359132902,
+      "european_value_same_tree": 4.31163131626687,
+      "early_exercise_premium": 0.12778404286603262,
+      "european_gbsm_reference": 4.309829868098319,
+      "american_minus_gbsm": 0.12958549103458328
+    },
+    {
+      "kind": "Put",
+      "dividends": "two cash payments",
+      "n": 500,
+      "american_value": 5.371403408627196,
+      "european_value_same_tree": 5.285959661211527,
+      "early_exercise_premium": 0.08544374741566862,
+      "european_gbsm_reference": null,
+      "american_minus_gbsm": null
+    }
+  ],
+  "central_difference_greeks": [
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 1.0,
+      "required_bump": true,
+      "delta": 0.5024116273910206,
+      "gamma": 0.04087539888105196
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 0.1,
+      "required_bump": true,
+      "delta": 0.5051785829830657,
+      "gamma": 0.0003493200546156316
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 0.01,
+      "required_bump": true,
+      "delta": 0.5051891251693474,
+      "gamma": 0.00024851082525145785
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 0.001,
+      "required_bump": true,
+      "delta": 0.5051893813468045,
+      "gamma": -4.440892098500626e-10
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 0.0001,
+      "required_bump": false,
+      "delta": 0.505189381354576,
+      "gamma": 0.0
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "bump": 1e-05,
+      "required_bump": false,
+      "delta": 0.5051893815277708,
+      "gamma": 0.0
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 1.0,
+      "required_bump": true,
+      "delta": -0.5473533340642085,
+      "gamma": 0.039125769488709494
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 0.1,
+      "required_bump": true,
+      "delta": -0.548769452020732,
+      "gamma": 0.00611759660706923
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 0.01,
+      "required_bump": true,
+      "delta": -0.5487627009556739,
+      "gamma": 0.005887451273167699
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 0.001,
+      "required_bump": true,
+      "delta": -0.5487628760438845,
+      "gamma": 0.006381422501533507
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 0.0001,
+      "required_bump": false,
+      "delta": -0.5487628004186007,
+      "gamma": 0.008700240528014547
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "bump": 1e-05,
+      "required_bump": false,
+      "delta": -0.5487628198075356,
+      "gamma": 0.06656009077232737
+    }
+  ],
+  "dividend_sensitivities": [
+    {
+      "option": "EuropeanCall",
+      "n": 500,
+      "dividend_number": 1,
+      "dividend_time": 0.1,
+      "dividend_amount": 0.25,
+      "bump": 0.001,
+      "dV_dDividend": -0.44106009786260003
+    },
+    {
+      "option": "EuropeanCall",
+      "n": 500,
+      "dividend_number": 2,
+      "dividend_time": 0.4,
+      "dividend_amount": 1.5,
+      "bump": 0.001,
+      "dV_dDividend": -0.38633660051612395
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "dividend_number": 1,
+      "dividend_time": 0.1,
+      "dividend_amount": 0.25,
+      "bump": 0.001,
+      "dV_dDividend": -0.4850598308050458
+    },
+    {
+      "option": "AmericanCall",
+      "n": 500,
+      "dividend_number": 2,
+      "dividend_time": 0.4,
+      "dividend_amount": 1.5,
+      "bump": 0.001,
+      "dV_dDividend": -0.10549506538382047
+    },
+    {
+      "option": "EuropeanPut",
+      "n": 500,
+      "dividend_number": 1,
+      "dividend_time": 0.1,
+      "dividend_amount": 0.25,
+      "bump": 0.001,
+      "dV_dDividend": 0.5544500119643025
+    },
+    {
+      "option": "EuropeanPut",
+      "n": 500,
+      "dividend_number": 2,
+      "dividend_time": 0.4,
+      "dividend_amount": 1.5,
+      "bump": 0.001,
+      "dV_dDividend": 0.5958244318384764
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "dividend_number": 1,
+      "dividend_time": 0.1,
+      "dividend_amount": 0.25,
+      "bump": 0.001,
+      "dV_dDividend": 0.5632468565068827
+    },
+    {
+      "option": "AmericanPut",
+      "n": 500,
+      "dividend_number": 2,
+      "dividend_time": 0.4,
+      "dividend_amount": 1.5,
+      "bump": 0.001,
+      "dV_dDividend": 0.605017599334623
+    }
+  ],
+  "second_dividend_exercise_boundary": 52.7239079901561,
+  "second_dividend_continuous_boundary_reference": 52.71684732698782,
+  "boundary_remaining_steps": 100,
+  "european_parity_error": 2.2031265700661606e-12,
+  "convergence_last_rows": [
+    {
+      "n": 400,
+      "american_call_no_dividend": 3.924661065323808,
+      "american_call_with_dividend": 3.467611765560493,
+      "european_call_with_dividend": 3.1740610733382,
+      "american_put_no_dividend": 4.440088734138542,
+      "american_put_with_dividend": 5.369522728651591,
+      "european_put_with_dividend": 5.2837420089973675
+    },
+    {
+      "n": 405,
+      "american_call_no_dividend": 3.9207152152579603,
+      "american_call_with_dividend": 3.4690184200654217,
+      "european_call_with_dividend": 3.1765067509155616,
+      "american_put_no_dividend": 4.4367904997638865,
+      "american_put_with_dividend": 5.371743746434743,
+      "european_put_with_dividend": 5.28618768657972
+    },
+    {
+      "n": 500,
+      "american_call_no_dividend": 3.9240694566022665,
+      "american_call_with_dividend": 3.4694525884962055,
+      "european_call_with_dividend": 3.176278725552066,
+      "american_put_no_dividend": 4.439415359132902,
+      "american_put_with_dividend": 5.371403408627196,
+      "european_put_with_dividend": 5.285959661211527
+    },
+    {
+      "n": 505,
+      "american_call_no_dividend": 3.9218043696018765,
+      "american_call_with_dividend": 3.4676847169375202,
+      "european_call_with_dividend": 3.1741208846557143,
+      "american_put_no_dividend": 4.437782294709118,
+      "american_put_with_dividend": 5.3694896960501355,
+      "european_put_with_dividend": 5.283801820317828
+    }
+  ],
+  "conventions": {
+    "tree": "Cash-dividend non-recombining CRR; recombination only within intervals",
+    "exercise_timing": "Compare before-dividend exercise with ex-dividend continuation; continuation also allows immediate post-dividend exercise",
+    "low_price_policy": "Stock equity is absorbing at zero and cash dividends cannot exceed it; only negligible-probability extreme nodes affected here",
+    "premiums": "Use American minus European on the same lattice to remove GBSM-vs-tree discretization error",
+    "greeks": "Central finite differences on a FIXED N grid; extra 1e-4 and 1e-5 bumps are diagnostic",
+    "dividend_sensitivity": "Central amount differences, primary bump0.001; bump0.01 exported as robustness check"
+  }
+}

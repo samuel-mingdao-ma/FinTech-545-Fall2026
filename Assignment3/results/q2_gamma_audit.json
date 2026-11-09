@@ -1,0 +1,46 @@
+{
+  "inputs": {
+    "option": "AmericanPut",
+    "spot": 48.5,
+    "strike": 50.0,
+    "maturity": 0.5,
+    "risk_free_rate": 0.045,
+    "volatility": 0.3,
+    "n": 500,
+    "bump": 1e-05,
+    "dividends": [
+      {
+        "time": 0.1,
+        "amount": 0.25
+      },
+      {
+        "time": 0.4,
+        "amount": 1.5
+      }
+    ]
+  },
+  "method": "Independent CRR recursion of baseline values and endpoint first divided differences",
+  "scope": "Same finite cash-dividend lattice and central bump as the saved Q2 result; not a smooth-model gamma",
+  "saved_price": 5.371403408627196,
+  "stable_price": 5.371403408627196,
+  "price_absolute_error": 0.0,
+  "price_absolute_tolerance": 1e-10,
+  "saved_gamma": 0.06656009077232737,
+  "stable_gamma": 0.06655215023521066,
+  "stable_delta": -0.5487628195800268,
+  "d_minus": 0.548763152340778,
+  "d_plus": -0.5487624868192756,
+  "gamma_difference": -7.940537116710167e-06,
+  "gamma_relative_difference": 0.00011929877235100583,
+  "gamma_relative_tolerance": 0.005,
+  "minimum_substantive_gamma": 0.01,
+  "runtime_seconds": 5.45719033399655,
+  "checks": {
+    "stable_values_finite": true,
+    "baseline_price_matches": true,
+    "gamma_agrees": true,
+    "gamma_positive_and_substantive": true
+  },
+  "passed": true,
+  "interpretation": "A substantive positive gamma survives direct propagation of endpoint differences, supporting finite-lattice kink crossings as the predominant source of the small-bump gamma. Ordinary root-price subtraction adds a smaller floating-point error; this audit also uses floating point."
+}

@@ -1,0 +1,3254 @@
+{
+  "passed": 410,
+  "total": 410,
+  "elapsed_seconds": 1.069498000011663,
+  "independent_MC_paths": 100000,
+  "independent_MC_seed": 105274,
+  "checks": [
+    {
+      "check": "Input manifest contains every original CSV exactly once",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: F-F_Momentum_Factor_daily.CSV",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: F-F_Research_Data_Factors_daily.CSV",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: problem1.csv",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: problem3.csv",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: problem3_portfolios.csv",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: problem4.csv",
+      "passed": true
+    },
+    {
+      "check": "Input integrity: problem5.csv",
+      "passed": true
+    },
+    {
+      "check": "Q1 all raw call/put quote rows preserved",
+      "passed": true
+    },
+    {
+      "check": "Q1 published bid/mid/ask prices preserve the source quotes",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7763568394002505e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 midpoint parity residuals",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.107298248878237e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 complete call-plus-put spread band",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.886579864025407e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 parity flags equal absolute gap versus full spread band",
+      "passed": true
+    },
+    {
+      "check": "Q1 Call K=140 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=140 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Call K=140 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=140 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.1316282072803006e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=145 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=145 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Call K=145 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=145 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.263256414560601e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=150 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=150 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Call K=150 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=150 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=155 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=155 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Call K=155 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.197442310920451e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=155 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.197442310920451e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=160 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=160 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.1316282072803006e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=160 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7763568394002505e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=160 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.263256414560601e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=165 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=165 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=165 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=165 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=170 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=170 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=170 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.014566457044566e-13,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=170 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7763568394002505e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=175 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=175 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.085620730620576e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=175 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.4868995751603507e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=175 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=180 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=180 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.730349362740526e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=180 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7763568394002505e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=180 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7533531010703882e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=185 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=185 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.042810365310288e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=185 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=185 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.9539925233402755e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=190 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=190 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=190 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.865174681370263e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=190 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.0872192862952943e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=195 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=195 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4432899320127035e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=195 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.6209256159527285e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=195 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.3306690738754696e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=200 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=200 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.5503158452884236e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=200 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.9968028886505635e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=200 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7430501486614958e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=205 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=205 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.329070518200751e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=205 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=205 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.27675647831893e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=210 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=210 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.7470027081099033e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=210 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.800116025829084e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=210 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.099120794378905e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=215 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=215 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.3487101980256284e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=215 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.942890293094024e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=215 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.049116928532385e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=220 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=220 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.0245584642661925e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=220 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7755575615628914e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=220 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.273559366969494e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=225 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Call K=225 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.0245584642661925e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=225 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.0539125955565396e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Call K=225 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4155343563970746e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=140 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=140 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7755575615628914e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=140 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.0816681711721685e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=140 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.219646771412954e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=145 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=145 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.6930901125533637e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=145 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.992007221626409e-16,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=145 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.4139358007223564e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=150 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=150 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.188694084447889e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=150 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.4980018054066022e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=150 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.3600232051658168e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=155 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=155 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.55506768257419e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=155 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.428191312579656e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=155 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.697042672001771e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=160 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=160 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.329070518200751e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=160 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.8833827526759706e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=160 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.1094237467877974e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=165 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=165 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.551914400963142e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=165 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.0880185641326534e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=165 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1302070390684094e-13,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=170 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=170 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=170 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.150013666048835e-13,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=170 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7630341631047486e-13,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=175 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=175 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.2456702336294256e-13,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=175 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.062616992290714e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=175 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.2212453270876722e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=180 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=180 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.865174681370263e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=180 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.6645352591003757e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=180 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.042810365310288e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=185 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=185 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.440892098500626e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=185 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.398081733190338e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=185 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.769962616701378e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=190 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=190 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.329070518200751e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=190 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.4868995751603507e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=190 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.6645352591003757e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=195 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=195 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.7763568394002505e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=195 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.842170943040401e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=195 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.842170943040401e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=200 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=200 bid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=200 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.552713678800501e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=200 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=205 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=205 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Put K=205 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=205 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.0658141036401503e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=210 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=210 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Put K=210 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=210 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=215 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.842170943040401e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=215 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Put K=215 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.1316282072803006e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=215 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=220 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.842170943040401e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=220 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Put K=220 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=220 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.552713678800501e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=225 no-arbitrage bounds",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 Put K=225 bid correctly unavailable",
+      "passed": true
+    },
+    {
+      "check": "Q1 Put K=225 mid independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 Put K=225 ask independent repricing",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 5e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q1 missing-IV inventory exactly matches independent bounds",
+      "passed": true,
+      "details": {
+        "expected_missing_roots": 9
+      }
+    },
+    {
+      "check": "Q1 vegas match independent price finite differences",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.451012417116544e-09,
+        "atol": 2e-07,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 per-vol-point and one-cent sensitivity units",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.005126491042233e-08,
+        "atol": 2e-07,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=140 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=145 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.367506770274758e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=150 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.6343818499726694e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=155 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.418476861114186e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=160 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.194034422677078e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=165 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.830650190776556e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=170 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.225205235136036e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=175 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.881784197001252e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=180 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.071532165918825e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=185 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.5561831257524545e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=190 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.637851296924623e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=195 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.927345865710862e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=200 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.599687380453133e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=205 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.564992910933597e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=210 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.082727195879436e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=215 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.329070518200751e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=220 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.6645352591003757e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q1 K=225 price-to-volatility translation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.329070518200751e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 dividend-interest condition values",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7755575615628914e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 dividend conditions use the stated inequality",
+      "passed": true
+    },
+    {
+      "check": "Q2 no-dividend European Call independent GBSM",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 PV-dividend European Call approximation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 no-dividend American Call independent one-dimensional CRR",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.886579864025407e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 no-dividend European Put independent GBSM",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 PV-dividend European Put approximation",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 no-dividend American Put independent one-dimensional CRR",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.9539925233402755e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 dividend European put-call parity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.2031265700661606e-12,
+        "atol": 1e-08,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q2 Call none matched-lattice exercise premium",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.325873406851315e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 Call none nonnegative exercise premium",
+      "passed": true
+    },
+    {
+      "check": "Q2 Call two cash payments matched-lattice exercise premium",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 Call two cash payments nonnegative exercise premium",
+      "passed": true
+    },
+    {
+      "check": "Q2 Put none matched-lattice exercise premium",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7755575615628914e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 Put none nonnegative exercise premium",
+      "passed": true
+    },
+    {
+      "check": "Q2 Put two cash payments matched-lattice exercise premium",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.7755575615628914e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 Put two cash payments nonnegative exercise premium",
+      "passed": true
+    },
+    {
+      "check": "Q2 convergence includes neighbouring feasible N=100 and105",
+      "passed": true
+    },
+    {
+      "check": "Q2 every convergence grid hits both dividend dates",
+      "passed": true
+    },
+    {
+      "check": "Q2 American call N=25 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.419486915845482e-14,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 American put N=25 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.3092638912203256e-14,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 American call N=100 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.5987211554602254e-14,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 American put N=100 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.0658141036401503e-14,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 American call N=105 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.412203687323199e-13,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 American put N=105 independent unbatched cash-tree recursion",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.199040866595169e-13,
+        "atol": 2e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 all eight requested fixed-grid Greek rows present",
+      "passed": true
+    },
+    {
+      "check": "Q2 four options times two dividend sensitivities present",
+      "passed": true
+    },
+    {
+      "check": "Q2 dividend 1 European derivative parity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.6679769504767137e-12,
+        "atol": 2e-07,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q2 dividend 2 European derivative parity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.700373341075647e-12,
+        "atol": 2e-07,
+        "rtol": 0.0
+      }
+    },
+    {
+      "check": "Q2 tree exercise-boundary independent continuation identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.199040866595169e-14,
+        "atol": 1e-09,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q2 continuous boundary independent GBSM identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-09,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 raw arithmetic returns reproduced",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.974659986866641e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 return moments independently calculated",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.367506770274758e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal likelihood and information criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t likelihood and information criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 Normal MLE mean and scale",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.632783294297951e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 forecast/time/contract conventions match the question",
+      "passed": true
+    },
+    {
+      "check": "Q3 both distributions and all book/tail rows present",
+      "passed": true
+    },
+    {
+      "check": "Q3 finite complete VaR/ES and ES at least VaR",
+      "passed": true
+    },
+    {
+      "check": "Q3 the1percent tail has at least the5percent VaR and ES",
+      "passed": true
+    },
+    {
+      "check": "Q3 MCSE rows complete, positive and finite",
+      "passed": true
+    },
+    {
+      "check": "Q3 MCSE less than10 percent of reported risk scale",
+      "passed": true
+    },
+    {
+      "check": "Q3 CoveredCall independent portfolio price",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 CoveredCall delta/gamma from independent price differences",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.9566186867668875e-06,
+        "atol": 3e-05,
+        "rtol": 3e-06
+      }
+    },
+    {
+      "check": "Q3 CoveredCall theta from independent time difference",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.437692157604033e-07,
+        "atol": 2e-05,
+        "rtol": 2e-07
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle independent portfolio price",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle delta/gamma from independent price differences",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.5129935420077345e-06,
+        "atol": 3e-05,
+        "rtol": 3e-06
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle theta from independent time difference",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.049153747269884e-07,
+        "atol": 2e-05,
+        "rtol": 2e-07
+      }
+    },
+    {
+      "check": "Q3 RiskReversal independent portfolio price",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 RiskReversal delta/gamma from independent price differences",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.935034195658773e-06,
+        "atol": 3e-05,
+        "rtol": 3e-06
+      }
+    },
+    {
+      "check": "Q3 RiskReversal theta from independent time difference",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.762334810948232e-07,
+        "atol": 2e-05,
+        "rtol": 2e-07
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall independent portfolio price",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall delta/gamma from independent price differences",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.565450914626126e-07,
+        "atol": 3e-05,
+        "rtol": 3e-06
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall theta from independent time difference",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.933347205835162e-07,
+        "atol": 2e-05,
+        "rtol": 2e-07
+      }
+    },
+    {
+      "check": "Q3 CoveredCall alpha=0.05 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 CoveredCall alpha=0.01 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 CoveredCall flat-price expiry-reduced P&L",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 CoveredCall full/delta/second-order P&L curves",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.637978807091713e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle alpha=0.05 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle alpha=0.01 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle flat-price expiry-reduced P&L",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 ShortStraddle full/delta/second-order P&L curves",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.092726157978177e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 RiskReversal alpha=0.05 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 RiskReversal alpha=0.01 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 RiskReversal flat-price expiry-reduced P&L",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 RiskReversal full/delta/second-order P&L curves",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.320099833421409e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall alpha=0.05 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall alpha=0.01 delta-normal risk",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall flat-price expiry-reduced P&L",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 HedgedShortCall full/delta/second-order P&L curves",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.637978807091713e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 all48 approximation-distribution-book-tail rows present",
+      "passed": true
+    },
+    {
+      "check": "Q3 no invalid arithmetic-return paths and matching simulation counts",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal published finite-draw terminal mean statistically consistent with zero return",
+      "passed": true,
+      "details": {
+        "z": 2.043700469472622
+      }
+    },
+    {
+      "check": "Q3 normal published simulated daily mean statistically consistent with zero",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal terminal-price standard deviation scale",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0020320969298825986,
+        "atol": 0.0,
+        "rtol": 0.05
+      }
+    },
+    {
+      "check": "Q3 normal independent audit paths are admissible",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal CoveredCall independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal CoveredCall published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal CoveredCall theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal CoveredCall alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal CoveredCall alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal CoveredCall alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal CoveredCall alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal ShortStraddle independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal ShortStraddle published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal ShortStraddle theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal ShortStraddle alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal ShortStraddle alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal ShortStraddle alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal ShortStraddle alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal RiskReversal independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal RiskReversal published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal RiskReversal theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal RiskReversal alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal RiskReversal alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal RiskReversal alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal RiskReversal alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal HedgedShortCall independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal HedgedShortCall published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal HedgedShortCall theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 normal HedgedShortCall alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal HedgedShortCall alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal HedgedShortCall alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 normal HedgedShortCall alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t published finite-draw terminal mean statistically consistent with zero return",
+      "passed": true,
+      "details": {
+        "z": 2.084412293252232
+      }
+    },
+    {
+      "check": "Q3 t published simulated daily mean statistically consistent with zero",
+      "passed": true
+    },
+    {
+      "check": "Q3 t terminal-price standard deviation scale",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.002623701994886929,
+        "atol": 0.0,
+        "rtol": 0.05
+      }
+    },
+    {
+      "check": "Q3 t independent audit paths are admissible",
+      "passed": true
+    },
+    {
+      "check": "Q3 t CoveredCall independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t CoveredCall published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t CoveredCall theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.105427357601002e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t CoveredCall alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t CoveredCall alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t CoveredCall alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t CoveredCall alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t ShortStraddle independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t ShortStraddle published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t ShortStraddle theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.552713678800501e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t ShortStraddle alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t ShortStraddle alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t ShortStraddle alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t ShortStraddle alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t RiskReversal independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t RiskReversal published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t RiskReversal theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t RiskReversal alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t RiskReversal alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t RiskReversal alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t RiskReversal alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t HedgedShortCall independent mean P&L within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t HedgedShortCall published mean MCSE consistency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t HedgedShortCall theoretical second-order mean identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 0.0,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q3 t HedgedShortCall alpha=0.05 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t HedgedShortCall alpha=0.05 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t HedgedShortCall alpha=0.01 independent VaR within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q3 t HedgedShortCall alpha=0.01 independent ES within combined7MCSE",
+      "passed": true
+    },
+    {
+      "check": "Q4 source has240 unique complete monthly observations",
+      "passed": true
+    },
+    {
+      "check": "Q4 unrestricted tangency normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.020562075079397e-17,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 LongOnly independent convex active-set QP tangency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.310468483202044e-10,
+        "atol": 3e-06,
+        "rtol": 2e-05
+      }
+    },
+    {
+      "check": "Q4 LongOnly budget/nonnegative/cap feasibility",
+      "passed": true,
+      "details": {
+        "independent_QP_variance": 17.656485961198698
+      }
+    },
+    {
+      "check": "Q4 PUTW20 independent convex active-set QP tangency",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1530668531101185e-08,
+        "atol": 3e-06,
+        "rtol": 2e-05
+      }
+    },
+    {
+      "check": "Q4 PUTW20 budget/nonnegative/cap feasibility",
+      "passed": true,
+      "details": {
+        "independent_QP_variance": 33.4261905811827
+      }
+    },
+    {
+      "check": "Q4 covariance agrees with original monthly returns",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.988036009904832e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 EQ moments and mean standard error",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.109832250191573e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 BOND moments and mean standard error",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.326672684688674e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 STK moments and mean standard error",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.326672684688674e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 PUTW moments and mean standard error",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.971772977317549e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 Unconstrained portfolio moments and annualized Sharpe",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 Unconstrained alpha=0.05 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 Unconstrained alpha=0.01 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.673617379884035e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 LongOnly portfolio moments and annualized Sharpe",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 LongOnly alpha=0.05 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.979727989493313e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 LongOnly alpha=0.01 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.734723475976807e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 PUTW20 portfolio moments and annualized Sharpe",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.5503158452884236e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 PUTW20 alpha=0.05 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.979727989493313e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 PUTW20 alpha=0.01 original-return historical/Normal risks",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 AllMonths independent CAPM and downside-beta regression",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.325873406851315e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 EQExcessBelowMinus5pct independent CAPM and downside-beta regression",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.842170943040401e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 frontier means and volatility trace original inputs",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.71445146547012e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q4 long-only frontier budget and bounds",
+      "passed": true
+    },
+    {
+      "check": "Q5 all fund dates aligned one-to-one without omissions",
+      "passed": true
+    },
+    {
+      "check": "Q5 raw source factor/RF percent conversion and fund decimals preserved",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.999054535747565e-17,
+        "atol": 1e-14,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 exactly six regressions and all22 coefficient rows",
+      "passed": true
+    },
+    {
+      "check": "Q5 FUND1 CAPM coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 7.806255641895632e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.947598300641403e-14,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3 coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.440892098500626e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3 conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.36733026615688e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3 coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.747758156208874e-13,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3 likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 Carhart4 coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.520726443341989e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 Carhart4 conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.418476861114186e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 Carhart4 coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.335629491680209e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 Carhart4 likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1926223897340549e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.4210854715202004e-14,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3 coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.608224830031759e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3 conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.798300629719868e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3 coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.676259379721159e-13,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3 likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 Carhart4 coefficients from independent normal equations",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.438912787006142e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 Carhart4 conventional OLS standard errors",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.394611824586896e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 Carhart4 coefficient t statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.097877427331696e-12,
+        "atol": 2e-08,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 Carhart4 likelihood, R2 and parameter-counted criteria",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8189894035458565e-12,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM residual correlation with SMB",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.3592239273284576e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM residual correlation with HML",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.1094237467877974e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM residual correlation with Mom",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM residual correlation with SMB",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1102230246251565e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM residual correlation with HML",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.0531133177191805e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM residual correlation with Mom",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.245004513516506e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 ten-year window anchored to factor file, not today or fund sample",
+      "passed": true
+    },
+    {
+      "check": "Q5 recent daily and annual arithmetic factor premia",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.326672684688674e-17,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 initial excess-return/volatility/Sharpe statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.881784197001252e-16,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 annual forecasts with/without alpha and realized return",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.662558979376172e-13,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 worst momentum date searched over full file",
+      "passed": true
+    },
+    {
+      "check": "Q5 FUND1 momentum-only dollar/sigma stress",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.0477378964424133e-09,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 initial excess-return/volatility/Sharpe statistics",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.9984014443252818e-15,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 annual forecasts with/without alpha and realized return",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.789013795582832e-14,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 worst momentum date searched over full file",
+      "passed": true
+    },
+    {
+      "check": "Q5 FUND2 momentum-only dollar/sigma stress",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.547473508864641e-11,
+        "atol": 1e-10,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->FF3 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.27675647831893e-15,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->FF3 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.773200064367433e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->FF3 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3->Carhart4 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.636779683484747e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3->Carhart4 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.134781488891349e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3->Carhart4 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.096456227153382e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3->Carhart4 Mom alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->Carhart4 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.5265566588595902e-15,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->Carhart4 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.952635523913784e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->Carhart4 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 2.220446049250313e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->Carhart4 Mom alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->FF3 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.884683795282953e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->FF3 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 3.608224830031759e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->FF3 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 9.096456227153382e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3->Carhart4 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 8.944667923005412e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3->Carhart4 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.2218832596585543e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3->Carhart4 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.214306433183765e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3->Carhart4 Mom alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1188966420050406e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->Carhart4 Mkt-RF alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1796119636642288e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->Carhart4 SMB alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 5.551115123125783e-17,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->Carhart4 HML alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.5092094240998222e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->Carhart4 Mom alpha attribution",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.1188966420050406e-16,
+        "atol": 1e-11,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->Carhart4 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.60821224129915e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 CAPM->FF3 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.583817692418226e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND1 FF3->Carhart4 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.786752591523502e-17,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->Carhart4 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 4.472333961502706e-19,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 CAPM->FF3 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.369687763352339e-19,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 FUND2 FF3->Carhart4 intercept attribution identity",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 1.8888834723770898e-19,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    },
+    {
+      "check": "Q5 saved attribution-check table agrees with independent intercept identities",
+      "passed": true,
+      "details": {
+        "max_absolute_difference": 6.891731109404109e-16,
+        "atol": 1e-12,
+        "rtol": 1e-08
+      }
+    }
+  ]
+}

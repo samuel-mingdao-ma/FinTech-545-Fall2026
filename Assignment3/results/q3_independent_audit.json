@@ -1,0 +1,233 @@
+{
+  "final_paths": 1000000,
+  "final_seed": 545,
+  "independent_paths": 1000000,
+  "independent_seed": 1545,
+  "compared_risk_points": 32,
+  "max_absolute_joint_MCSE_z": 2.415079172401249,
+  "tolerance_z": 5.0,
+  "independent_Greek_checks": 24,
+  "max_Greek_relative_error": 1.5038921056264386e-07,
+  "greek_tolerance_relative": 1e-05,
+  "production_files_unchanged": true,
+  "greek_checks": [
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": true,
+      "greek": "delta",
+      "analytic": 0.6463540728599939,
+      "finite_difference": 0.6463540722402664,
+      "relative_error": 9.58804960885151e-10,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": true,
+      "greek": "gamma",
+      "analytic": 0.015978755271998175,
+      "finite_difference": 0.015978757675030566,
+      "relative_error": 1.5038921056264386e-07,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": true,
+      "greek": "theta",
+      "analytic": -8.486959100097575,
+      "finite_difference": -8.486959099585079,
+      "relative_error": 6.03863769921401e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": true,
+      "greek": "vega",
+      "analytic": 32.03901817463882,
+      "finite_difference": 32.03901817308008,
+      "relative_error": 4.865126974936012e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": false,
+      "greek": "delta",
+      "analytic": -0.3536459271400061,
+      "finite_difference": -0.35364592775977144,
+      "relative_error": 1.7525024398379775e-09,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": false,
+      "greek": "gamma",
+      "analytic": 0.015978755271998175,
+      "finite_difference": 0.015978754517062852,
+      "relative_error": 4.7246190941533236e-08,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": false,
+      "greek": "theta",
+      "analytic": -4.361534355238982,
+      "finite_difference": -4.361534355368235,
+      "relative_error": 2.9634766616024567e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0425,
+      "is_call": false,
+      "greek": "vega",
+      "analytic": 32.03901817463882,
+      "finite_difference": 32.03901817272481,
+      "relative_error": 5.973997933289139e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": true,
+      "greek": "delta",
+      "analytic": 0.6367379549965281,
+      "finite_difference": 0.6367379543945617,
+      "relative_error": 9.453910528176674e-10,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": true,
+      "greek": "gamma",
+      "analytic": 0.016020490959523268,
+      "finite_difference": 0.016020488639393687,
+      "relative_error": 1.4482262668317929e-07,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": true,
+      "greek": "theta",
+      "analytic": -8.079294706966378,
+      "finite_difference": -8.07929470774127,
+      "relative_error": 9.591075587318577e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": true,
+      "greek": "vega",
+      "analytic": 32.12270244343107,
+      "finite_difference": 32.12270244077331,
+      "relative_error": 8.273786402339511e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": false,
+      "greek": "delta",
+      "analytic": -0.35907085266842637,
+      "finite_difference": -0.35907085326887983,
+      "relative_error": 1.6722422894123098e-09,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": false,
+      "greek": "gamma",
+      "analytic": 0.016020490959523268,
+      "finite_difference": 0.016020490218377544,
+      "relative_error": 4.626236028132116e-08,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": false,
+      "greek": "theta",
+      "analytic": -4.569279805244727,
+      "finite_difference": -4.569279805366477,
+      "relative_error": 2.66454703549398e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0365,
+      "is_call": false,
+      "greek": "vega",
+      "analytic": 32.12270244343107,
+      "finite_difference": 32.122702442194395,
+      "relative_error": 3.849857643472571e-11,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": true,
+      "greek": "delta",
+      "analytic": 0.5788279888229722,
+      "finite_difference": 0.5788279883347514,
+      "relative_error": 8.434643910642583e-10,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": true,
+      "greek": "gamma",
+      "analytic": 0.01615596812071748,
+      "finite_difference": 0.01615596861231299,
+      "relative_error": 3.042810601959869e-08,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": true,
+      "greek": "theta",
+      "analytic": -5.805834214270211,
+      "finite_difference": -5.8058342155220535,
+      "relative_error": 2.1561796966076085e-10,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": true,
+      "greek": "vega",
+      "analytic": 32.394347834818745,
+      "finite_difference": 32.394347834951986,
+      "relative_error": 4.113093262106707e-12,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": false,
+      "greek": "delta",
+      "analytic": -0.3918601864378735,
+      "finite_difference": -0.3918601869277912,
+      "relative_error": 1.250235872258044e-09,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": false,
+      "greek": "gamma",
+      "analytic": 0.01615596812071748,
+      "finite_difference": 0.01615596861231299,
+      "relative_error": 3.042810601959869e-08,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": false,
+      "greek": "theta",
+      "analytic": -5.929596956615969,
+      "finite_difference": -5.929596957443549,
+      "relative_error": 1.3956777782946424e-10,
+      "passed": true
+    },
+    {
+      "cost_of_carry": 0.0,
+      "is_call": false,
+      "greek": "vega",
+      "analytic": 32.394347834818745,
+      "finite_difference": 32.394347834596715,
+      "relative_error": 6.85398561509761e-12,
+      "passed": true
+    }
+  ],
+  "scope": "Independent Monte Carlo random-seed rerun conditional on the same fitted models, plus synthetic central-finite-difference derivative checks",
+  "passed": true
+}
