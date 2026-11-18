@@ -1,0 +1,298 @@
+{
+  "8.3": {
+    "simulations": 10000,
+    "batches": 20,
+    "mcse": {
+      "VaR Absolute": 0.0018861571093126707,
+      "VaR Diff from Mean": 0.001720521313159627
+    },
+    "analytic_risk": {
+      "VaR Absolute": 0.045115230894087185,
+      "VaR Diff from Mean": 0.09521556797862994
+    }
+  },
+  "8.6": {
+    "simulations": 10000,
+    "batches": 20,
+    "mcse": {
+      "ES Absolute": 0.0034757759001780536,
+      "ES Diff from Mean": 0.003187788830952441
+    },
+    "analytic_risk": {
+      "ES Absolute": 0.09215637336207744,
+      "ES Diff from Mean": 0.1422567104466202
+    }
+  },
+  "8_fits": {
+    "normal": {
+      "mu": 0.046771957516449095,
+      "sigma": 0.051789725724068626
+    },
+    "t": {
+      "mu": 0.050100337084542756,
+      "scale": 0.04495507773803843,
+      "nu": 4.092925127847645
+    }
+  },
+  "9.1": {
+    "simulations": 100000,
+    "seed": 545,
+    "batches": 20,
+    "spearman_correlation": [
+      [
+        1.0,
+        0.21914947873696844
+      ],
+      [
+        0.21914947873696844,
+        1.0
+      ]
+    ],
+    "risk_mcse": [
+      {
+        "Stock": "A",
+        "VaR95_MCSE": 0.3900200155880168,
+        "ES95_MCSE": 0.3369967173121645,
+        "VaR95_Pct_MCSE": 0.0001950100077940084,
+        "ES95_Pct_MCSE": 0.00016849835865608226
+      },
+      {
+        "Stock": "B",
+        "VaR95_MCSE": 0.6138107077450664,
+        "ES95_MCSE": 1.3782550556203061,
+        "VaR95_Pct_MCSE": 0.00020460356924835546,
+        "ES95_Pct_MCSE": 0.0004594183518734354
+      },
+      {
+        "Stock": "Total",
+        "VaR95_MCSE": 0.907898527496177,
+        "ES95_MCSE": 1.4519946605377345,
+        "VaR95_Pct_MCSE": 0.0001815797054992354,
+        "ES95_Pct_MCSE": 0.0002903989321075469
+      }
+    ],
+    "analytic_marginal_risk": [
+      {
+        "Stock": "A",
+        "VaR95": 94.9549709239573,
+        "ES95": 120.26615148251126,
+        "VaR95_Pct": 0.04747748546197865,
+        "ES95_Pct": 0.06013307574125563
+      },
+      {
+        "Stock": "B",
+        "VaR95": 116.74657981170216,
+        "ES95": 168.1592809479891,
+        "VaR95_Pct": 0.03891552660390072,
+        "ES95_Pct": 0.0560530936493297
+      }
+    ],
+    "aggregation_max_error": 0.0
+  },
+  "10.1": {
+    "method": "convex cyclic coordinate descent",
+    "iterations": 14,
+    "risk_budget_max_abs_error": 6.186995360479841e-13,
+    "volatility": 0.048368935586289546,
+    "minimum_covariance_eigenvalue": 2.716308276031894e-17
+  },
+  "10.2": {
+    "method": "convex cyclic coordinate descent",
+    "iterations": 14,
+    "risk_budget_max_abs_error": 5.289102489314246e-13,
+    "volatility": 0.062181914625533304,
+    "minimum_covariance_eigenvalue": 2.716308276031894e-17
+  },
+  "10.3": {
+    "method": "SLSQP with analytic gradients and deterministic multiple starts",
+    "sharpe_ratio": 0.5722360226382855,
+    "successful_starts": 13,
+    "start_objective_spread": 5.984102102729594e-14,
+    "budget_error": 2.220446049250313e-16,
+    "minimum_covariance_eigenvalue": -0.004766976741328528,
+    "covariance_is_psd": false,
+    "active_lower_bounds": [
+      0,
+      1,
+      2
+    ],
+    "active_upper_bounds": []
+  },
+  "10.4": {
+    "method": "SLSQP with analytic gradients and deterministic multiple starts",
+    "sharpe_ratio": 0.2590703330834613,
+    "successful_starts": 14,
+    "start_objective_spread": 2.3869795029440866e-14,
+    "budget_error": 0.0,
+    "minimum_covariance_eigenvalue": -0.004766976741328528,
+    "covariance_is_psd": false,
+    "active_lower_bounds": [
+      0,
+      1,
+      2
+    ],
+    "active_upper_bounds": [
+      3
+    ]
+  },
+  "11.1": {
+    "return_attribution_sum_error": 0.0,
+    "volatility_attribution_sum_error": 3.469446951953614e-18,
+    "weight_budget_max_abs_error": 2.220446049250313e-16,
+    "volatility_ddof": 1,
+    "linking": "Carino with drifting buy-and-hold weights"
+  },
+  "11.2": {
+    "return_attribution_sum_error": 1.3877787807814457e-17,
+    "volatility_attribution_sum_error": 0.0,
+    "weight_budget_max_abs_error": 1.1102230246251565e-16,
+    "volatility_ddof": 1,
+    "linking": "Carino with drifting buy-and-hold weights"
+  },
+  "european_greeks": {
+    "rho": "dV/dr with dividend yield q=r-b fixed",
+    "theta": "calendar decay -dV/dT per year",
+    "vega": "dV/dsigma per absolute volatility unit"
+  },
+  "american_greeks": {
+    "steps": 500,
+    "rho": "dV/dr holding cost of carry b fixed",
+    "theta": "maturity sensitivity +dV/dT per year",
+    "gamma_spot_bump": 1.5,
+    "first_derivative_method": "central, eps^(1/3)*max(abs(parameter),1)"
+  },
+  "cash_dividends": {
+    "steps_per_day": 2,
+    "dates": "exact integer grid steps = 2*dividend day",
+    "geometry": "nonrecombining across cash payments; exercise before payment",
+    "equity_floor": "max(S-cash,0); inactive for supplied inputs"
+  },
+  "deterministic": true,
+  "13.4": {
+    "estimator": "sample mean; ddof=1 sd; Kendall correlation; two-stage theta grid",
+    "grid_points_per_stage": 200,
+    "covariance_scale_identity_max_error": 5.421010862427522e-20
+  },
+  "13.6": {
+    "correlation_matches_gaussian": true,
+    "marginal_df": [
+      7.761485543981591,
+      5.120744954190687,
+      7.430751050417249,
+      5.331264539105335,
+      5.134109314694364
+    ]
+  },
+  "13.9": {
+    "simulations": 100000,
+    "seed": 545,
+    "batches": 20,
+    "batch_sizes": [
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000,
+      5000
+    ],
+    "rng": "NumPy default_rng; independent normal seed and common chi-square seed+1 streams",
+    "risk_mcse": [
+      {
+        "Stock": "A1",
+        "VaR95_MCSE": 0.08003158820078912,
+        "ES95_MCSE": 0.1129632747783654,
+        "VaR95_Pct_MCSE": 8.003158820078912e-05,
+        "ES95_Pct_MCSE": 0.00011296327477836541
+      },
+      {
+        "Stock": "A2",
+        "VaR95_MCSE": 0.3245962797855672,
+        "ES95_MCSE": 0.5109374825940267,
+        "VaR95_Pct_MCSE": 0.0001622981398927836,
+        "ES95_Pct_MCSE": 0.00025546874129701337
+      },
+      {
+        "Stock": "A3",
+        "VaR95_MCSE": 0.10728245590633388,
+        "ES95_MCSE": 0.2201012916193108,
+        "VaR95_Pct_MCSE": 7.152163727088925e-05,
+        "ES95_Pct_MCSE": 0.00014673419441287386
+      },
+      {
+        "Stock": "A4",
+        "VaR95_MCSE": 0.30109640521428915,
+        "ES95_MCSE": 0.594107786636343,
+        "VaR95_Pct_MCSE": 0.00012043856208571566,
+        "ES95_Pct_MCSE": 0.0002376431146545372
+      },
+      {
+        "Stock": "A5",
+        "VaR95_MCSE": 0.31487588696948615,
+        "ES95_MCSE": 0.4378322083227893,
+        "VaR95_Pct_MCSE": 0.00010495862898982872,
+        "ES95_Pct_MCSE": 0.00014594406944092977
+      },
+      {
+        "Stock": "Total",
+        "VaR95_MCSE": 0.675059366196544,
+        "ES95_MCSE": 1.166500675394356,
+        "VaR95_Pct_MCSE": 6.75059366196544e-05,
+        "ES95_Pct_MCSE": 0.00011665006753943561
+      }
+    ],
+    "analytic_marginal_risk": [
+      {
+        "Stock": "A1",
+        "VaR95": 13.501367864301008,
+        "ES95": 18.503218503761925,
+        "VaR95_Pct": 0.013501367864301008,
+        "ES95_Pct": 0.018503218503761926
+      },
+      {
+        "Stock": "A2",
+        "VaR95": 49.82701479873048,
+        "ES95": 70.60520420630445,
+        "VaR95_Pct": 0.02491350739936524,
+        "ES95_Pct": 0.035302602103152225
+      },
+      {
+        "Stock": "A3",
+        "VaR95": 29.78335973760942,
+        "ES95": 40.11174936870709,
+        "VaR95_Pct": 0.01985557315840628,
+        "ES95_Pct": 0.026741166245804724
+      },
+      {
+        "Stock": "A4",
+        "VaR95": 71.17331712079411,
+        "ES95": 100.57677222813759,
+        "VaR95_Pct": 0.028469326848317645,
+        "ES95_Pct": 0.04023070889125503
+      },
+      {
+        "Stock": "A5",
+        "VaR95": 62.29211586484746,
+        "ES95": 89.45872478434548,
+        "VaR95_Pct": 0.02076403862161582,
+        "ES95_Pct": 0.02981957492811516
+      }
+    ],
+    "mcse_method": "sample standard deviation of twenty batch estimates / sqrt(20)",
+    "common_chi_square_per_path": true,
+    "all_risks_positive": true
+  }
+}
