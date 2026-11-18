@@ -9,8 +9,9 @@ Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2 and 7.1�
 This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.
 
 Instructor reference comparisons: **25/25 passed**.
-Pytest suite: **59/59 passed** (25 instructor cases plus 34 independent checks).
-This is not a claim that all 50 cases in the full-semester Tests.xlsx are implemented.
+Pytest suite: **85/85 passed** (25 instructor cases plus 60 independent checks; 0 skipped).
+Functional run completed (UTC): 2026-11-18T20:25:53.825747+00:00.
+These 25 first-checkpoint cases are complemented by cases 8–13 in the separate FunctionalTests2 folder.
 
 All answers below were calculated by risk545. Full-precision matrices and parameters are in output/*.csv.
 
@@ -37,10 +38,10 @@ All answers below were calculated by risk545. Full-precision matrices and parame
 | 5.5 | PASS | 0.000939396 |
 | 6.1 | PASS | 9.99634e-17 |
 | 6.2 | PASS | 9.9855e-17 |
-| 7.1 | PASS | 2.77556e-17 |
-| 7.2 | PASS | 3.9684e-07 |
-| 7.3 | PASS | 3.35438e-08 |
-| 7.4 | PASS | 5.68434e-14 |
+| 7.1 | PASS | 2.08167e-17 |
+| 7.2 | PASS | 3.59995e-07 |
+| 7.3 | PASS | 9.537e-08 |
+| 7.4 | PASS | 0 |
 | 7.5 | PASS | 7.81597e-14 |
 | 7.6 | PASS | 1.46372e-12 |
 
@@ -82,21 +83,21 @@ These are documented implementation tolerances, not confirmed instructor grading
 
 | Parameter | Calculated value |
 |---|---:|
-| mu | 0.0501003370845 |
-| sigma | 0.044955077738 |
-| nu | 4.09292512785 |
+| mu | 0.0501003359855 |
+| sigma | 0.0449550781287 |
+| nu | 4.09292516469 |
 
 ### Test 7.3
 
 | Parameter | Calculated value |
 |---|---:|
 | mu | 0 |
-| sigma | 0.0506263037387 |
-| nu | 4.66190876763 |
-| Alpha | 0.0495878809086 |
-| B1 | 1.17776320056 |
-| B2 | 1.82695526253 |
-| B3 | 3.05641231691 |
+| sigma | 0.0506263040984 |
+| nu | 4.66190888266 |
+| Alpha | 0.0495878807622 |
+| B1 | 1.17776322787 |
+| B2 | 1.82695528263 |
+| B3 | 3.05641228461 |
 
 ### Test 7.4
 
@@ -123,6 +124,7 @@ These are documented implementation tolerances, not confirmed instructor grading
 | delta | 0.0526078621407 |
 
 The t scale is not its standard deviation. Error location in the regression is fixed to zero, while Alpha is estimated.
+Both t fitters support the Gaussian likelihood boundary as nu=infinity, with the normal maximum-likelihood scale.
 NIG parameters use (mu, alpha, beta, delta), with SciPy a=alpha*delta and b=beta*delta.
 
 ## Methods

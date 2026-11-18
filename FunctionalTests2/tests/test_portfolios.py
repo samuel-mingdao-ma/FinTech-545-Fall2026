@@ -56,6 +56,34 @@ def test_maximum_sharpe_matches_interior_tangency_and_permutation():
     np.testing.assert_allclose(reordered, expected[permutation], atol=2e-8, rtol=0)
 
 
+@pytest.mark.parametrize("covariance,means,expected", [
+    (np.diag([0., 1.]), [0., .1], .1),
+    (np.array([[1., -1.], [-1., 1.]]), [.1, -.1], .1),
+])
+def test_maximum_sharpe_skips_zero_variance_starts(covariance, means, expected):
+    weights, detail = maximum_sharpe(covariance, means, 0.)
+    assert weights @ covariance @ weights > 0
+    assert detail["sharpe_ratio"] == pytest.approx(expected, abs=1e-12)
+    assert weights.sum() == pytest.approx(1.)
+
+
+@pytest.mark.parametrize("covariance,means", [
+    (np.diag([0., 1.]), [.01, .1]),
+    (np.array([[1., -1.], [-1., 1.]]), [.1, .1]),
+])
+def test_maximum_sharpe_reports_unbounded_positive_excess_null_portfolios(covariance, means):
+    with pytest.raises(ValueError, match="unbounded Sharpe"):
+        maximum_sharpe(covariance, means, 0.)
+
+
+def test_risk_budgets_can_be_scaled_without_overflow():
+    covariance = np.diag([.01, .04])
+    ordinary, _ = risk_parity(covariance, [1., 1.])
+    with np.errstate(over="raise", invalid="raise"):
+        scaled, _ = risk_parity(covariance, [1e308, 1e308])
+    np.testing.assert_allclose(scaled, ordinary, atol=1e-14)
+
+
 def test_box_constraints_bind_and_match_independent_dense_search():
     covariance = np.diag([0.01, 0.04, 0.09])
     means, risk_free = np.array([0.15, 0.08, 0.04]), 0.02
@@ -202,3 +230,24 @@ def test_build_cases_has_teacher_schemas_and_numerical_identities():
     gradient = excess / np.sqrt(variance) - (weights @ excess) * (covariance @ weights) / variance**1.5
     np.testing.assert_allclose(gradient[support], gradient[support].mean(), atol=2e-8, rtol=0)
     assert np.all(gradient[weights < 1e-7] <= gradient[support].mean() + 1e-8)
+
+
+@pytest.mark.parametrize("group", [10, 11])
+def test_build_cases_reads_only_selected_group_inputs(group, monkeypatch):
+    data_dir = Path(__file__).resolve().parents[1] / "data"
+    original_read = pd.read_csv
+    names = []
+
+    def read(path, *args, **kwargs):
+        name = Path(path).name
+        if group == 10:
+            assert name in {"test5_2.csv", "test5_3.csv", "test10_3_means.csv"}
+        else:
+            assert name.startswith("test11_")
+        names.append(name)
+        return original_read(path, *args, **kwargs)
+
+    monkeypatch.setattr(pd, "read_csv", read)
+    cases, diagnostics = build_cases(data_dir, groups=[group])
+    assert names and all(key.startswith(f"{group}.") for key in cases)
+    assert set(cases) == set(diagnostics)

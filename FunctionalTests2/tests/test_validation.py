@@ -2,7 +2,24 @@
 import pandas as pd
 import pytest
 
-from risk545_ft2.validation import validate_cases
+from risk545_ft2.validation import normalize_groups, validate_cases
+
+
+@pytest.mark.parametrize("groups", [[], [7], [14], [8.0], [True], "8", 8])
+def test_group_selection_requires_supported_integers(groups):
+    with pytest.raises(ValueError, match="Groups"):
+        normalize_groups(groups)
+
+
+def test_group_selection_is_complete_by_default_and_orders_subsets():
+    assert normalize_groups() == [8, 9, 10, 11, 12, 13]
+    assert normalize_groups([11, 8, 11]) == [8, 11]
+
+
+@pytest.mark.parametrize("cases", [{}, {"8.0": pd.DataFrame({"Value": [1.]})}])
+def test_empty_or_unknown_case_selection_cannot_pass(cases, tmp_path):
+    with pytest.raises(ValueError, match="supported functional case"):
+        validate_cases(cases, {}, tmp_path)
 
 
 def test_option_values_are_comparisons_and_ids_are_keys(tmp_path):
@@ -20,6 +37,20 @@ def test_duplicate_identifiers_are_rejected(tmp_path):
     reference.to_csv(tmp_path / "testout12_3.csv", index=False)
     with pytest.raises(ValueError, match="Duplicate"):
         validate_cases({"12.3": pd.DataFrame({"ID": [1, 1], "Value": [4., 5.]})}, {}, tmp_path)
+
+
+def test_missing_identifiers_are_rejected(tmp_path):
+    frame = pd.DataFrame({"ID": [1, None], "Value": [4., 5.]})
+    frame.to_csv(tmp_path / "testout12_3.csv", index=False)
+    with pytest.raises(ValueError, match="identifiers must not be missing"):
+        validate_cases({"12.3": frame}, {}, tmp_path)
+
+
+@pytest.mark.parametrize("frame", [pd.DataFrame({"Value": []}), pd.DataFrame({"Label": ["empty"]})])
+def test_reference_requires_numeric_observations(frame, tmp_path):
+    frame.to_csv(tmp_path / "testout12_3.csv", index=False)
+    with pytest.raises(ValueError, match="numeric reference observations"):
+        validate_cases({"12.3": frame}, {}, tmp_path)
 
 
 def test_mc_tolerance_does_not_hide_biased_simulation(tmp_path):
@@ -55,7 +86,7 @@ def test_reference_uncertainty_accounts_for_different_path_counts(tmp_path):
 
 
 def test_publisher_preserves_existing_unowned_files(tmp_path):
-    from run_functional_tests import _publish
+    from functionaltests2_runner import _publish
     output = tmp_path / "existing"
     output.mkdir()
     (output / "user.txt").write_text("preserve this")

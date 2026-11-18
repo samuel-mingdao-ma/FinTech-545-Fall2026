@@ -2,6 +2,7 @@
 import argparse
 import json
 import platform
+from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -18,11 +19,15 @@ def main():
     if args.output_dir.resolve() == args.data_dir.resolve():
         parser.error("Output directory must not overwrite the instructor reference data")
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    started_at = datetime.now(timezone.utc).isoformat()
     rows = []
     for case in CASE_IDS:
         try:
+            # A failed new calculation must not leave a previous run's answer.
+            destination = args.output_dir / output_name(case)
+            destination.unlink(missing_ok=True)
             actual = calculate(case, args.data_dir, args.seed)
-            actual.to_csv(args.output_dir / output_name(case), index=False)
+            actual.to_csv(destination, index=False)
             expected = read(output_name(case), args.data_dir)
             metrics = compare(case, actual, expected, args.data_dir)
             row = {"test": case, "status": "PASS", **metrics}
@@ -32,6 +37,7 @@ def main():
         print(f"{case:>3}: {row['status']}" + (f" — {row['error']}" if "error" in row else ""))
     passed = sum(r["status"] == "PASS" for r in rows)
     report = {"passed": passed, "total": len(rows), "seed": args.seed,
+              "started_at_utc": started_at, "completed_at_utc": datetime.now(timezone.utc).isoformat(),
               "versions": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__, "pandas": pd.__version__},
               "scope": "Current checkpoint: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2, 7.1–7.6",
               "cases": rows}

@@ -14,7 +14,13 @@ DATA = ROOT / "data"
 CASE_IDS = [f"1.{i}" for i in range(1, 5)] + [f"2.{i}" for i in range(1, 4)] + [f"3.{i}" for i in range(1, 5)] + ["4.1"] + [f"5.{i}" for i in range(1, 6)] + ["6.1", "6.2"] + [f"7.{i}" for i in range(1, 7)]
 
 
+def _validate_case(case):
+    if case not in CASE_IDS:
+        raise ValueError(f"Case {case} is outside this submission's scope")
+
+
 def output_name(case):
+    _validate_case(case)
     # The workbook uses a different spelling from actual CSVs for group 7.
     return f"testout{case.replace('.', '_')}.csv" if case.startswith(("6.", "7.")) else f"testout_{case}.csv"
 
@@ -29,6 +35,7 @@ def matrix(name, data_dir=DATA):
 
 def calculate(case, data_dir=DATA, seed=1234):
     """Calculate one case without reading that case's expected answer."""
+    _validate_case(case)
     if case.startswith("1."):
         frame = read("test1.csv", data_dir)
         a = risk.missing_covariance(frame, pairwise=case in ("1.3", "1.4"), corr=case in ("1.2", "1.4"))
@@ -81,6 +88,8 @@ def calculate(case, data_dir=DATA, seed=1234):
 
 
 def simulation_target(case, data_dir=DATA):
+    if case not in [f"5.{i}" for i in range(1, 6)]:
+        raise ValueError(f"Case {case} is not a simulation case")
     if case == "5.1":
         return matrix("test5_1.csv", data_dir)
     if case == "5.2":
@@ -92,6 +101,7 @@ def simulation_target(case, data_dir=DATA):
 
 
 def compare(case, actual, expected, data_dir=DATA):
+    _validate_case(case)
     if list(actual.columns) != list(expected.columns) or actual.shape != expected.shape:
         raise AssertionError("CSV dimensions or column order differ from reference")
     if case in ("6.1", "6.2"):
@@ -101,6 +111,8 @@ def compare(case, actual, expected, data_dir=DATA):
     a, e = actual.to_numpy(float), expected.to_numpy(float)
     if not np.isfinite(a).all():
         raise AssertionError("Output includes NaN or infinity")
+    if not np.isfinite(e).all():
+        raise AssertionError("Reference includes NaN or infinity")
     result = {"max_abs_error": float(np.max(np.abs(a-e)))}
     if case.startswith("5."):
         target = simulation_target(case, data_dir)

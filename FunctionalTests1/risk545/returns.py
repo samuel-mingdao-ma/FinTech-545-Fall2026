@@ -21,11 +21,15 @@ def calculate_returns(prices, method="arithmetic", date_column="Date"):
     values = prices[assets].to_numpy(dtype=float)
     if not np.isfinite(values).all() or (values <= 0).any():
         raise ValueError("Prices must be finite, complete and strictly positive")
-    ratio = values[1:] / values[:-1]
     if method.lower() in ("arithmetic", "discrete"):
-        result = ratio - 1
+        result = values[1:] / values[:-1] - 1
     elif method.lower() == "log":
-        result = np.log(ratio)
+        # The ratio can overflow or underflow even when both prices and the
+        # log return are finite. Keep ratio accuracy for ordinary price moves.
+        with np.errstate(over="ignore", under="ignore", divide="ignore"):
+            result = np.log(values[1:] / values[:-1])
+        extreme = ~np.isfinite(result)
+        result[extreme] = np.log(values[1:][extreme]) - np.log(values[:-1][extreme])
     else:
         raise ValueError("method must be arithmetic or log")
     frame = pd.DataFrame(result, columns=assets)

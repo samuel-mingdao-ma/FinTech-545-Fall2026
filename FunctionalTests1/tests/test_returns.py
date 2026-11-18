@@ -35,3 +35,10 @@ def test_invalid_prices(value):
 def test_invalid_method():
     with pytest.raises(ValueError):
         calculate_returns(pd.DataFrame({"Date": [1, 2], "A": [100, 110]}), "unknown")
+
+
+def test_log_returns_remain_finite_for_extreme_positive_prices():
+    prices = pd.DataFrame({"Date": [1, 2, 3], "A": [1e-300, 1e300, 1e-300]})
+    with np.errstate(over="raise", divide="raise", invalid="raise", under="ignore"):
+        result = calculate_returns(prices, "log")
+    np.testing.assert_allclose(result.A, [600*np.log(10), -600*np.log(10)])

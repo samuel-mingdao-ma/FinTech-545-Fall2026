@@ -1,14 +1,16 @@
 {
-  "passed": 23,
-  "total": 23,
-  "seed": 2026,
+  "passed": 25,
+  "total": 25,
+  "seed": 1234,
+  "started_at_utc": "2026-11-18T20:25:54.185550+00:00",
+  "completed_at_utc": "2026-11-18T20:25:54.366419+00:00",
   "versions": {
-    "python": "3.12.3",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
-    "pandas": "3.0.6"
+    "python": "3.12.2",
+    "numpy": "1.26.4",
+    "scipy": "1.15.2",
+    "pandas": "2.3.3"
   },
-  "scope": "1.1\u20131.4, 2.1\u20132.3, 3.1\u20133.4, 4.1, 5.1\u20135.5, 7.1\u20137.6; inferred first checkpoint, not confirmed Canvas scope",
+  "scope": "Current checkpoint: 1.1\u20131.4, 2.1\u20132.3, 3.1\u20133.4, 4.1, 5.1\u20135.5, 6.1\u20136.2, 7.1\u20137.6",
   "cases": [
     {
       "test": "1.1",
@@ -31,13 +33,13 @@
     {
       "test": "1.4",
       "status": "PASS",
-      "max_abs_error": 2.220446049250313e-16,
+      "max_abs_error": 4.440892098500626e-16,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "2.1",
       "status": "PASS",
-      "max_abs_error": 6.661338147750939e-16,
+      "max_abs_error": 2.220446049250313e-16,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
@@ -49,112 +51,124 @@
     {
       "test": "2.3",
       "status": "PASS",
-      "max_abs_error": 8.881784197001252e-16,
+      "max_abs_error": 2.220446049250313e-16,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "3.1",
       "status": "PASS",
-      "max_abs_error": 1.27675647831893e-15,
+      "max_abs_error": 8.604228440844963e-16,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "3.2",
       "status": "PASS",
-      "max_abs_error": 1.4988010832439613e-15,
+      "max_abs_error": 1.3322676295501878e-15,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "3.3",
       "status": "PASS",
-      "max_abs_error": 1.096345236817342e-15,
+      "max_abs_error": 1.1622647289044608e-15,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "3.4",
       "status": "PASS",
-      "max_abs_error": 1.609823385706477e-15,
+      "max_abs_error": 2.3314683517128287e-15,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "4.1",
       "status": "PASS",
-      "max_abs_error": 1.6653345369377348e-16,
+      "max_abs_error": 1.457167719820518e-16,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "5.1",
       "status": "PASS",
-      "max_abs_error": 0.00045854401406013323,
-      "max_mc_z": 1.4422183635588361,
-      "max_reference_mc_z": 0.7023948991553557,
-      "relative_frobenius": 0.00323821193948684,
+      "max_abs_error": 0.000878502971546305,
+      "max_mc_z": 1.692290577250844,
+      "max_reference_mc_z": 1.634553734588795,
+      "relative_frobenius": 0.006222163698962316,
       "criterion": "MC z <= 7; reference z <= 7; relative Frobenius <= 0.03"
     },
     {
       "test": "5.2",
       "status": "PASS",
-      "max_abs_error": 0.00047101138564467626,
-      "max_mc_z": 1.4422183635588361,
-      "max_reference_mc_z": 0.6711098685097233,
-      "relative_frobenius": 0.0028499543487901166,
+      "max_abs_error": 0.0016590691892223453,
+      "max_mc_z": 2.0476768807219408,
+      "max_reference_mc_z": 1.8837879454500095,
+      "relative_frobenius": 0.010373420800627456,
       "criterion": "MC z <= 7; reference z <= 7; relative Frobenius <= 0.03"
     },
     {
       "test": "5.3",
       "status": "PASS",
-      "max_abs_error": 0.0012750906104020687,
-      "max_mc_z": 1.4422183635588728,
-      "max_reference_mc_z": 1.2562490658687595,
-      "relative_frobenius": 0.006853957930611865,
+      "max_abs_error": 0.000878502971546305,
+      "max_mc_z": 1.5256575134995345,
+      "max_reference_mc_z": 1.634553734588795,
+      "relative_frobenius": 0.0052306613738309195,
       "criterion": "MC z <= 7; reference z <= 7; relative Frobenius <= 0.03"
     },
     {
       "test": "5.4",
       "status": "PASS",
-      "max_abs_error": 0.001231160301034706,
-      "max_mc_z": 1.4422183635588361,
-      "max_reference_mc_z": 1.2129678985102508,
-      "relative_frobenius": 0.006629322686410676,
+      "max_abs_error": 0.000878502971546305,
+      "max_mc_z": 1.525657513499571,
+      "max_reference_mc_z": 1.634553734588795,
+      "relative_frobenius": 0.005087987012647009,
       "criterion": "MC z <= 7; reference z <= 7; relative Frobenius <= 0.03"
     },
     {
       "test": "5.5",
       "status": "PASS",
-      "max_abs_error": 0.0006743942804325331,
-      "max_mc_z": 0.8323357887343014,
-      "max_reference_mc_z": 0.6644312082161946,
-      "relative_frobenius": 0.003855734437000386,
+      "max_abs_error": 0.0008908324240492205,
+      "max_mc_z": 1.8618911552379684,
+      "max_reference_mc_z": 0.8776718323424587,
+      "relative_frobenius": 0.005184930582217899,
       "criterion": "MC z <= 7; reference z <= 7; relative Frobenius <= 0.03"
+    },
+    {
+      "test": "6.1",
+      "status": "PASS",
+      "max_abs_error": 9.996344030316351e-17,
+      "criterion": "rtol=1e-07, atol=1e-08"
+    },
+    {
+      "test": "6.2",
+      "status": "PASS",
+      "max_abs_error": 9.985502008591496e-17,
+      "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "7.1",
       "status": "PASS",
-      "max_abs_error": 2.7755575615628914e-17,
+      "max_abs_error": 2.0816681711721685e-17,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "7.2",
       "status": "PASS",
-      "max_abs_error": 3.968397210840635e-07,
+      "max_abs_error": 1.5089054450356798e-08,
       "criterion": "rtol=0.0005, atol=1e-06"
     },
     {
       "test": "7.3",
       "status": "PASS",
-      "max_abs_error": 3.354378286246629e-08,
+      "max_abs_error": 3.471646232711123e-07,
       "criterion": "rtol=0.0005, atol=1e-06"
     },
     {
       "test": "7.4",
       "status": "PASS",
-      "max_abs_error": 5.684341886080802e-14,
+      "max_abs_error": 1.1368683772161603e-13,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "7.5",
       "status": "PASS",
-      "max_abs_error": 7.815970093361102e-14,
+      "max_abs_error": 3.552713678800501e-14,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {

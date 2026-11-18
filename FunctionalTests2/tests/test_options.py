@@ -33,6 +33,27 @@ def test_generalized_put_call_parity_and_vectorization():
     assert price(0., 100., 1., .04, .02, .2, False) == pytest.approx(100*exp(-.04))
 
 
+def test_european_price_handles_tiny_spot_and_discounted_deterministic_limit():
+    ordinary = price(1., 1., 1., .04, .02, .2)
+    tiny = price(1e-310, 1e-310, 1., .04, .02, .2)
+    assert tiny / 1e-310 == pytest.approx(ordinary, abs=1e-12)
+    with np.errstate(over="raise", invalid="raise"):
+        assert price(100., 100., 1., 1000., 1000., 0.) == 100.
+
+
+def test_low_volatility_crr_probability_avoids_exponential_cancellation():
+    # Up/down exponentials round to one, while their log displacements still
+    # define a valid symmetric risk-neutral tree.
+    value = tree_price(100., 90., 1., 0., 0., 1e-18, n=20, american=False)
+    assert value == pytest.approx(10., abs=1e-12)
+
+
+def test_extreme_finite_volatility_has_correct_call_and_put_limits():
+    with np.errstate(over="raise", invalid="raise"):
+        assert price(100., 100., 1., 0., 0., 1e200) == 100.
+        assert price(100., 100., 1., 0., 0., 1e200, False) == 100.
+
+
 @pytest.mark.parametrize("is_call", [True, False])
 def test_european_greeks_against_independent_repricing(is_call):
     parameters = np.array([107., 100., .7, .037, .012, .29])
@@ -200,3 +221,20 @@ def test_case_builder_uses_only_inputs_and_records_greek_conventions(tmp_path):
     assert cases["12.3"].Value.iloc[0] == pytest.approx(expected, abs=1e-12)
     assert "holding cost of carry b fixed" in diagnostic["american_greeks"]["rho"]
     assert diagnostic["cash_dividends"]["steps_per_day"] == 2
+
+
+@pytest.mark.parametrize("identifier", [1.5, "OPTION-01"])
+def test_option_identifiers_are_preserved(identifier, tmp_path):
+    pd.DataFrame([{
+        "ID": identifier, "Option Type": "Call", "Underlying": 100., "Strike": 100.,
+        "DaysToMaturity": 50, "DayPerYear": 365, "RiskFreeRate": .045,
+        "DividendRate": 0., "ImpliedVol": .2,
+    }]).to_csv(tmp_path / "test12_1.csv", index=False)
+    pd.DataFrame([{
+        "ID": identifier, "Option Type": "Put", "Underlying": 100., "Strike": 100.,
+        "DaysToMaturity": 4, "DayPerYear": 365, "RiskFreeRate": .045,
+        "ImpliedVol": .2, "DividendDates": "1,3", "DividendAmts": ".1,.2",
+    }]).to_csv(tmp_path / "test12_3.csv", index=False)
+    cases, _ = build_cases(tmp_path)
+    for frame in cases.values():
+        assert frame.ID.iloc[0] == identifier

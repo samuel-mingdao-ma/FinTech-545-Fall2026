@@ -57,11 +57,13 @@ def price(s, k, t, r, b, sigma, is_call=True):
     s, k, t, r, b, sigma = _inputs(s, k, t, r, b, sigma)
     active = (s > 0) & (t > 0) & (sigma > 0)
     vol_time = np.where(active, sigma*np.sqrt(t), 1.)
-    d1 = (np.log(np.maximum(s, np.finfo(float).tiny)/k)+(b+.5*sigma*sigma)*t)/vol_time
-    d2 = d1-vol_time
+    log_moneyness = np.log(np.where(s > 0, s, 1.)) - np.log(k)
+    standardized_forward = log_moneyness/vol_time + b*(t/vol_time)
+    d1 = standardized_forward + .5*vol_time
+    d2 = standardized_forward - .5*vol_time
     regular = sign*(s*np.exp((b-r)*t)*special.ndtr(sign*d1)
                     - k*np.exp(-r*t)*special.ndtr(sign*d2))
-    deterministic = np.exp(-r*t)*np.maximum(sign*(s*np.exp(b*t)-k), 0.)
+    deterministic = np.maximum(sign*(s*np.exp((b-r)*t)-k*np.exp(-r*t)), 0.)
     return _result(np.where(active, regular, deterministic))
 
 
@@ -77,8 +79,10 @@ def greeks(s, k, t, r, b, sigma, is_call=True):
     if (s <= 0).any() or (t <= 0).any() or (sigma <= 0).any():
         raise ValueError("Greeks require positive spot, maturity, and volatility")
     root_t = np.sqrt(t)
-    d1 = (np.log(s/k)+(b+.5*sigma*sigma)*t)/(sigma*root_t)
-    d2 = d1-sigma*root_t
+    vol_time = sigma*root_t
+    standardized_forward = (np.log(s)-np.log(k))/vol_time + b*(t/vol_time)
+    d1 = standardized_forward + .5*vol_time
+    d2 = standardized_forward - .5*vol_time
     carry, discount = np.exp((b-r)*t), np.exp(-r*t)
     density = np.exp(-.5*d1*d1)/np.sqrt(2*np.pi)
     value = price(s, k, t, r, b, sigma, is_call)
@@ -139,8 +143,9 @@ def _tree_inputs(s, k, t, r, b, sigma, n, is_call, american):
 def _tree_parameters(t, r, b, sigma, n):
     dt = t/n
     log_up = sigma*np.sqrt(dt)
-    up, down = np.exp(log_up), np.exp(-log_up)
-    p = (np.exp(b*dt)-down)/(up-down)
+    # Algebraically equivalent to (exp(b*dt)-down)/(up-down), without
+    # subtracting nearly equal exponentials on fine/low-volatility grids.
+    p = np.expm1(b*dt+log_up)/np.expm1(2*log_up)
     if not 0 < p < 1:
         raise ValueError("Risk-neutral probability must be in (0,1); refine the tree grid")
     return log_up, p, np.exp(-r*dt)
@@ -280,7 +285,7 @@ def build_cases(data_dir, *, simulations=100000, seed=545):
         is_call = row["Option Type"] == "Call"
         for records, computed in ((european, greeks(*parameters, is_call=is_call)),
                                    (american, tree_greeks(*parameters, n=500, is_call=is_call))):
-            records.append([int(row.ID)]+[computed[name.lower()] for name in columns[1:]])
+            records.append([row.ID]+[computed[name.lower()] for name in columns[1:]])
     cash = _option_rows(data_dir, "test12_3.csv")
     discrete = []
     for _, row in cash.iterrows():
@@ -296,7 +301,7 @@ def build_cases(data_dir, *, simulations=100000, seed=545):
             row.RiskFreeRate, row.ImpliedVol, n,
             [(2*day, amount) for day, amount in zip(dates, amounts)],
             is_call=row["Option Type"] == "Call")
-        discrete.append([int(row.ID), value])
+        discrete.append([row.ID, value])
     cases = {"12.1": pd.DataFrame(european, columns=columns),
              "12.2": pd.DataFrame(american, columns=columns),
              "12.3": pd.DataFrame(discrete, columns=["ID", "Value"])}

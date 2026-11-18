@@ -50,8 +50,9 @@ def fix_correlation(
     convergence rule and final diagonal ridge match the teacher's code.
     """
     result = _correlation(correlation).copy()
-    if ridge <= 0 or tol < 0:
-        raise ValueError("ridge must be positive and tol nonnegative")
+    if (np.ndim(ridge) != 0 or np.ndim(tol) != 0 or not np.isfinite(ridge)
+            or not np.isfinite(tol) or ridge <= 0 or tol < 0):
+        raise ValueError("ridge must be finite and positive and tol finite and nonnegative")
     if np.linalg.eigvalsh(result)[0] < -tol:
         original = result.copy()
         correction = np.zeros_like(result)
@@ -100,7 +101,7 @@ def mvt_scale(sd: np.ndarray, correlation: np.ndarray, nu: float) -> np.ndarray:
     sd = np.asarray(sd, dtype=float)
     if sd.shape != (len(correlation),) or not np.isfinite(sd).all() or (sd <= 0).any():
         raise ValueError("sd must give one positive finite standard deviation per margin")
-    if not np.isfinite(nu) or nu <= 2:
+    if np.ndim(nu) != 0 or not np.isfinite(nu) or nu <= 2:
         raise ValueError("nu must be finite and greater than two")
     return np.outer(sd, sd) * correlation * ((nu - 2.0) / nu)
 
@@ -150,7 +151,8 @@ def profile_nu(
     Deliberately do not substitute a continuous optimizer: the two explicit
     grids define the numerical result in the functional-test specification.
     """
-    if not 0 < lo < hi < 0.5 or not isinstance(n, (int, np.integer)) or n < 2:
+    if (np.ndim(lo) != 0 or np.ndim(hi) != 0 or not 0 < lo < hi < 0.5
+            or not isinstance(n, (int, np.integer)) or isinstance(n, (bool, np.bool_)) or n < 2):
         raise ValueError("require 0 < lo < hi < 0.5 and at least two grid points")
     coarse = np.linspace(lo, hi, n)
     likelihoods = np.array([loglikelihood(1.0 / theta) for theta in coarse])
@@ -208,7 +210,7 @@ def t_copula_ll(uniforms: np.ndarray, correlation: np.ndarray, nu: float) -> flo
     correlation = _correlation(correlation)
     if correlation.shape[0] != uniforms.shape[1]:
         raise ValueError("correlation and observation dimensions must agree")
-    if not np.isfinite(nu) or nu <= 0:
+    if np.ndim(nu) != 0 or not np.isfinite(nu) or nu <= 0:
         raise ValueError("nu must be positive and finite")
     transformed = stats.t.ppf(uniforms, df=nu)
     joint = _multivariate_t_logpdf(transformed, correlation, nu)
@@ -237,7 +239,8 @@ def simulate_pca(covariance: np.ndarray, draws: int, seed: int = 1234) -> np.nda
     paths across languages.
     """
     covariance = _square(covariance, name="covariance")
-    if not isinstance(draws, (int, np.integer)) or draws <= 0:
+    if (not isinstance(draws, (int, np.integer)) or isinstance(draws, (bool, np.bool_))
+            or draws <= 0):
         raise ValueError("draws must be a positive integer")
     eigenvalues, eigenvectors = np.linalg.eigh(covariance)
     if eigenvalues[0] < -1e-8:
@@ -257,7 +260,7 @@ def simulate_mvt(
     mean = np.asarray(mean, dtype=float)
     if mean.shape != (len(scale),) or not np.isfinite(mean).all():
         raise ValueError("mean must give one finite value per margin")
-    if not np.isfinite(nu) or nu <= 0:
+    if np.ndim(nu) != 0 or not np.isfinite(nu) or nu <= 0:
         raise ValueError("nu must be positive and finite")
     normals = simulate_pca(scale, draws, seed)
     # Separate seeded streams follow the teacher's normal/chi-square sequence.
@@ -285,7 +288,7 @@ def tail_dependence_t(rho: float | np.ndarray, nu: float) -> float | np.ndarray:
     rho = np.asarray(rho, dtype=float)
     if not np.isfinite(rho).all() or (rho < -1).any() or (rho > 1).any():
         raise ValueError("rho must be finite and between minus one and one")
-    if not np.isfinite(nu) or nu <= 0:
+    if np.ndim(nu) != 0 or not np.isfinite(nu) or nu <= 0:
         raise ValueError("nu must be positive and finite")
     with np.errstate(divide="ignore"):
         threshold = -np.sqrt((nu + 1.0) * (1.0 - rho) / (1.0 + rho))
@@ -294,6 +297,7 @@ def tail_dependence_t(rho: float | np.ndarray, nu: float) -> float | np.ndarray:
 
 
 def copula_aicc(likelihood: float, parameters: int, observations: int) -> float:
+    _information_inputs(likelihood, parameters, observations)
     if parameters < 0 or observations <= parameters + 1:
         raise ValueError("AICc requires k >= 0 and observations > k + 1")
     return float(
@@ -304,22 +308,28 @@ def copula_aicc(likelihood: float, parameters: int, observations: int) -> float:
 
 
 def copula_bic(likelihood: float, parameters: int, observations: int) -> float:
+    _information_inputs(likelihood, parameters, observations)
     if parameters < 0 or observations <= 0:
         raise ValueError("BIC requires k >= 0 and positive observations")
     return float(parameters * np.log(observations) - 2.0 * likelihood)
 
 
+def _information_inputs(likelihood, parameters, observations):
+    if np.ndim(likelihood) != 0 or not np.isfinite(likelihood):
+        raise ValueError("log likelihood must be a finite scalar")
+    if any(not isinstance(value, (int, np.integer)) or isinstance(value, (bool, np.bool_))
+           for value in (parameters, observations)):
+        raise ValueError("parameter and observation counts must be integers")
+
+
 def _analytic_margin_risk(model, value: float, alpha: float = 0.05) -> dict[str, float]:
-    args, kwargs = model.args, model.kwds
-    nu = float(args[0] if args else kwargs["df"])
-    mean = float(kwargs.get("loc", args[1] if len(args) > 1 else 0.0))
-    scale = float(kwargs.get("scale", args[2] if len(args) > 2 else 1.0))
-    quantile = stats.t.ppf(alpha, nu)
-    var = -value * (mean + scale * quantile)
-    es = value * (
-        -mean + scale * (nu + quantile**2) / (nu - 1.0) * stats.t.pdf(quantile, nu) / alpha
-    )
-    return {"VaR95": float(var), "ES95": float(es), "VaR95_Pct": float(var / value), "ES95_Pct": float(es / value)}
+    from .risk import parametric_risk
+
+    if np.ndim(value) != 0 or not np.isfinite(value) or value <= 0:
+        raise ValueError("current value must be positive and finite")
+    risk = parametric_risk(model, alpha)
+    return {"VaR95": float(value * risk["var"]), "ES95": float(value * risk["es"]),
+            "VaR95_Pct": risk["var"], "ES95_Pct": risk["es"]}
 
 
 def build_cases(
@@ -337,10 +347,11 @@ def build_cases(
         raise ValueError("simulations must be an integer >= 10000 for twenty risk batches")
     data_dir = Path(data_dir)
     returns = pd.read_csv(data_dir / "test13_returns.csv")
-    portfolio = pd.read_csv(data_dir / "test13_portfolio.csv")
+    portfolio = pd.read_csv(data_dir / "test13_portfolio.csv", dtype={"Stock": str})
     data = _matrix(returns.to_numpy(dtype=float))
-    if portfolio["Stock"].duplicated().any():
-        raise ValueError("portfolio stock names must be unique")
+    if (portfolio["Stock"].isna().any() or portfolio["Stock"].duplicated().any()
+            or portfolio["Stock"].eq("Total").any()):
+        raise ValueError("portfolio stock names must be nonmissing, unique, and cannot be Total")
     stocks = portfolio["Stock"].tolist()
     if set(stocks) != set(returns.columns):
         raise ValueError("portfolio and return asset names must agree")
@@ -416,7 +427,10 @@ def build_cases(
         },
         "13.6": {
             "correlation_matches_gaussian": bool(np.array_equal(copula_correlation, t_correlation)),
-            "marginal_df": [float(model.args[0] if model.args else model.kwds["df"]) for model in margins],
+            "marginal_df": [float(model.args[0]) if np.isfinite(model.args[0]) else None
+                            for model in margins],
+            "normal_limit_margins": [str(returns.columns[j]) for j, model in enumerate(margins)
+                                     if np.isposinf(model.args[0])],
         },
         "13.9": {
             "simulations": int(simulations),

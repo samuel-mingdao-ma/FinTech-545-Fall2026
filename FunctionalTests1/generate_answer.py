@@ -10,13 +10,15 @@ report = json.loads((out / "test_report.json").read_text())
 suites = ET.parse(out / "pytest-results.xml").getroot()
 tests = sum(int(s.get("tests", 0)) for s in suites.findall("testsuite"))
 failures = sum(int(s.get("failures", 0))+int(s.get("errors", 0)) for s in suites.findall("testsuite"))
+skipped = sum(int(s.get("skipped", 0)) for s in suites.findall("testsuite"))
 lines = ["# FINTECH 545 — Functional Test Answers", "", "Samuel Ma", "",
          "## Scope and verification", "",
          "Implemented: 1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1, 5.1–5.5, 6.1–6.2 and 7.1–7.6.", "",
          "This current-checkpoint scope includes the instructor's newly announced NIG cases 7.5 and 7.6.", "",
          f"Instructor reference comparisons: **{report['passed']}/{report['total']} passed**.",
-         f"Pytest suite: **{tests-failures}/{tests} passed** ({report['total']} instructor cases plus {tests-report['total']} independent checks).",
-         "This is not a claim that all 50 cases in the full-semester Tests.xlsx are implemented.", "",
+         f"Pytest suite: **{tests-failures-skipped}/{tests} passed** ({report['total']} instructor cases plus {tests-report['total']} independent checks; {skipped} skipped).",
+         f"Functional run completed (UTC): {report.get('completed_at_utc', 'not recorded in this historical report')}.",
+         "These 25 first-checkpoint cases are complemented by cases 8–13 in the separate FunctionalTests2 folder.", "",
          "All answers below were calculated by risk545. Full-precision matrices and parameters are in output/*.csv.", "",
          "## Results by test", "", "| Test | Result | Maximum absolute difference vs reference |", "|---|---|---:|"]
 for row in report["cases"]:
@@ -28,7 +30,7 @@ lines += ["", "## Return conversion tests 6.1 and 6.2", "",
           "Dates, column order, dimensions and all numeric entries are checked against the supplied references.",
           "Independent checks verify known returns, exp(log return)-1, scale invariance, unchanged inputs and invalid prices.", "",
           "## Monte Carlo covariance comparisons", "",
-          "100,000 observations per case; seed 1234. Python and Julia simulations have different random streams.",
+          f"100,000 observations per case; seed {report['seed']}. Python and Julia simulations have different random streams.",
           "The Frobenius differences below are divided by the norm of the analytic target covariance.", "",
           "| Test | Relative Frobenius difference | Largest error / MC standard error vs target |", "|---|---:|---:|"]
 for r in report["cases"]:
@@ -45,6 +47,7 @@ for i in range(1, 7):
         lines.append(f"| {name} | {value:.12g} |")
     lines.append("")
 lines += ["The t scale is not its standard deviation. Error location in the regression is fixed to zero, while Alpha is estimated.",
+          "Both t fitters support the Gaussian likelihood boundary as nu=infinity, with the normal maximum-likelihood scale.",
           "NIG parameters use (mu, alpha, beta, delta), with SciPy a=alpha*delta and b=beta*delta.", "",
           "## Methods", "",
           "1. Missing-data covariance/correlation: listwise or pairwise deletion, sample covariance divisor n-1.",

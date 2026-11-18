@@ -6,9 +6,9 @@ def _matrix(a):
     a = np.asarray(a, dtype=float)
     if a.ndim != 2 or a.shape[0] != a.shape[1] or len(a) == 0:
         raise ValueError("Expected a nonempty square matrix")
-    if not np.isfinite(a).all() or not np.allclose(a, a.T, atol=1e-12, rtol=1e-10):
+    if not np.isfinite(a).all() or not np.allclose(a, a.T, atol=1e-12*np.max(np.abs(a)), rtol=1e-10):
         raise ValueError("Expected a finite symmetric matrix")
-    return (a + a.T) / 2
+    return a/2 + a.T/2
 
 
 def _standardize(a):
@@ -26,8 +26,8 @@ def _positive(a, epsilon=0):
 
 def near_psd(a, epsilon=0.0):
     """Clip correlation eigenvalues, renormalize diagonal, restore variances."""
-    if epsilon < 0:
-        raise ValueError("epsilon must be nonnegative")
+    if not np.isfinite(epsilon) or epsilon < 0:
+        raise ValueError("epsilon must be finite and nonnegative")
     c, sd = _standardize(a)
     c = _positive(c, epsilon)
     scale = np.sqrt(np.diag(c))
@@ -41,8 +41,8 @@ def higham_psd(a, *, tol=1e-9, max_iter=1000):
     Work in correlation space and preserve the input variances. Stop only
     after both distance convergence and numerical positive semidefiniteness.
     """
-    if tol <= 0 or max_iter < 1:
-        raise ValueError("tol and max_iter must be positive")
+    if not np.isfinite(tol) or tol <= 0 or max_iter < 1:
+        raise ValueError("tol must be finite and positive; max_iter must be positive")
     original, sd = _standardize(a)
     y, correction = original.copy(), np.zeros_like(original)
     previous = np.inf
@@ -62,8 +62,8 @@ def higham_psd(a, *, tol=1e-9, max_iter=1000):
 def chol_psd(a, tol=1e-8):
     """Lower triangular root L with L @ L.T = a, including singular PSD."""
     a = _matrix(a)
-    if tol <= 0:
-        raise ValueError("tol must be positive")
+    if not np.isfinite(tol) or tol <= 0:
+        raise ValueError("tol must be finite and positive")
     if np.linalg.eigvalsh(a)[0] < -tol:
         raise ValueError("Matrix is not positive semidefinite")
     root = np.zeros_like(a)
@@ -72,7 +72,7 @@ def chol_psd(a, tol=1e-8):
         if pivot < -tol:
             raise ValueError("Negative Cholesky pivot")
         # Tiny positive/negative residuals at a zero pivot are rounding error.
-        if abs(pivot) <= np.finfo(float).eps * max(1.0, abs(a[j, j])) * len(a) or pivot < 0:
+        if abs(pivot) <= np.finfo(float).eps * abs(a[j, j]) * len(a) or pivot < 0:
             residual = a[j+1:, j] - root[j+1:, :j] @ root[j, :j]
             if np.any(np.abs(residual) > tol):
                 raise ValueError("Inconsistent zero Cholesky pivot")

@@ -11,6 +11,18 @@ CASE_IDS = [f"{group}.{case}" for group, count in CASE_COUNTS.items() for case i
 STOCHASTIC = {"8.3", "8.6", "9.1", "13.9"}
 
 
+def normalize_groups(groups=None):
+    """Return a nonempty, ordered selection of the supported integer groups."""
+    try:
+        values = list(CASE_COUNTS if groups is None else groups)
+    except TypeError as error:
+        raise ValueError("Groups must be chosen from 8 through 13") from error
+    if not values or any(not isinstance(group, int) or isinstance(group, bool)
+                         or group not in CASE_COUNTS for group in values):
+        raise ValueError("Groups must be chosen from 8 through 13")
+    return sorted(set(values))
+
+
 def output_name(case):
     return f"testout{case.replace('.', '_')}.csv"
 
@@ -39,6 +51,8 @@ def _aligned(actual, expected):
     if not keys and {"I", "J"} <= set(expected):
         keys = ["I", "J"]
     if keys:
+        if actual[keys].isna().any().any() or expected[keys].isna().any().any():
+            raise ValueError("Output row identifiers must not be missing")
         if actual.duplicated(keys).any() or expected.duplicated(keys).any():
             raise ValueError("Duplicate output row identifiers")
         actual = actual.set_index(keys)
@@ -88,10 +102,14 @@ def validate_cases(cases, diagnostics, reference_dir):
     At equal sample sizes the limit is 6*sqrt(2)*ownSE. Comparisons with exact
     fitted-model marginal risk use 6*ownSE.
     """
+    if not cases or not set(cases) <= set(CASE_IDS):
+        raise ValueError("At least one supported functional case is required")
     summary, details = [], []
     for case in sorted(cases, key=lambda value: tuple(map(int, value.split(".")))):
         expected = pd.read_csv(Path(reference_dir) / output_name(case))
         actual, expected = _aligned(cases[case], expected)
+        if expected.empty or not any(pd.api.types.is_numeric_dtype(expected[column]) for column in expected):
+            raise ValueError(f"Case {case} requires numeric reference observations")
         if case in STOCHASTIC:
             _check_diagnostics(case, diagnostics, actual)
         absolute_tolerance, relative_tolerance = numerical_tolerance(case)
@@ -149,4 +167,6 @@ def validate_cases(cases, diagnostics, reference_dir):
                                 record["absolute_difference"] for record in reference_records),
                             WorstReferenceMCSEZ=max(zs) if zs else None))
         details.extend(records)
-    return pd.DataFrame(summary), details
+    summary = pd.DataFrame(summary)
+    summary["WorstReferenceMCSEZ"] = summary["WorstReferenceMCSEZ"].astype(float)
+    return summary, details

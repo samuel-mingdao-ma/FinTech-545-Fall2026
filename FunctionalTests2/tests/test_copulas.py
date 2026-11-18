@@ -1,6 +1,7 @@
 """Independent density, mixture, profile-grid, and group-13 checks."""
 
 from pathlib import Path
+import json
 
 import numpy as np
 import pandas as pd
@@ -267,3 +268,61 @@ def test_analytic_margin_es_matches_numerical_tail_integration():
     expected_es = -value * model.expect(lambda x: x, lb=-np.inf, ub=model.ppf(alpha)) / alpha
     assert actual["VaR95"] == pytest.approx(-value * model.ppf(alpha))
     assert actual["ES95"] == pytest.approx(expected_es, rel=1e-8)
+
+
+def test_normal_limit_margin_risk_and_mixed_copula_simulation_preserve_stock_ids(tmp_path):
+    # Normal-limit and finite-t marginal fits must both remain usable by the
+    # inverse-CDF simulation. CSV identifiers must retain their leading zeros.
+    returns = pd.DataFrame({
+        "001": np.random.default_rng(0).normal(size=100) * .01,
+        "010": stats.t.rvs(5, size=100, random_state=7) * .01,
+    })
+    returns.to_csv(tmp_path / "test13_returns.csv", index=False)
+    pd.DataFrame({"Stock": ["010", "001"], "currentValue": [100., 200.]}).to_csv(
+        tmp_path / "test13_portfolio.csv", index=False)
+    cases, diagnostics = copulas.build_cases(tmp_path, simulations=10_000)
+    assert diagnostics["13.6"]["marginal_df"][0] is None
+    assert diagnostics["13.6"]["marginal_df"][1] > 2
+    assert diagnostics["13.6"]["normal_limit_margins"] == ["001"]
+    assert cases["13.9"]["Stock"].tolist() == ["010", "001", "Total"]
+    assert np.isfinite(cases["13.9"].iloc[:, 1:]).all().all()
+    json.dumps(diagnostics, allow_nan=False)
+    normal = stats.norm(.002, .01)
+    margin = copulas._analytic_margin_risk(stats.t(np.inf, loc=.002, scale=.01), 200.)
+    expected_es = 200 * (-.002 + .01 * stats.norm.pdf(stats.norm.ppf(.05)) / .05)
+    assert margin["ES95"] == pytest.approx(expected_es)
+    assert margin["VaR95"] == pytest.approx(-200 * normal.ppf(.05))
+
+
+@pytest.mark.parametrize("function", [copulas.copula_aicc, copulas.copula_bic])
+@pytest.mark.parametrize("arguments", [(np.nan, 1, 20), (np.inf, 1, 20),
+                                        (-3., .5, 20), (-3., 1, 20.5),
+                                        (-3., True, 20)])
+def test_information_criteria_reject_nonfinite_likelihood_and_noninteger_counts(function, arguments):
+    with pytest.raises(ValueError):
+        function(*arguments)
+
+
+@pytest.mark.parametrize("keyword", ["ridge", "tol"])
+@pytest.mark.parametrize("value", [np.nan, np.inf])
+def test_correlation_repair_rejects_nonfinite_controls(keyword, value):
+    with pytest.raises(ValueError, match="finite"):
+        copulas.fix_correlation(np.eye(2), **{keyword: value})
+
+
+@pytest.mark.parametrize("nu", [np.array([6.]), np.nan, np.inf])
+def test_copula_degrees_of_freedom_must_be_finite_scalars(nu):
+    operations = [
+        lambda: copulas.mvt_scale(np.ones(2), np.eye(2), nu),
+        lambda: copulas.t_copula_ll(np.array([[.3, .7]]), np.eye(2), nu),
+        lambda: copulas.simulate_mvt(np.zeros(2), np.eye(2), nu, 20),
+        lambda: copulas.tail_dependence_t(.3, nu),
+    ]
+    for operation in operations:
+        with pytest.raises(ValueError):
+            operation()
+
+
+def test_pca_simulation_rejects_boolean_draw_count():
+    with pytest.raises(ValueError, match="positive integer"):
+        copulas.simulate_pca(np.eye(2), True)

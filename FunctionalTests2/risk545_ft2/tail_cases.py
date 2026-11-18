@@ -54,15 +54,20 @@ def _group8(data, seed):
     diagnostics = {"8.3": var_diagnostic, "8.6": es_diagnostic,
                    "8_fits": {"normal": {"mu": float(normal.mean()), "sigma": float(normal.std())},
                               "t": {"mu": float(student.mean()), "scale": student.kwds["scale"],
-                                    "nu": float(student.args[0])}}}
+                                    "nu": None if np.isinf(student.args[0]) else float(student.args[0]),
+                                    "normal_limit": bool(np.isinf(student.args[0]))}}}
     return cases, diagnostics
 
 
 def _group9(data, simulations, seed):
     returns = pd.read_csv(data / "test9_1_returns.csv")
-    portfolio = pd.read_csv(data / "test9_1_portfolio.csv", encoding="utf-8-sig")
+    portfolio = pd.read_csv(data / "test9_1_portfolio.csv", encoding="utf-8-sig", dtype={"Stock": str})
+    if portfolio.Stock.isna().any() or (portfolio.Stock == "").any():
+        raise ValueError("Portfolio asset labels must be populated")
     if returns.columns.duplicated().any() or portfolio.Stock.duplicated().any():
         raise ValueError("Return and portfolio asset labels must be unique")
+    if "Total" in returns.columns or "Total" in set(portfolio.Stock):
+        raise ValueError("Total is reserved for the aggregate portfolio row")
     if set(portfolio.Stock) != set(returns.columns):
         raise ValueError("The portfolio and return assets must match")
     portfolio = portfolio.set_index("Stock").loc[returns.columns].reset_index()
@@ -79,7 +84,8 @@ def _group9(data, simulations, seed):
     # Spearman is computed on fitted PITs, as in test_setup.jl. Monotone
     # marginal transformations leave the ranks unchanged.
     pit = np.column_stack([model.cdf(returns[name]) for name, model in zip(returns.columns, models)])
-    correlation = np.corrcoef(stats.rankdata(pit, axis=0), rowvar=False)
+    correlation = np.atleast_2d(np.corrcoef(stats.rankdata(pit, axis=0), rowvar=False))
+    np.fill_diagonal(correlation, 1.0)
     uniform = simulate_gaussian_copula(correlation, simulations, seed)
     uniform = np.clip(uniform, np.finfo(float).tiny, 1 - np.finfo(float).eps)
     simulated = np.column_stack([model.ppf(uniform[:, j]) for j, model in enumerate(models)])
@@ -112,15 +118,21 @@ def _group9(data, simulations, seed):
     return {"9.1": pd.DataFrame(risk_rows)}, diagnostics
 
 
-def build_cases(data_dir, *, simulations=100_000, seed=545):
-    """Compute every case in groups 8 and 9 from input data only."""
+def build_cases(data_dir, *, simulations=100_000, seed=545, groups=None):
+    """Compute selected complete groups 8 and 9 from their input data only."""
     if not isinstance(simulations, (int, np.integer)) or simulations < 10_000:
         raise ValueError("At least 10000 integer portfolio simulation draws are required")
     if not isinstance(seed, (int, np.integer)) or isinstance(seed, bool) or seed < 0:
         raise ValueError("The random seed must be a nonnegative integer")
+    chosen = {8, 9} if groups is None else set(groups)
+    if not chosen or not chosen <= {8, 9} or any(isinstance(group, bool) for group in chosen):
+        raise ValueError("Tail-risk groups must be chosen from 8 and 9")
     data = Path(data_dir)
-    cases, diagnostic = _group8(data, seed)
-    group9, more = _group9(data, simulations, seed)
-    cases.update(group9)
-    diagnostic.update(more)
+    cases, diagnostic = {}, {}
+    if 8 in chosen:
+        cases, diagnostic = _group8(data, seed)
+    if 9 in chosen:
+        group9, more = _group9(data, simulations, seed)
+        cases.update(group9)
+        diagnostic.update(more)
     return cases, diagnostic

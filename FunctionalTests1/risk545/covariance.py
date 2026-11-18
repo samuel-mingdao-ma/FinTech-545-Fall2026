@@ -14,7 +14,7 @@ def _data(x, allow_missing=False):
 def correlation(cov):
     """Convert a covariance matrix to correlation (positive variances required)."""
     cov = _data(cov)
-    if cov.shape[0] != cov.shape[1] or not np.allclose(cov, cov.T):
+    if cov.shape[0] != cov.shape[1] or not np.allclose(cov, cov.T, atol=1e-12*np.max(np.abs(cov)), rtol=1e-10):
         raise ValueError("Expected a symmetric square covariance matrix")
     sd = np.sqrt(np.diag(cov)) if np.all(np.diag(cov) > 0) else None
     if sd is None:

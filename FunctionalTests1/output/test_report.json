@@ -2,6 +2,8 @@
   "passed": 25,
   "total": 25,
   "seed": 1234,
+  "started_at_utc": "2026-11-18T20:25:53.667782+00:00",
+  "completed_at_utc": "2026-11-18T20:25:53.825747+00:00",
   "versions": {
     "python": "3.12.3",
     "numpy": "2.5.4",
@@ -142,25 +144,25 @@
     {
       "test": "7.1",
       "status": "PASS",
-      "max_abs_error": 2.7755575615628914e-17,
+      "max_abs_error": 2.0816681711721685e-17,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {
       "test": "7.2",
       "status": "PASS",
-      "max_abs_error": 3.968397210840635e-07,
+      "max_abs_error": 3.599949289778692e-07,
       "criterion": "rtol=0.0005, atol=1e-06"
     },
     {
       "test": "7.3",
       "status": "PASS",
-      "max_abs_error": 3.354378286246629e-08,
+      "max_abs_error": 9.537001410819812e-08,
       "criterion": "rtol=0.0005, atol=1e-06"
     },
     {
       "test": "7.4",
       "status": "PASS",
-      "max_abs_error": 5.684341886080802e-14,
+      "max_abs_error": 0.0,
       "criterion": "rtol=1e-07, atol=1e-08"
     },
     {

@@ -57,6 +57,7 @@ def risk_parity(covariance, risk_budget=None, *, tolerance=1e-12, max_iterations
     diagonal = np.diag(covariance)
     if np.any(diagonal <= 0):
         raise ValueError("positive risk budgets require positive asset variances")
+    budget = budget / budget.max()
     budget = budget / budget.sum()
     scaled = covariance / diagonal.max()
     x = np.sqrt(budget / np.diag(scaled))
@@ -88,6 +89,8 @@ def risk_parity(covariance, risk_budget=None, *, tolerance=1e-12, max_iterations
 def _bounded_simplex_projection(value, lower, upper):
     """Euclidean projection onto box bounds and sum(weights)=1."""
     value = np.asarray(value, dtype=float)
+    if value.sum() == 1 and np.all(value >= lower) and np.all(value <= upper):
+        return value.copy()
     left = float(np.min(value - upper))
     right = float(np.max(value - lower))
     for _ in range(100):
@@ -103,9 +106,11 @@ def maximum_sharpe(covariance, means, risk_free, bounds=None, *, seed=545):
     """Maximize Sharpe subject to a unit budget and explicit box bounds.
 
     Default bounds are [0, 1].  Finite symmetric input is used without a PSD
-    repair, matching the teacher's indefinite covariance fixture.  Nonpositive
-    variance at a feasible point evaluated by the solver is rejected.  Analytic
-    gradients and deterministic multiple starts check numerical convergence;
+    repair, matching the teacher's indefinite covariance fixture. Nonpositive
+    variance is excluded from the objective's domain. A feasible null-risk
+    portfolio with positive excess return makes the ratio unbounded if any
+    positive-risk portfolio exists and is rejected when found among starts.
+    Analytic gradients and deterministic multiple starts check numerical convergence;
     when the matrix is indefinite this is not a general proof of globality.
     """
     covariance, minimum_eigenvalue = _covariance(covariance, require_psd=False)
@@ -128,22 +133,30 @@ def maximum_sharpe(covariance, means, risk_free, bounds=None, *, seed=545):
     def objective(weights):
         variance = float(weights @ covariance @ weights)
         if variance <= variance_floor:
-            raise ValueError("nonpositive portfolio variance at an evaluated feasible portfolio")
+            return np.inf
         return -float(weights @ excess) / np.sqrt(variance)
 
     def gradient(weights):
         variance = float(weights @ covariance @ weights)
         if variance <= variance_floor:
-            raise ValueError("nonpositive portfolio variance at an evaluated feasible portfolio")
+            return np.zeros(n)
         sd = np.sqrt(variance)
         return -excess / sd + float(weights @ excess) * (covariance @ weights) / sd**3
 
     rng = np.random.default_rng(seed)
     starts = [np.ones(n) / n, *np.eye(n), *rng.dirichlet(np.ones(n), size=8)]
+    feasible_starts = [_bounded_simplex_projection(start, lower, upper) for start in starts]
+    positive_starts = [start for start in feasible_starts if np.isfinite(objective(start))]
+    if not positive_starts:
+        raise ValueError("nonpositive portfolio variance at every feasible optimization start")
+    # Cw=0 gives an exact null-risk direction. Mixing it with any positive-risk
+    # feasible point preserves the bounds and budget; risk shrinks linearly to
+    # zero while the positive excess return stays bounded away from zero.
+    if any(np.all(covariance @ start == 0) and start @ excess > 0
+           for start in feasible_starts):
+        raise ValueError("unbounded Sharpe ratio: a zero-risk portfolio has positive excess return")
     candidates = []
-    for start in starts:
-        feasible_start = _bounded_simplex_projection(start, lower, upper)
-        objective(feasible_start)
+    for feasible_start in positive_starts:
         result = optimize.minimize(
             objective, feasible_start, jac=gradient, method="SLSQP",
             bounds=list(zip(lower, upper)),
@@ -272,24 +285,30 @@ def expost_factor(weights, stock_returns, factor_returns, beta):
                              residual_returns, portfolio_returns, carino_k)
 
 
-def build_cases(data_dir, *, simulations=100000, seed=545):
-    """Compute teacher-schema tables 10.1–10.4 and 11.1–11.2 from input CSVs."""
+def build_cases(data_dir, *, simulations=100000, seed=545, groups=(10, 11)):
+    """Compute selected group-10/11 tables, reading only their input CSVs."""
+    groups = set(groups)
+    if not groups <= {10, 11}:
+        raise ValueError("Portfolio groups must be selected from 10 and 11")
     data_dir = Path(data_dir)
-    covariance_rp = pd.read_csv(data_dir / "test5_2.csv").to_numpy(dtype=float)
-    covariance_sr = pd.read_csv(data_dir / "test5_3.csv").to_numpy(dtype=float)
-    means = pd.read_csv(data_dir / "test10_3_means.csv")["Mean"].to_numpy(dtype=float)
     cases, diagnostics = {}, {}
-    configurations = [
-        ("10.1", risk_parity, (covariance_rp,), {}),
-        ("10.2", risk_parity, (covariance_rp, [1, 1, 1, 1, 0.5]), {}),
-        ("10.3", maximum_sharpe, (covariance_sr, means, 0.04), {"seed": seed}),
-        ("10.4", maximum_sharpe,
-         (covariance_sr, means, 0.04, np.tile([0.1, 0.5], (len(means), 1))), {"seed": seed}),
-    ]
-    for key, function, args, kwargs in configurations:
-        weights, detail = function(*args, **kwargs)
-        cases[key] = pd.DataFrame({"W": weights})
-        diagnostics[key] = detail
+    if 10 in groups:
+        covariance_rp = pd.read_csv(data_dir / "test5_2.csv").to_numpy(dtype=float)
+        covariance_sr = pd.read_csv(data_dir / "test5_3.csv").to_numpy(dtype=float)
+        means = pd.read_csv(data_dir / "test10_3_means.csv")["Mean"].to_numpy(dtype=float)
+        configurations = [
+            ("10.1", risk_parity, (covariance_rp,), {}),
+            ("10.2", risk_parity, (covariance_rp, [1, 1, 1, 1, 0.5]), {}),
+            ("10.3", maximum_sharpe, (covariance_sr, means, 0.04), {"seed": seed}),
+            ("10.4", maximum_sharpe,
+             (covariance_sr, means, 0.04, np.tile([0.1, 0.5], (len(means), 1))), {"seed": seed}),
+        ]
+        for key, function, args, kwargs in configurations:
+            weights, detail = function(*args, **kwargs)
+            cases[key] = pd.DataFrame({"W": weights})
+            diagnostics[key] = detail
+    if 11 not in groups:
+        return cases, diagnostics
     weights = pd.read_csv(data_dir / "test11_1_weights.csv")["W"].to_numpy(dtype=float)
     returns = pd.read_csv(data_dir / "test11_1_returns.csv")
     asset_attribution = expost_factor(weights, returns, returns, np.eye(len(weights)))

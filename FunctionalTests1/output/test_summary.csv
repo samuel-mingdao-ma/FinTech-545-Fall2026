@@ -18,9 +18,9 @@ test,status,max_abs_error,criterion,max_mc_z,max_reference_mc_z,relative_frobeni
 5.5,PASS,0.0009393958712103287,MC z <= 7; reference z <= 7; relative Frobenius <= 0.03,3.484188964832045,3.5223152362418184,0.007340068430513393
 6.1,PASS,9.996344030316351e-17,"rtol=1e-07, atol=1e-08",,,
 6.2,PASS,9.985502008591496e-17,"rtol=1e-07, atol=1e-08",,,
-7.1,PASS,2.7755575615628914e-17,"rtol=1e-07, atol=1e-08",,,
-7.2,PASS,3.968397210840635e-07,"rtol=0.0005, atol=1e-06",,,
-7.3,PASS,3.354378286246629e-08,"rtol=0.0005, atol=1e-06",,,
-7.4,PASS,5.684341886080802e-14,"rtol=1e-07, atol=1e-08",,,
+7.1,PASS,2.0816681711721685e-17,"rtol=1e-07, atol=1e-08",,,
+7.2,PASS,3.599949289778692e-07,"rtol=0.0005, atol=1e-06",,,
+7.3,PASS,9.537001410819812e-08,"rtol=0.0005, atol=1e-06",,,
+7.4,PASS,0.0,"rtol=1e-07, atol=1e-08",,,
 7.5,PASS,7.815970093361102e-14,"rtol=1e-07, atol=1e-08",,,
 7.6,PASS,1.4637180356658064e-12,"rtol=0.0005, atol=1e-06",,,

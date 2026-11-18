@@ -48,9 +48,10 @@ python run_functional_tests.py --data-dir /path/to/data --output-dir /path/to/re
 - `functional_cases.py`: maps each numbered case to inputs, function calls and comparison rules.
 - `run_functional_tests.py`: exports calculated CSV answers and a per-case pass/fail report.
 - `tests/test_functional.py`: 25 separately named instructor tests.
-- `tests/test_returns.py`: 7 independent return-conversion checks.
+- `tests/test_returns.py`: 8 independent return-conversion checks.
 - `tests/test_independent.py`: 27 additional checks on independent data, mathematical
   properties, repeatability and invalid inputs. These are our own checks, not hidden instructor tests.
+- `tests/test_regressions.py`: 25 checks for reproduced numerical, validation and rerun failures.
 - `output/`: calculated answer CSVs, summary CSV, JSON report and pytest JUnit results.
 - `ANSWER.md`: methods, generated numerical results, tolerances and verification summary.
 - `generate_answer.py`: regenerate `ANSWER.md` from the actual test reports.
@@ -94,10 +95,15 @@ order and have no added row index. Matrix output row order matches variable colu
 - Return cases 6.1/6.2: `calculate_returns(prices, method='arithmetic'/'log')`;
   preserve Date and asset order, omit first row, no filling or demeaning. Outputs
   are `testout6_1.csv` and `testout6_2.csv` (no underscore after `testout`).
+  Log returns remain finite when the price ratio overflows or underflows.
 - Student t: estimate location, scale and nu; constrain `nu >= 2.0001`, as the reference does.
   Scale is not standard deviation. For nu > 2, variance is `scale**2 * nu/(nu-2)`.
+  If the likelihood is maximized at the Gaussian limit, return `nu=np.inf` and
+  the normal maximum-likelihood scale (`ddof=0`); the separate `fit_normal` course
+  convention remains `ddof=1`.
 - t regression: estimate intercept, slopes, scale and nu; error location is fixed at zero
-  to avoid confounding it with the regression intercept.
+  to avoid confounding it with the regression intercept. Its Gaussian boundary uses
+  the least-squares coefficients and maximum-likelihood residual scale.
 - AICc: `-2*log_likelihood + 2*k + 2*k*(k+1)/(n-k-1)`; the univariate t fit has k=3.
 - NIG moments: sample variance and uncorrected skewness/excess kurtosis match Julia conventions.
 - NIG MLE: convert SciPy `(a,b,loc,scale)` to `mu=loc`, `delta=scale`,
@@ -123,8 +129,9 @@ The methods and CSV contracts follow the instructor's `testfiles/test_setup.jl`,
 Python implementation and test harness were prepared with AI assistance and verified
 against the provided references. The lecture explicitly permits consulting the instructor's library.
 
-The downloaded `Tests.xlsx` is the updated 50-case catalog; the local course copy has
-39 cases. Neither is itself an executable test suite. The actual group 7 CSVs are named
+The current instructor `Tests.xlsx` is the updated 50-case catalog; this folder
+implements the 25 cases listed above. The workbook itself is not an executable test suite.
+The actual group 7 CSVs are named
 `testout7_1.csv`, etc., although some workbook rows say `testout_7.1.csv`.
 The adapters follow actual supplied filenames. Reference intermediates from cases 1 and
 3 are used as inputs where the workbook explicitly specifies them; the independent suite
@@ -132,3 +139,7 @@ also validates a fully calculated covariance-to-repair-to-factorization-to-simul
 
 Do not run the instructor's data generator over `data/`: the assignment consumes the
 provided inputs. Calculated outputs are stored separately in `output/`.
+Each new JSON report records its actual execution start and completion times in UTC.
+A failed calculation removes its prior CSV so that reruns cannot retain an old answer
+for that case. The second-seed report is `output/seed2026/test_report.json`;
+the obsolete `output/test_report_seed2026.json` alias was removed.
